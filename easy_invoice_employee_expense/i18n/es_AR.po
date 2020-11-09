@@ -1,0 +1,190 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_employee_expense
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-07 16:27+0000\n"
+"PO-Revision-Date: 2019-10-07 16:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_amount_expense
+msgid "Amount Expense"
+msgstr "Monto de Gasto"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_amount_invoice
+msgid "Amount Invoice"
+msgstr "Monto en Facturas"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_amount_returned
+msgid "Amount Returned"
+msgstr "Monto Devuelto"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.ui.view,arch_db:easy_invoice_employee_expense.easy_employee_expense_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_employee_expense
+#: selection:easy.employee.expense,state:0
+msgid "Pending to Rendig"
+msgstr "Pendiente a Rendir"
+
+#. module: easy_invoice_employee_expense
+#: selection:easy.employee.expense,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.actions.act_window,name:easy_invoice_employee_expense.action_easy_employee_expense
+#: model:ir.ui.menu,name:easy_invoice_employee_expense.submenu_action_easy_employee_expense
+#: model:ir.ui.view,arch_db:easy_invoice_employee_expense.easy_employee_expense_form
+#: model:ir.ui.view,arch_db:easy_invoice_employee_expense.easy_employee_expense_tree
+#: model:ir.ui.view,arch_db:easy_invoice_employee_expense.easy_hr_employee_form_inherit
+msgid "Easy Employee Expense"
+msgstr "Gastos de Empleados "
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model,name:easy_invoice_employee_expense.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_hr_employee_expense_line_ids
+#: model:ir.ui.view,arch_db:easy_invoice_employee_expense.easy_hr_employee_form_inherit
+msgid "Expense"
+msgstr "Gasto"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.ui.view,arch_db:easy_invoice_employee_expense.easy_employee_expense_form
+msgid "Rendig"
+msgstr "Rendir"
+
+#. module: easy_invoice_employee_expense
+#: selection:easy.employee.expense,state:0
+msgid "Rendig"
+msgstr "Rendido"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_employee_expense
+#: code:addons/easy_invoice_employee_expense/wizard/wizard_easy_employee_cc_create.py:30
+#: code:addons/odoo11/addons-calyx/odoo-calyx/easy_invoice_employee_expense/wizard/wizard_easy_employee_cc_create.py:30
+#, python-format
+msgid "No se pueden realizar Movimientos en cero."
+msgstr "No se pueden realizar Movimientos en cero."
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_employee_id
+msgid "Payment"
+msgstr "Pago"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_payment_amount_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_payment_invoice_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_payment_returned_id
+msgid "Payment Related"
+msgstr "Pago Relacionado"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_recaudation_id
+msgid "Recaudation Related"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_description
+msgid "Reference/Description"
+msgstr "Referencia/Descripción"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model.fields,field_description:easy_invoice_employee_expense.field_easy_employee_expense_state
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_employee_expense
+#: code:addons/easy_invoice_employee_expense/models/easy_employee_expense.py:106
+#: code:addons/easy_invoice_employee_expense/models/easy_employee_expense.py:186
+#: code:addons/easy_invoice_employee_expense/models/easy_employee_expense.py:191
+#: code:addons/odoo11/addons-calyx/odoo-calyx/easy_invoice_employee_expense/models/easy_employee_expense.py:106
+#: code:addons/odoo11/addons-calyx/odoo-calyx/easy_invoice_employee_expense/models/easy_employee_expense.py:186
+#: code:addons/odoo11/addons-calyx/odoo-calyx/easy_invoice_employee_expense/models/easy_employee_expense.py:191
+#, python-format
+msgid "You can not Retire without Funds. Make a Transference or permit movement in negative Amount"
+msgstr "No Puede realizar retiros sin Fondos. Haga una transferencia o permita Movimientos en negativos."
+
+#. module: easy_invoice_employee_expense
+#: code:addons/easy_invoice_employee_expense/wizard/wizard_easy_employee_cc_conf.py:25
+#: code:addons/odoo11/addons-calyx/odoo-calyx/easy_invoice_employee_expense/wizard/wizard_easy_employee_cc_conf.py:25
+#, python-format
+msgid "You must put an amount equal or less of Amount Total"
+msgstr "Debe poner un monto Igual o Menor al Monto Total"
+
+#. module: easy_invoice_employee_expense
+#: code:addons/easy_invoice_employee_expense/wizard/wizard_easy_employee_cc_conf.py:23
+#: code:addons/odoo11/addons-calyx/odoo-calyx/easy_invoice_employee_expense/wizard/wizard_easy_employee_cc_conf.py:23
+#, python-format
+msgid "You must put an amount greater than zero"
+msgstr "Debe poner un monto Mayor a Cero"
+
+#. module: easy_invoice_employee_expense
+#: model:ir.model,name:easy_invoice_employee_expense.model_easy_employee_expense
+msgid "easy.employee.expense"
+msgstr "easy.employee.expense"

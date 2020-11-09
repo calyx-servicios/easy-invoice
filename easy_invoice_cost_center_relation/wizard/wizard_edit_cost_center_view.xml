@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model='ir.ui.view' id='view_wizard_edit_cost_center_form'>
+        <field name='name'>wizard.edit.cost.center.form</field>
+        <field name='model'>wizard.edit.cost.center</field>
+        <field name='arch' type='xml'>
+            <form string="Edit Cost Center" >
+                <group>
+                    <group>
+                        <field name="cost_center_id" required="1" />
+                    </group>
+                </group>
+                <footer>
+                   <button name='edit_cost_center' string='Edit Cost Center'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_wizard_edit_cost_center">
+        <field name="name">Edit Cost Center</field>
+        <field name="res_model">wizard.edit.cost.center</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    
+</odoo>

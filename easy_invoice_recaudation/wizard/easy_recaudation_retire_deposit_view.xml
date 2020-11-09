@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model='ir.ui.view' id='view_easy_recaudation_retire_deposit_form'>
+        <field name='name'>easy.recaudation.retire.deposit.form</field>
+        <field name='model'>easy.recaudation.retire.deposit</field>
+        <field name='arch' type='xml'>
+            <form string="Retire/Deposit/Transfer" >
+                <group>
+                    <group>
+                        <field name="name" required="1" />
+                        <field name="date" required="1" />
+                    </group>
+                    <group>
+                        <field name="amount" required="1"/>
+                        <field name="type" required="1" />
+                        <field name="recaudation_id" attrs="{'invisible': [('type', '!=', 'transfer')],'required': [('type', '=', 'transfer')]}" domain="[('state', '=', 'open')]" />
+                    </group>
+                </group>
+                <footer>
+                   <button name='create_move' string='Create Move'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_easy_recaudation_retire_deposit">
+        <field name="name">Retire/Deposit/Transfer</field>
+        <field name="res_model">easy.recaudation.retire.deposit</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+  
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record id="easy_invoice_confirm_view" model="ir.ui.view">
+            <field name="name">easy.invoice.confirm.form</field>
+            <field name="model">easy.invoice.confirm</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Draft Invoices">
+                    <p class="oe_grey">
+                        Once draft invoices are confirmed, you will not be able
+                        to modify them.
+                    </p>
+                    <footer>
+                        <button string="Confirm Invoices" name="invoice_confirm" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_easy_invoice_confirm"
+            multi="True"
+            key2="client_action_multi" name="Confirm Draft Invoices"
+            res_model="easy.invoice.confirm" src_model="easy.invoice"
+            view_mode="form" target="new" view_type="form" />
+
+    </data>
+</odoo>

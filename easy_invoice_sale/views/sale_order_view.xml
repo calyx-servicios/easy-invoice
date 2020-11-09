@@ -1,0 +1,37 @@
+<odoo>
+  <data>
+
+
+
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="name">Sale Order Inherit</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_quotation_send']" position="after">
+                <button name="create_easy_invoice" type="object" string="Create Easy Invoice"
+                    attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}" 
+                    groups="easy_invoice.easy_invoice_user_group" class="btn-primary"/> 
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page  name="invoice_ids_page" string="Invoice Lines" groups="easy_invoice.easy_invoice_user_group" >
+                     <field name="sale_order_invoice_ids" readonly="1" groups="easy_invoice.easy_invoice_user_group">
+                    </field>
+               </page> 
+
+
+                   
+            </xpath>
+
+
+
+        </field>
+    </record>
+<!-- 
+
+ -->
+  </data>
+</odoo>
+
+

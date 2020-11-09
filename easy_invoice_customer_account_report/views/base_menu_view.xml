@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+            <menuitem
+                id="customer_account_report_wizard_menu"
+                name="Account Report"
+                parent="easy_invoice_partner_cc.menu_action_easy_res_partner_cc_customer"
+                action="easy_invoice_customer_account_report.customer_account_report_wizard"
+                groups="base.group_erp_manager"
+                />
+    </data>
+</odoo>

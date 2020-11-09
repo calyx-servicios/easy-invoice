@@ -1,0 +1,532 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_employee_cc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-06 17:51+0000\n"
+"PO-Revision-Date: 2020-05-06 17:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_middle_page
+msgid "<span style=\"padding-right:5px;\">\n"
+"                                    <strong>Total Pagado</strong>\n"
+"                                </span>"
+msgstr "<span style=\"padding-right:5px;\">\n"
+"                                    <strong>Total Pagado</strong>\n"
+"                                </span>"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_header
+msgid "<span>\n"
+"                                    <strong>RECIBO DE SUELDOS</strong>\n"
+"                                </span>"
+msgstr "<span>\n"
+"                                    <strong>RECIBO DE SUELDOS</strong>\n"
+"                                </span>"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_middle_page
+msgid "<strong>EMPLEADO</strong>"
+msgstr "<strong>EMPLEADO</strong>"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_middle_page
+msgid "<strong>Importe</strong>"
+msgstr "<strong>Importe</strong>"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_middle_page
+msgid "<strong>MOTIVO</strong>"
+msgstr "<strong>MOTIVO</strong>"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_footer
+msgid "Aclaración:"
+msgstr "Aclaración:"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,profile:0
+#: selection:easy.employee.cc,type:0
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_amount_advancement
+#: selection:wizard.easy.employee.cc.create,type:0
+msgid "Advancement"
+msgstr "Adelantos"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_amount
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_amount_total
+msgid "Amount Total"
+msgstr "Monto Total"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,state:0
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,profile:0
+#: selection:easy.employee.cc,type:0
+#: selection:wizard.easy.employee.cc.create,type:0
+msgid "Bank"
+msgstr "Banco"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,profile:0
+#: selection:easy.employee.cc,type:0
+#: selection:wizard.easy.employee.cc.create,type:0
+msgid "Basic Salary"
+msgstr "Sueldo Básico"
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/wizard/wizard_easy_employee_cc_create.py:56
+#: code:addons/easy_invoice_employee_cc/wizard/wizard_easy_employee_cc_create.py:56
+#, python-format
+msgid "Can not create a Moviment with amount 0.00."
+msgstr "No se pueden realizar Movimientos en cero."
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Concepto"
+msgstr "Concepto"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.actions.act_window,name:easy_invoice_employee_cc.act_wizard_easy_employee_cc_confirm
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.view_wizard_easy_employee_cc_confirm_form
+msgid "Confirm Salary"
+msgstr "Confirmar Salario"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_date_contable
+msgid "Contable Date"
+msgstr "Fecha Contable"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.view_wizard_easy_employee_cc_confirm_form
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.view_wizard_easy_employee_cc_create_form
+msgid "Create Move"
+msgstr "Crear Movimiento"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_date_contable
+msgid "Date Contable"
+msgstr "Fecha Contable"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_header
+msgid "Documento no válido como Factura"
+msgstr "Documento no válido como Factura"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employee.cc,state:0
+msgid "Done"
+msgstr "Hecho"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employee.cc,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_easy_movement
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_easy_movement
+msgid "Easy Movement"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_middle_page
+msgid "Efectivo"
+msgstr "Efectivo"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model,name:easy_invoice_employee_cc.model_hr_employee
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_employee_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_employee_id
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_tree
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.menu,name:easy_invoice_employee_cc.menu_action_easy_hr_employee_cc
+msgid "Employee CC"
+msgstr "Empleados"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_header
+msgid "Fecha:"
+msgstr "Fecha:"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_footer
+msgid "Firma:"
+msgstr "Firma:"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,ttype:0
+msgid "Haberes"
+msgstr "Haberes"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_employee_settlements_form
+msgid "Habilitar"
+msgstr "Habilitar"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Hook"
+msgstr "Hook"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.actions.act_window,name:easy_invoice_employee_cc.action_easy_hr_employee_tree
+#: model:ir.ui.menu,name:easy_invoice_employee_cc.submenu_action_easy_hr_employee_cc_tree
+msgid "Hr Employee CC"
+msgstr "Empleados"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Identification"
+msgstr "Identificación"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_employee_settlements_form
+msgid "Inhabilitar"
+msgstr "Inhabilitar"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,help:easy_invoice_employee_cc.field_easy_employee_cc_date_contable
+msgid "Keep empty to use the current date"
+msgstr "Dejarlo vacío para utilizar la fecha actual."
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,profile:0
+#: selection:easy.employee.cc,type:0
+#: selection:wizard.easy.employee.cc.create,type:0
+msgid "Liquidation Salary"
+msgstr "Liquidación de Sueldo"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.actions.act_window,name:easy_invoice_employee_cc.action_wizard_easy_employee_cc_create
+msgid "Make Salary/Advancement"
+msgstr "Pagar Salario o Dar Adelanto"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_middle_page
+msgid "Medios de Pago"
+msgstr "Medios de Pago"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,easy_movement:0
+msgid "No"
+msgstr "No"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,state:0
+msgid "Open"
+msgstr "Abierto"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,ttype:0
+msgid "Pagos y Compensaciones"
+msgstr "Pagos y Compensaciones"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Partner CC"
+msgstr "Cuenta Corriente"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_amount_payment
+msgid "Payment"
+msgstr "Pago"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_payment_id
+msgid "Payment Related"
+msgstr "Pago Relacionado"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.actions.report,name:easy_invoice_employee_cc.action_report_easyinvoice_employee
+msgid "Print Easy Employee"
+msgstr "Imprimir Empleado Easy"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_profile
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_employee_settlements_form
+msgid "Profile"
+msgstr "Perfil"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_footer
+msgid "RECIBI CONFORME"
+msgstr "RECIBI CONFORME"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_confirm_recaudation_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_recaudation_id
+msgid "Recaudation"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_recaudation_id
+msgid "Recaudation Related"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_description
+msgid "Reference/Description"
+msgstr "Referencia/Descripción"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_hr_employee_amount_residual
+msgid "Residual"
+msgstr "Saldo del Empleado"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_amount_residual_payment
+msgid "Residual Payment"
+msgstr "Restante a Pagar"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_user_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_amount_salary
+msgid "Salary"
+msgstr "Salary"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_hr_employee_cc_line_ids
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.view_wizard_easy_employee_cc_create_form
+msgid "Salary/Advancement"
+msgstr "Salario/Adelanto"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.menu,name:easy_invoice_employee_cc.menu_action_easy_employee_settings_cc
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.actions.act_window,name:easy_invoice_employee_cc.action_easy_employee_settlement_tree
+#: model:ir.ui.menu,name:easy_invoice_employee_cc.submenu_action_easy_employee_settlement_tree
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_employee_settlement_tree
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_employee_settlements_form
+msgid "Settlement"
+msgstr "Conceptos"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_state
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_state
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_symbol
+msgid "Symbol"
+msgstr "Símbolo"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.report_easy_advance_payment_header
+msgid "Tel:"
+msgstr "Tel.:"
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/models/hr_employee.py:61
+#: code:addons/easy_invoice_employee_cc/models/hr_employee.py:61
+#, python-format
+msgid "The Employee %s already has the Identification Number %s"
+msgstr "El Empleado %s ya tiene el Número de Identificación %s"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_easy_employe_cc_settlement_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_easy_employe_cc_settlement_id
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Total"
+msgstr "Total"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employe_cc_settlement_ttype
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_settlement_type
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_easy_employee_cc_type
+#: model:ir.model.fields,field_description:easy_invoice_employee_cc.field_wizard_easy_employee_cc_create_type
+#: model:ir.ui.view,arch_db:easy_invoice_employee_cc.easy_hr_employee_form
+msgid "Type"
+msgstr "Concepto"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model.fields,help:easy_invoice_employee_cc.field_easy_employe_cc_settlement_sequence
+msgid "Used to order the 'All Operations' kanban view"
+msgstr "Usado para ordenar la vista kanban de 'Todas la operaciones'"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model,name:easy_invoice_employee_cc.model_wizard_easy_employee_cc_confirm
+msgid "Wizard Easy Employee C.C. Confirm"
+msgstr "Confirmar Movimiento de Empleado"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model,name:easy_invoice_employee_cc.model_wizard_easy_employee_cc_create
+msgid "Wizard Easy Employee C.C. Create"
+msgstr "Crear Movimiento de Empleado"
+
+#. module: easy_invoice_employee_cc
+#: selection:easy.employe.cc.settlement,easy_movement:0
+msgid "Yes"
+msgstr "Si"
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/models/easy_employee_cc.py:179
+#: code:addons/easy_invoice_employee_cc/models/easy_employee_cc.py:179
+#, python-format
+msgid "You can not Retire without Funds. Make a Transference or permit movement in negative Amount"
+msgstr "No Puede realizar retiros sin Fondos. Haga una transferencia o permita Movimientos en negativos."
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/models/easy_employee_cc.py:291
+#: code:addons/easy_invoice_employee_cc/models/easy_employee_cc.py:291
+#, python-format
+msgid "You can not delete a Settlement maybe you want to archived"
+msgstr "No puede eliminar un concepto en uso, intente archivarlo."
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/models/easy_employee_cc.py:217
+#: code:addons/easy_invoice_employee_cc/models/easy_employee_cc.py:217
+#, python-format
+msgid "You cannot delete these type of movement! because have easy payment relation"
+msgstr "No puede eliminar esta linea debido a que tiene un movimiento de caja relacionado."
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/wizard/wizard_easy_employee_cc_conf.py:25
+#: code:addons/easy_invoice_employee_cc/wizard/wizard_easy_employee_cc_conf.py:25
+#, python-format
+msgid "You must put an amount equal or less of Amount Total"
+msgstr "Debe poner una cantidad igual o menor de Cantidad total"
+
+#. module: easy_invoice_employee_cc
+#: code:addons/addons-calyx/odoo-calyx/easy_invoice_employee_cc/wizard/wizard_easy_employee_cc_conf.py:23
+#: code:addons/easy_invoice_employee_cc/wizard/wizard_easy_employee_cc_conf.py:23
+#, python-format
+msgid "You must put an amount greater than zero"
+msgstr "Debe poner una cantidad mayor a cero"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model,name:easy_invoice_employee_cc.model_easy_employe_cc_settlement
+msgid "easy.employe.cc.settlement"
+msgstr "easy.employe.cc.settlement"
+
+#. module: easy_invoice_employee_cc
+#: model:ir.model,name:easy_invoice_employee_cc.model_easy_employee_cc
+msgid "easy.employee.cc"
+msgstr "easy.employee.cc"
+

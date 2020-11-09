@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+            <menuitem
+                id="easy_invoice.income_statements_report_menu"
+                name="Estados de Resultados"
+                parent="account_financial_report.menu_oca_reports"
+                action="easy_invoice.action_income_statements_wizard"
+                groups="base.group_erp_manager"
+                />
+    </data>
+</odoo>

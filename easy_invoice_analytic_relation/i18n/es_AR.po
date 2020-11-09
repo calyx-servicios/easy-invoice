@@ -1,0 +1,155 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_analytic_relation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-21 22:59+0000\n"
+"PO-Revision-Date: 2020-08-21 22:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_analytic_relation
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_employee_cc.py:68
+#: code:addons/easy_invoice_analytic_relation/models/easy_employee_cc.py:68
+#, python-format
+msgid " con la cuenta Cuenta Analítica "
+msgstr " con la cuenta Cuenta Analítica "
+
+#. module: easy_invoice_analytic_relation
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_employee_cc.py:69
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_employee_expense.py:58
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_invoice_line.py:69
+#: code:addons/easy_invoice_analytic_relation/models/easy_employee_cc.py:69
+#: code:addons/easy_invoice_analytic_relation/models/easy_employee_expense.py:58
+#: code:addons/easy_invoice_analytic_relation/models/easy_invoice_line.py:69
+#, python-format
+msgid " en la linea "
+msgstr " en la linea "
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_employee_cc_analytic_account_id
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_employee_expense_analytic_account_id
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_invoice_line_analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta Analitica"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_hr_employee_analytic_account_id
+msgid "Analytic Account Payment CC"
+msgstr "Cuenta Analítica de Sueldos/Adelantos"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea Analítica"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_employee_cc_analytic_line_id
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_employee_expense_analytic_line_id
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_invoice_line_analytic_line_id
+msgid "Analytic Line Move"
+msgstr "Movimiento Analítico"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_easy_employee_expense_product_id
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_hr_employee_product_id
+msgid "Analytic Product"
+msgstr "Producto de Cuenta Analítica"
+
+#. module: easy_invoice_analytic_relation
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_employee_expense.py:57
+#: code:addons/easy_invoice_analytic_relation/models/easy_employee_expense.py:57
+#, python-format
+msgid "Crea con la cuenta Cuenta Analítica "
+msgstr "Crea con la cuenta Cuenta Analítica "
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_easy_invoice
+msgid "Easy Invoice"
+msgstr "Factura Rápida"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_easy_invoice_line
+msgid "Easy Invoice Line"
+msgstr "Linea de Factura"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_account_analytic_line_employee_cc_id
+msgid "Employee CC"
+msgstr "Cta Cte Empleado"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_account_analytic_line_employee_expense_id
+msgid "Employee Expense"
+msgstr "Gasto de Empleado"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_account_analytic_line_invoice_line_id
+msgid "Invoice Line"
+msgstr "Linea Factura"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model.fields,field_description:easy_invoice_analytic_relation.field_product_category_account_analytic
+msgid "Not account analytic for product"
+msgstr "No crear entrada analitica en facturas"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_product_category
+msgid "Product Category"
+msgstr "Categoría de producto"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_sale_order
+msgid "Quotation"
+msgstr "Presupuesto"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de orden de ventas"
+
+#. module: easy_invoice_analytic_relation
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_employee_cc.py:67
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_employee_expense.py:56
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_invoice_line.py:65
+#: code:addons/easy_invoice_analytic_relation/models/easy_employee_cc.py:67
+#: code:addons/easy_invoice_analytic_relation/models/easy_employee_expense.py:56
+#: code:addons/easy_invoice_analytic_relation/models/easy_invoice_line.py:65
+#, python-format
+msgid "Se crea Movimiento Analítico"
+msgstr "Se crea Movimiento Analítico"
+
+#. module: easy_invoice_analytic_relation
+#: code:addons/addons/addons-calyx/odoo-calyx/easy_invoice_analytic_relation/models/easy_invoice_line.py:66
+#: code:addons/easy_invoice_analytic_relation/models/easy_invoice_line.py:66
+#, python-format
+msgid "Se creacon la cuenta Cuenta Analítica "
+msgstr "Se creacon la cuenta Cuenta Analítica "
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_easy_employee_cc
+msgid "easy.employee.cc"
+msgstr "easy.employee.cc"
+
+#. module: easy_invoice_analytic_relation
+#: model:ir.model,name:easy_invoice_analytic_relation.model_easy_employee_expense
+msgid "easy.employee.expense"
+msgstr "easy.employee.expense"
+

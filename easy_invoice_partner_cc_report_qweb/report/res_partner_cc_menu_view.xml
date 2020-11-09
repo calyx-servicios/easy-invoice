@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <data >
+    
+
+
+
+
+
+        <report 
+            id="action_report_res_partner_cc"
+            string="Print Report Partner CC"
+            model="res.partner" 
+            report_type="qweb-pdf"
+            file="easy_invoice_partner_cc_report_qweb.report_res_partner_cc" 
+            name="easy_invoice_partner_cc_report_qweb.report_res_partner_cc"
+            print_report_name="'Estado de Deuda de %s' % (object.name)"
+        />
+
+    
+
+
+    </data>
+</odoo>

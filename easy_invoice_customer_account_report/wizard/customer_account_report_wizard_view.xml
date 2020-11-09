@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="customer_account_report_wizard_view" model="ir.ui.view">
+        <field name="name">Customer Account Report Wizard</field>
+        <field name="model">customer.account.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+              
+                <div>
+                    <group name="filters">
+                        <group name="date_range">
+                            <field name="date_range_id"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+
+                        </group>
+
+                    </group>
+                    
+
+                    <group name="account_filter" col="4">
+                        <label for="account_ids" colspan="4"/>
+
+                        <field name="account_ids"
+                               nolabel="1"
+                               widget="many2many_tags"
+                               options="{'no_create': True}"
+                               domain="[('customer','=',True)]"
+                               colspan="4"/>
+                    </group>
+                    <group>
+                        <field name="non_zero"></field>
+                    </group>
+                </div>
+
+                <footer>
+                    <div >
+                        <button name="button_export_html" string="Vista"
+                            type="object" default_focus="1" class="oe_highlight"/>
+                        or
+                        <button name="button_export_xlsx" string="Exportar XLSX" type="object"/>
+                        or
+                        <button string="Cancelar" class="oe_link" special="cancel" />
+                    </div>
+
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="easy_invoice_customer_account_report.customer_account_report_wizard"
+                name="Customer Account Report"
+                res_model="customer.account.report.wizard"
+                view_type="form"
+                view_mode="form"
+                view_id="customer_account_report_wizard_view"
+                target="new" />
+
+</odoo>

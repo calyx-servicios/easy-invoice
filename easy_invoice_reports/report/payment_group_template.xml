@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="external_layout_standard_paymentgroup">
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-7 " style="width:48%;">
+                    <t t-call="easy_invoice_reports.report_easypaymentgroup_document_header" />
+                </div>
+                <div class="col-xs-7 " style="width:48%;margin-left:30px;">
+                    <t t-call="easy_invoice_reports.report_easypaymentgroup_document_header" />
+                </div>
+            </div>
+        </div>
+
+        <div class="article o_report_layout_standard">
+            <t t-raw="0" />
+        </div>
+
+        <div class="footer">
+            <div class="row">
+                <div class="col-xs-7 " style="width:48%;">
+                    <t t-call="easy_invoice_reports.report_easypaymentgroup_document_footer" />
+                </div>
+                <div class="col-xs-7 " style="width:48%;margin-left:30px;">
+                    <t t-call="easy_invoice_reports.report_easypaymentgroup_document_footer" />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="external_layout">
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc" />
+        </t>
+
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()" />
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company" />
+        </t>
+
+        <t t-call="easy_invoice_reports.external_layout_standard_paymentgroup">
+            <t t-raw="0" />
+        </t>
+
+    </template>
+
+    <template id="report_easypaymentgroup_document_header">
+        <div class="headerx" style="font-size:10px;width:100%;">
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-xs-5 " name="company_address" style="font-size:10px;margin-left: 10px;">
+                    <div class="row" style="height:50%;margin-left:10px;">
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="height:50px;width:50px;" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li t-if="company.name">
+                                <span t-field="company.name" />
+                            </li>
+                            <li t-if="company.vat">
+                                <t t-esc="company.country_id.vat_label or 'TIN'" />
+                                <span t-field="company.vat" />
+                            </li>
+                            <li t-if="company.email">
+                                <span t-field="company.email" />
+                            </li>
+                            <li t-if="company.street">
+                                <span t-field="company.street" />
+                            </li>
+                            <li t-if="company.city">
+                                <span t-field="company.city" />
+                                <span t-field="company.state_id" />
+                                <span t-field="company.zip" />
+                            </li>
+                            <li>
+                                Tel:
+                                <span t-field="company.phone" />
+                            </li>
+                            <li>
+                                I.V.A.:
+                                <strong>IVA Responsable Inscrito</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 " style="font-size:30px;padding-left: 10px;">
+                    <div class="row" style="padding-top: 20px; ">
+                        <ul class="list-unstyled">
+                            <li class="text-center">
+                                <strong>X</strong>
+                            </li>
+                            <li style="font-size:8px">Documento no válido como Factura</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 text-left" style="padding-left: 20px;">
+                    <div class="row" style="font-size:10px;">
+                        <ul class="list-unstyled">
+                            <li style="font-size:16px">
+                                <span>
+                                    <t t-if="doc.group_type == 'in_group'">
+                                        <strong>PAGO</strong>
+                                    </t>
+                                    <t t-if="doc.group_type == 'out_group'">
+                                        <strong>RECIBO</strong>
+
+                                    </t>
+                                </span>
+                            </li>
+                            <li>
+                                N°:
+                                <span t-field="doc.name" />
+                            </li>
+                            <li t-if="doc.date">
+                                Fecha:
+                                <span t-field="doc.date" />
+                            </li>
+                        </ul>
+                        <br />
+                        <ul class="list-unstyled">
+                            <li>
+                                CUIT:
+                                <span t-field="company.main_id_number" />
+                            </li>
+                            <li>
+                                Ing. Bruto:
+                                <span t-field="company.gross_income_number" />
+                            </li>
+                            <li>
+                                Inicio de Actividades:
+                                <span t-field="company.start_date" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_easypaymentgroup_document_middle_page">
+
+        <div class="row" style="padding-top:15px;font-size:10px;width:105%;">
+
+            <table class="table table-condensed" style="border: 1px solid black;">
+                <tbody>
+                    <tr>
+                        <td class="text-left" style="padding-left:15px;padding-bottom:10px;padding-top: 10px;border-top: 1px solid black;">
+                            <t t-if="doc.group_type == 'out_group'">
+                                <strong>Cliente:</strong>
+                            </t>
+                            <t t-if="doc.group_type == 'in_group'">
+                                <strong>Proveedor:</strong>
+                            </t>
+                            <span t-field="doc.partner_id.name" />
+                        </td>
+                        <td class="text-left" style="padding-left:15px;padding-bottom:10px;padding-top: 10px;border-top: 1px solid black;">
+                            <strong>Cound IVA: </strong>
+                            IVA Responsable Inscrito
+                            <br />
+                            <strong>CUIT</strong>
+                            :
+                            <span t-field="doc.partner_id.main_id_number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left" colspan="2" style="padding-left:15px;padding-bottom:10px;border-top: none">
+                            <strong>Dirección:</strong>
+                            <t t-if="doc.partner_id.city">
+                                <span t-field="doc.partner_id.street" />
+                                .
+                                <span t-field="doc.partner_id.city" />
+                                -
+                                <span t-field="doc.partner_id.state_id" />
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row" style="margin-top:-15px;font-size:12px;width:105%;">
+            <table class="table table-condensed" style="border: 1px solid black;">
+                <thead>
+                    <tr>
+                        <th class="text-center" colspan="3" style="background:#9b9b9b">Medios de Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-right" colspan="3" style="background:#cdcdcd">
+                            <strong>Importe</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            Efectivo
+                        </td>
+                        <td class="text-center">
+                            <span t-field="doc.recaudation_id" />
+                        </td>
+                        <td class="text-right">
+                            <span style="padding-right:5px;">
+                                <strong>Total Pagado</strong>
+                            </span>
+                            <t t-if="doc.group_type == 'out_group'">
+                                <span t-field="doc.partner_amount" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' style="padding-right: 20px;" />
+                            </t>
+                            <t t-if="doc.group_type == 'in_group'">
+                                <span t-field="doc.amount_money" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' style="padding-right: 20px;" />
+                            </t>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row" style="font-size:12px;width:105%;">
+
+            <table class="table table-condensed" style="border: 1px solid black;">
+                <thead>
+                    <tr>
+                        <th class="text-center" colspan="2" style="background:#9b9b9b">Comprobantes Imputados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-right" colspan="2" style="background:#cdcdcd">
+                            <strong>Importe</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                            <t t-if="doc.group_type == 'out_group'">
+                        <t t-foreach="doc.out_invoice_ids" t-as="invoice">
+                            <tr>
+                                <td class="text-left">
+                                    <span t-field="invoice.invoice_id.name" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="invoice.invoice_id.amount_total" />
+                                </td>
+                            </tr>
+                        </t>
+                        <t t-foreach="doc.out_rectificative_ids" t-as="credit_note">
+                            <tr>
+                                <td class="text-left">
+                                    <span t-field="credit_note.invoice_id.name" />
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="credit_note.invoice_id.amount_total" />
+                                </td>
+                            </tr>
+                        </t>
+                        </t>
+                        <t t-if="doc.group_type == 'in_group'">
+                                <t t-foreach="doc.in_invoice_ids" t-as="invoice">
+                                    <tr>
+                                        <td class="text-left">
+                                            <span t-field="invoice.invoice_id.name" />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="invoice.invoice_id.amount_total" />
+                                        </td>
+                                    </tr>
+                                </t>
+                                <t t-foreach="doc.in_rectificative_ids" t-as="credit_note">
+                                    <tr>
+                                        <td class="text-left">
+                                            <span t-field="credit_note.invoice_id.name" />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="credit_note.invoice_id.amount_total" />
+                                        </td>
+                                    </tr>
+                                </t>
+                                </t>
+                        <td class="text-right" style="background:#cdcdcd" colspan="2">
+                            <span style="padding-right:5px;">
+                                <strong>Importe Total</strong>
+                            </span>
+                            <t t-if="doc.group_type == 'out_group'">
+                                <span t-field="doc.partner_amount" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' style="padding-right: 20px;" />
+                            </t>
+                            <t t-if="doc.group_type == 'in_group'">
+                                <span t-field="doc.amount2pay" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' style="padding-right: 20px;" />
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_easypaymentgroup_document_footer">
+
+        <div class="row" style="width:105%;">
+
+            <table class="table table-condensed" style="border:none;">
+                <tbody>
+                    <tr>
+                        <td class="text-left" style="border:none;padding-left: 30px;font-size:12px;">
+                            RECIBI CONFORME
+                        </td>
+                        <td class="text-right" style="border:none;padding-right: 200px;">
+                            Firma:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" style="border:none;padding-right: 200px;font-size:16px;" colspan="2">
+                            Aclaración:
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </template>
+
+    <template id="report_easypaymentgroup_document">
+        <t t-call="easy_invoice_reports.external_layout">
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+            <div class="page">
+                <div class="oe_structure" />
+                <div class="row">
+                    <div class="col-xs-7 " style="width:45%;">
+                        <t t-call="easy_invoice_reports.report_easypaymentgroup_document_middle_page" />
+                    </div>
+                    <div class="col-xs-7 " style="width:45%;margin-left:60px;">
+                        <t t-call="easy_invoice_reports.report_easypaymentgroup_document_middle_page" />
+                    </div>
+                </div>
+
+                <div class="oe_structure" />
+            </div>
+        </t>
+    </template>
+
+    <template id="report_easy_paymentgroup">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="easy_invoice_reports.report_easypaymentgroup_document" t-lang="doc.partner_id.lang" />
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

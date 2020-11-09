@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--
+        PARA AMBOS
+ -->
+        <record id="view_easy_invoice_filter" model="ir.ui.view">
+            <field name="name">easy.invoice.select</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <search string="Search Invoice">
+                    <field name="name"/>
+                    <field name="number"/>
+                    <field name="date_invoice"/>
+                    <field name="date_expiration"/>
+                    <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                    <filter name="unpaid" string="Open" domain="[('state', '=', 'open')]"/>
+                    <filter name="paid" string="Paid" domain="[('state', '=', 'paid')]"/>
+                    <filter name="late" string="Overdue" domain="['&amp;', ('date_due', '&lt;', time.strftime('%%Y-%%m-%%d')), ('state', '=', 'open')]" help="Overdue invoices, maturity date passed"/>
+                    <separator/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id" string="Salesperson" domain="[('share','=', False)]"/>
+                    <separator/>
+                    <filter domain="[('user_id','=',uid)]" help="My Invoices"/>
+                    <separator/>
+                    <filter string="My Activities" name="activities_my" domain="[('activity_ids.user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Late Activities" name="activities_overdue" domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]" help="Show all records which has next action date is before today"/>
+                    <filter string="Today Activities" name="activities_today" domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter string="Future Activities" name="activities_upcoming_all" domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                        ]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}"/>
+                        <filter string="Salesperson" context="{'group_by':'user_id'}"/>
+                        <filter string="Type" context="{'group_by':'type'}"/>
+                        <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                        <separator/>
+                        <filter string="Invoice Date" context="{'group_by':'date_invoice'}"/>
+                        <filter string="Due Date" context="{'group_by':'date_due'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!--
+FACTUAS DE CLIENTES
+ -->
+        <record id="easy_invoice_customer_tree" model="ir.ui.view">
+            <field name="name">easy.invoice.tree</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="name" />
+                    <field name="subtype_invoice" />
+                    <field name="partner_id" string="Customer"/>
+                    <field name="date_invoice"/>
+                    <field name="user_id"/>
+                    <field name="date_expiration"/>
+                    <field name="amount_total"/>
+                    <field name="residual_amount" string="Residual" sum="Total"/>
+                    <field name="description_debit_note"/>
+
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="easy_invoice_customer_form" model="ir.ui.view">
+            <field name="name">easy.invoice.customer.form</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice" class="o_invoice_form">
+                    <header>
+                        <button name="confirm" type="object" states="draft" string="Confirm" class="oe_highlight"/>
+                        <button name="back2draft" type="object" states="cancel" string="Back to Draft" class="oe_highlight"/>
+
+                        <button name="cancel_invoice" type="object" states="open,paid" string="Cancell Invoice" class="oe_highlight"/>
+                        <button name="pay" type="object" states="open" string="Pay" class="oe_highlight"/>
+
+
+
+                        <button name="rectificate_invoice" type="object" string="Rectificate Invoice" class="oe_highlight" context="{'default_partner_id':partner_id}" attrs="{'invisible':['|',('type', 'not in', ['out_invoice','in_invoice']),('state', 'not in', ['open'])]}"/>
+
+
+
+                        <button name="print_easyinvoice" string="Print Invoice" type="object" states="open,paid" class="btn-primary o_sale_print"/>
+                        <!-- <button name="print_easyshipment" string="Print Shipment" type="object" class="btn-primary o_sale_print"/> -->
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid"/>
+                    </header>
+                    <sheet string="Invoice">
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline" readonly="1" />
+                        </h1>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <field name="type" invisible="1"/>
+                        <field name="boolean_permit_cancel" invisible="1"/>
+
+                        <group>
+                            <group>
+                                <field string="Partner Customer" name="partner_id" context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company'}" options='{"always_reload": True, "no_quick_create": True}' domain="[('customer', '=', True)]" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="configuration_sequence_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="type_refund" attrs="{'invisible': [('type', 'not in', ['out_refund','in_refund'])]
+                                        ,'required': [('type', 'in', ['out_refund','in_refund'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="description_refund" attrs="{'invisible': [('type', 'not in', ['out_refund','in_refund'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="subtype_invoice" attrs="{'invisible': [('type', 'not in', ['out_invoice','in_invoice'])]
+                                        ,'required': [('type', 'in', ['out_invoice','in_invoice'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="type_debit_note" attrs="{'invisible': [('subtype_invoice', 'not in', ['debit_note'])]
+                                        ,'required': [('subtype_invoice', 'in', ['debit_note'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="description_debit_note" attrs="{'invisible': [('subtype_invoice', 'not in', ['debit_note'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+
+                                <field name="rectificative_invoice_id" readonly="1" attrs="{'invisible': [('rectificative_invoice_id', '=', False)]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+                            </group>
+                            <group>
+                                <field name="date_invoice" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="date_expiration" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="date_contable" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="user_id" readony="1" />
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="invoice_line_ids_page" string="Invoice Lines">
+                                <field name="invoice_line_ids" nolabel="1" widget="one2many_list" mode="tree,kanban" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'search_invoice_state':state}">
+                                    <tree string="Invoice Lines" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="product_id" domain="[('sale_ok','=',True)]" required="1" />
+                                        <field name="quantity" required="1" />
+                                        <field name="uom_id" groups="product.group_uom"/>
+                                        <field name="price_unit" required="1" readonly="1"/>
+                                        <field name="price_subtotal"/>
+                                        <field name="invoice_state" invisible="1" />
+                                    </tree>
+
+                                </field>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                </group>
+                                <field name="note" class="oe_inline" />
+                                <div class="oe_clear"/>
+                            </page>
+
+                            <page string="Payments" name="payment_line_ids_page">
+                                <group >
+                                    <group name="group_1">
+                                        <field name="residual_amount" readonly="1" />
+                                    </group >
+                                    <group name="group_2">
+
+                                    </group >
+                                </group>
+                                <field name="payment_line_ids" readonly="0">
+                                    <tree string="payment Lines" editable="bottom">
+                                        <field name="date_pay"/>
+                                        <field name="amount_in" sum="Total" />
+                                        <field name="amount_out" sum="Total"/>
+                                        <field name="state" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="easy_invoice_customer_form_responsible" model="ir.ui.view">
+            <field name="name">easy.invoice.customer.form.responsible</field>
+            <field name="model">easy.invoice</field>
+            <field name="inherit_id" ref="easy_invoice_customer_form" />
+            <!-- <field name="groups_id" eval="[(6, 0, [ref('easy_invoice.easy_invoice_responsible_group') ])]" /> -->
+            <field name="groups_id" eval="[(6, 0, [ref('easy_invoice.easy_invoice_responsible_price_group') ])]" />
+            <field name="arch" type="xml">
+                <field name="price_unit" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="action_easy_invoice_customer_tree" model="ir.actions.act_window">
+            <field name="name">Customer Invoices</field>
+            <field name="res_model">easy.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_invoice')]</field>
+            <field name="context">{'default_type':'out_invoice','type':'out_invoice'}</field>
+            <field name="search_view_id" ref="view_easy_invoice_filter"/>
+        </record>
+
+        <record id="action_easy_invoice_customer_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_invoice_customer_tree"/>
+            <field name="act_window_id" ref="action_easy_invoice_customer_tree"/>
+        </record>
+
+        <record id="action_easy_invoice_customer_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_invoice_customer_form"/>
+            <field name="act_window_id" ref="action_easy_invoice_customer_tree"/>
+        </record>
+
+        <menuitem action="action_easy_invoice_customer_tree" id="menu_action_easy_invoice_customer_tree" parent="customer_menu" sequence="10"/>
+
+
+
+        <record id="easy_invoice_customer_rec_tree" model="ir.ui.view">
+            <field name="name">easy.invoice.tree</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="name" />
+                    <field name="type" />
+                    <field name="partner_id" string="Customer"/>
+                    <field name="date_invoice"/>
+                    <field name="rectificative_invoice_id"/>
+                    <field name="user_id"/>
+                    <field name="date_expiration"/>
+                    <field name="amount_total"/>
+                    <field name="residual_amount" string="Residual" sum="Total"/>
+                    <field name="type_refund"/>
+                    <field name="state"/>
+
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_easy_invoice_customer_rec_tree" model="ir.actions.act_window">
+            <field name="name">Customer Invoices Rectificative</field>
+            <field name="res_model">easy.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','out_refund')]</field>
+            <field name="context">{'default_type':'out_refund','type':'out_refund'}</field>
+            <field name="search_view_id" ref="view_easy_invoice_filter"/>
+        </record>
+
+        <record id="action_easy_invoice_customer_rec_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_invoice_customer_rec_tree"/>
+            <field name="act_window_id" ref="action_easy_invoice_customer_rec_tree"/>
+        </record>
+
+        <record id="action_easy_invoice_customer_rec_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_invoice_customer_form"/>
+            <field name="act_window_id" ref="action_easy_invoice_customer_rec_tree"/>
+        </record>
+
+        <menuitem action="action_easy_invoice_customer_rec_tree" id="menu_action_easy_invoice_customer_rec_tree" parent="customer_menu" sequence="20"/>
+
+
+
+        <!--
+FACTUAS DE COMPRAS
+ -->
+
+
+        <record id="easy_invoice_supplier_tree" model="ir.ui.view">
+            <field name="name">easy.invoice.tree</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="number" />
+                    <field name="subtype_invoice" />
+                    <field name="partner_id" string="Supplier"/>
+                    <field name="date_invoice"/>
+                    <field name="user_id"/>
+                    <field name="date_expiration"/>
+                    <field name="amount_total"/>
+                    <field name="residual_amount" string="Residual" sum="Total"/>
+                    <field name="description_debit_note"/>
+                    <field name="name" />
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="easy_invoice_supplier_form" model="ir.ui.view">
+            <field name="name">easy.invoice.supplier.form</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice" class="o_invoice_form">
+                    <header>
+                        <button name="confirm" type="object" states="draft" string="Confirm" class="oe_highlight"/>
+                        <button name="back2draft" type="object" states="cancel" string="Back to Draft" class="oe_highlight"/>
+
+                        <button name="cancel_invoice" type="object" states="open,paid" string="Cancell Invoice" class="oe_highlight"/>
+
+
+                        <button name="rectificate_invoice" type="object" states="open,paid" string="Rectificate Invoice" class="oe_highlight" attrs="{'invisible':['|',('type', 'not in', ['out_invoice','in_invoice']),('state', 'not in', ['open'])]}"/>
+                        <!-- <button name="print_easyinvoice" string="Print Invoice" type="object" states="open,paid" class="btn-primary o_sale_print"/>
+                    <button name="print_easyshipment" string="Print Shipment" type="object" class="btn-primary o_sale_print"/> -->
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,open,paid"/>
+                    </header>
+                    <sheet string="Invoice">
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline" readonly="1" />
+                        </h1>
+                        <field name="type" invisible="1"/>
+                        <field name="boolean_permit_cancel" invisible="1"/>
+                        <group>
+                            <group>
+                                <field string="Partner Supplier" name="partner_id" context="{'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1, 'default_company_type': 'company'}" domain="[('supplier', '=', True)]" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="configuration_sequence_id" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+
+                                <field name="type_refund" attrs="{'invisible': [('type', 'not in', ['out_refund','in_refund'])]
+                                        ,'required': [('type', 'in', ['out_refund','in_refund'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="description_refund" attrs="{'invisible': [('type', 'not in', ['out_refund','in_refund'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+
+                                <field name="subtype_invoice" attrs="{'invisible': [('type', 'not in', ['out_invoice','in_invoice'])]
+                                        ,'required': [('type', 'in', ['out_invoice','in_invoice'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="type_debit_note" attrs="{'invisible': [('subtype_invoice', 'not in', ['debit_note'])]
+                                        ,'required': [('subtype_invoice', 'in', ['debit_note'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="description_debit_note" attrs="{'invisible': [('subtype_invoice', 'not in', ['debit_note'])]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+
+                                <field name="rectificative_invoice_id" readonly="1" attrs="{'invisible': [('rectificative_invoice_id', '=', False)]
+                                        ,'readonly': [('state', '!=', 'draft')]}"/>
+
+                            </group>
+                            <group>
+                                <field name="number" required="True" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date_invoice" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date_expiration" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="date_contable" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                                <field name="user_id" readonly="1" />
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Invoice Lines">
+                                <field name="invoice_line_ids" nolabel="1" widget="one2many_list" mode="tree,kanban" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'search_invoice_state':state}">
+                                    <tree string="Invoice Lines" editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="product_id" domain="[('purchase_ok','=',True)]" required="1" />
+                                        <field name="quantity" required="1" />
+                                        <field name="uom_id" groups="product.group_uom"/>
+                                        <field name="price_unit" required="1" />
+                                        <field name="price_subtotal"/>
+                                        <field name="invoice_state" invisible="1" />
+                                    </tree>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right">
+                                    <field name="amount_total" class="oe_subtotal_footer_separator"/>
+                                </group>
+
+                                <field name="note" class="oe_inline" placeholder="Setup default terms and conditions in your settings ..."/>
+                                <div class="oe_clear"/>
+                            </page>
+                            <page string="Payments" name="payment_line_ids_page">
+                                <group >
+                                    <group name="group_1">
+                                        <field name="residual_amount" readonly="1" />
+                                    </group >
+                                    <group name="group_2">
+
+                                    </group >
+                                </group>
+                                <field name="payment_line_ids" readonly="0">
+                                    <tree string="payment Lines" editable="bottom">
+                                        <field name="date_pay"/>
+                                        <field name="amount_in" sum="Total" />
+                                        <field name="amount_out" sum="Total"/>
+                                        <field name="state" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_easy_invoice_supplier_tree" model="ir.actions.act_window">
+            <field name="name">Supplier Invoice</field>
+            <field name="res_model">easy.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_invoice')]</field>
+            <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice'}</field>
+            <field name="search_view_id" ref="view_easy_invoice_filter"/>
+        </record>
+
+        <record id="action_easy_invoice_supplier_form_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_invoice_supplier_tree"/>
+            <field name="act_window_id" ref="action_easy_invoice_supplier_tree"/>
+        </record>
+
+        <record id="action_easy_invoice_supplier_tree_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_invoice_supplier_form"/>
+            <field name="act_window_id" ref="action_easy_invoice_supplier_tree"/>
+        </record>
+
+        <menuitem action="action_easy_invoice_supplier_tree" id="menu_action_easy_invoice_supplier_tree" parent="vendor_menu" sequence="10"/>
+
+
+        <record id="easy_invoice_supplier_rec_tree" model="ir.ui.view">
+            <field name="name">easy.invoice.tree</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="number" />
+                    <field name="type" />
+                    <field name="partner_id" string="Supplier"/>
+                    <field name="date_invoice"/>
+                    <field name="rectificative_invoice_id"/>
+                    <field name="user_id"/>
+                    <field name="date_expiration"/>
+                    <field name="amount_total"/>
+                    <field name="residual_amount" string="Residual" sum="Total"/>
+                    <field name="type_refund"/>
+                    <field name="name" />
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_easy_invoice_supplier_rec_tree" model="ir.actions.act_window">
+            <field name="name">Supplier Invoice Rectificative</field>
+            <field name="res_model">easy.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','=','in_refund')]</field>
+            <field name="context">{'default_type': 'in_refund', 'type': 'in_refund'}</field>
+            <field name="search_view_id" ref="view_easy_invoice_filter"/>
+        </record>
+
+        <record id="action_easy_invoice_supplier_rec_form_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_invoice_supplier_rec_tree"/>
+            <field name="act_window_id" ref="action_easy_invoice_supplier_rec_tree"/>
+        </record>
+
+        <record id="action_easy_invoice_supplier_tree_rec_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_invoice_supplier_form"/>
+            <field name="act_window_id" ref="action_easy_invoice_supplier_rec_tree"/>
+        </record>
+
+        <menuitem action="action_easy_invoice_supplier_rec_tree" id="menu_action_easy_invoice_supplier_rec_tree" parent="vendor_menu" sequence="20"/>
+
+
+
+
+
+    </data>
+</odoo>

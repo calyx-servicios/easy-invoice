@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model='ir.ui.view' id='view_wizard_easy_partner_cc_anticipe_form'>
+        <field name='name'>wizard.easy.partner.cc.form</field>
+        <field name='model'>wizard.easy.partner.cc</field>
+        <field name='arch' type='xml'>
+            <form string="Anticipe" >
+                <group>
+                    <group>
+                        <field name="partner_id" required="1"  domain="[('customer', '=', True)]"/>
+                        <field name="amount" required="1"/>
+                        <field name="recaudation_id" required="1"  domain="[('user_ids','in',[uid]),('state', '=', 'open')]"  />  
+                    </group>
+                    <group>
+                        <field name="date" required="1" />
+                        <field name="name" required="1" />
+                        <field name="type" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                   <button name='create_move' string='Create Move'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_wizard_easy_partner_cc_anticipe">
+        <field name="name">Make Anticipe</field>
+        <field name="res_model">wizard.easy.partner.cc</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wizard_easy_partner_cc_anticipe_form"/>
+        <field name="context">{'default_type':'anticipe'}</field>
+        <field name="target">new</field>
+    </record>
+    
+    <menuitem action="action_wizard_easy_partner_cc_anticipe" id="submenu_action_wizard_easy_partner_cc_anticipe" 
+        parent="menu_action_easy_res_partner_cc_customer" sequence="40"/>
+
+
+
+
+
+    <record model='ir.ui.view' id='view_wizard_easy_partner_cc_advancement_form'>
+        <field name='name'>wizard.easy.partner.cc.form</field>
+        <field name='model'>wizard.easy.partner.cc</field>
+        <field name='arch' type='xml'>
+            <form string="Advancement" >
+                <group>
+                    <group>
+                        <field name="partner_id" required="1"  domain="[('supplier', '=', True)]"/>
+                        <field name="amount" required="1"/>
+                        <field name="recaudation_id" required="1"  domain="[('user_ids','in',[uid]),('state', '=', 'open')]"  />
+                    </group>
+                    <group>
+                        <field name="date" required="1" />
+                        <field name="name" required="1" />
+                        <field name="type" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                   <button name='create_move' string='Create Move'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_wizard_easy_partner_cc_advancement">
+        <field name="name">Make Advancement</field>
+        <field name="res_model">wizard.easy.partner.cc</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wizard_easy_partner_cc_advancement_form"/>
+        <field name="context">{'default_type':'advancement'}</field>
+        <field name="target">new</field>
+    </record>
+    
+    <menuitem action="action_wizard_easy_partner_cc_advancement" id="submenu_action_wizard_easy_partner_cc_advancement" 
+        parent="menu_action_easy_res_partner_cc_supplier" sequence="30"/>
+
+
+
+</odoo>

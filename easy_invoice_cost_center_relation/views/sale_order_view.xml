@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="name">Sale Order Inherit</field>
+        <field name="inherit_id" ref="easy_invoice_sale.sale_order_form_inherit" />
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_id']"  position="after">
+                <field name="order_line_cost_center_ids" widget="many2many_tags"/>
+            </xpath>
+
+
+        </field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template id="easy_invoice_employee_report.employee_report_qweb">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="easy_invoice_employee_report.internal_layout">
+                    <t t-call="easy_invoice_employee_report.employee_report_base" />
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="easy_invoice_employee_report.employee_report_base">
+
+        <!-- Defines global variables used by internal layout -->
+
+        <t t-set="title">
+            Employee Report_ -
+            <t t-raw="o.company_id.name" />
+            -
+            <t t-raw="o.company_id.currency_id.name" />
+        </t>
+        <t t-set="company_name" t-value="o.company_id.name" />
+        <t t-set="res_company" t-value="o.company_id" />
+        <div class="page">
+            <div class="row">
+                <div class="col-xs-1">
+                    <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="height:30px;width:30px;" />
+                </div>
+
+                <h4 class="mt0" t-esc="title or 'Odoo Report'" style="text-align: left;" />
+
+            </div>
+            <!-- Display filters -->
+            <t t-call="easy_invoice_employee_report.employee_report_filters" />
+
+            <div class="act_as_table list_table" style="margin-top: 10px;" />
+
+            <!-- Display account lines -->
+
+            <div class="act_as_table data_table" style="width: 100%;">
+                <!-- Display account header -->
+                <t t-call="easy_invoice_employee_report.employee_report_header" />
+
+                <!-- Display each lines -->
+                <t t-foreach="o.type_ids" t-as="type">
+                    <t t-call="easy_invoice_employee_report.employee_report_type" />
+
+                </t>
+
+            </div>
+
+        </div>
+    </template>
+
+    <template id="easy_invoice_employee_report.employee_report_filters">
+        <div class="act_as_table data_table" style="width: 100%;">
+            <div class="act_as_row labels">
+                <div class="act_as_cell">Date range filter</div>
+
+            </div>
+            <div class="act_as_row">
+                <div class="act_as_cell">
+                    From:
+                    <span t-field="o.date_from" />
+                    To:
+                    <span t-field="o.date_to" />
+                </div>
+
+            </div>
+
+
+        </div>
+    </template>
+
+    <template id="easy_invoice_employee_report.employee_report_header">
+        <!-- Display table headers for lines -->
+        <div class="act_as_thead">
+            <div class="act_as_row labels">
+
+
+                <div class="act_as_cell" style="width: 5%;">Employee</div>
+                <div class="act_as_cell" style="width: 3%;">Type</div>
+                <div class="act_as_cell" style="width: 3%;">Settlement Type</div>
+                <div class="act_as_cell" style="width: 3%;">Description</div>
+                <div class="act_as_cell" style="width: 5%;">Amount</div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="easy_invoice_employee_report.employee_report_employee">
+        <!-- # line -->
+        <div class="act_as_row lines" style="background:#fbfbfb; font-size:13px;font-weight:bold;">
+
+            <!--## Code-->
+
+
+            <div class="act_as_cell">
+                <span t-field="employee.employee_id.name" />
+            </div>
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell">
+                <span t-field="employee.total" />
+            </div>
+        </div>
+
+        <t t-foreach="employee.move_ids" t-as="move">
+            <t t-call="easy_invoice_employee_report.employee_report_move" />
+
+        </t>
+
+
+    </template>
+
+    <template id="easy_invoice_employee_report.employee_report_type">
+        <!-- # line -->
+        <div class="act_as_row lines" style="background:#fbfbfb; font-size:10px;">
+            <!--## Code-->
+            <div class="act_as_cell"></div>
+
+            <div class="act_as_cell">
+                <span t-field="type.type_id.name" />
+            </div>
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell"></div>
+
+            <div class="act_as_cell">
+                <span t-field="type.total" />
+            </div>
+
+        </div>
+
+        <t t-if="o.detail">
+            <t t-foreach="type.employee_ids" t-as="employee">
+                <t t-call="easy_invoice_employee_report.employee_report_employee" />
+
+            </t>
+        </t>
+
+
+    </template>
+
+
+    <template id="easy_invoice_employee_report.employee_report_move">
+        <!-- # line -->
+        <div class="act_as_row lines" style="background:#fbfbfb; font-size:9px;">
+            <!--## Code-->
+            <div class="act_as_cell">
+                <span t-field="move.date" />
+            </div>
+
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell">
+                <span t-field="move.settlement_type" />
+            </div>
+            <div class="act_as_cell">
+                    <span t-field="move.description" />
+                </div>
+            <div class="act_as_cell">
+                <span t-field="move.total" />
+            </div>
+
+        </div>
+
+
+    </template>
+
+</odoo>

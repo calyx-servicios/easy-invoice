@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+       <!--
+FACTUAS DE CLIENTES
+ -->
+        <record id="easy_invoice_list_list_tree" model="ir.ui.view">
+            <field name="name">easy.invoice.tree</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="name" />
+                    <field name="partner_id" string="Customer"/>
+                    <field name="date_invoice"/>
+                    <field name="user_id"/>
+                    <field name="date_expiration"/>
+                    <field name="amount_total_signed" string="Total" sum="Total" />
+                    <field name="residual_amount" />
+                    <field name="type" />
+                    <field name="type_refund"/>
+                    <field name="description_refund"/>
+                    <field name="type_debit_note"/>
+                    <field name="description_debit_note"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="easy_invoice_list_list_form" model="ir.ui.view">
+            <field name="name">easy.invoice.customer.form</field>
+            <field name="model">easy.invoice</field>
+            <field name="arch" type="xml">
+                <form string="Invoice" class="o_invoice_form">
+               
+                    <sheet string="Invoice">
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline"  readonly="1" />
+                        </h1>
+                    </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_easy_invoice_list_list_tree" model="ir.actions.act_window">
+            <field name="name">Customer Invoices List</field>
+            <field name="res_model">easy.invoice</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('type','in',['out_invoice','out_refund'])]</field>
+        </record>
+
+        <record id="action_easy_invoice_list_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_invoice_list_list_tree"/>
+            <field name="act_window_id" ref="action_easy_invoice_list_list_tree"/>
+        </record>
+
+        <record id="action_easy_invoice_list_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_invoice_list_list_form"/>
+            <field name="act_window_id" ref="action_easy_invoice_list_list_tree"/>
+        </record>
+
+        <menuitem action="action_easy_invoice_list_list_tree" id="menu_action_easy_invoice_customer_tree" 
+            parent="easy_invoice_partner_cc.menu_action_easy_res_partner_cc" sequence="100"/>
+
+
+
+  </data>
+</odoo>

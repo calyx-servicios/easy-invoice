@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model='ir.ui.view' id='view_easy_invoice_payment_form'>
+        <field name='name'>easy.invoice.payment.form</field>
+        <field name='model'>easy.invoice.payment</field>
+        <field name='arch' type='xml'>
+            <form string="Pay In/Out" >
+                <group>
+                    <group>
+                        <field name="date" required="1" />
+                        <field name="recaudation_id" required="1" 
+                            domain="[('user_ids','in',[uid]),('state', '=', 'open')]" 
+                            options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="amount" required="1"  />
+                        <field name="total_amount" readonly="1" />
+                    </group> 
+
+                        <field name="partner_id" invisible="1" />
+                        <field name="type_invoice" invisible="1" />
+
+                </group>
+                <footer>
+                   <button name='prepare_debt' string='Prepare Debt'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+  <!-- 
+    <act_window id="action_easy_invoice_payment"
+            
+            name="Pago Total o Parcial de Facturas"
+            res_model="easy.invoice.payment" src_model="easy.invoice"
+            view_mode="form" target="new" view_type="form" />
+   -->
+
+    
+
+            
+</odoo>

@@ -1,0 +1,376 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_partner_cc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-03 22:03+0000\n"
+"PO-Revision-Date: 2020-02-03 22:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_payment_in_group_form_inherit
+msgid "Adelanto a Usar"
+msgstr "Adelanto a Usar"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.act_window,name:easy_invoice_partner_cc.action_easy_partner_cc_supplier_tree
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_amount_advancement
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_amount_advancement
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_amount_advancement
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.submenu_action_easy_partner_cc_supplier_tree
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.view_wizard_easy_partner_cc_advancement_form
+#: selection:wizard.easy.partner.cc,type:0
+msgid "Advancement"
+msgstr "Adelantos"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_amount
+msgid "Amount"
+msgstr "Subtotal"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.act_window,name:easy_invoice_partner_cc.action_easy_partner_cc_customer_tree
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_amount_anticipe
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_amount_anticipe
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_amount_anticipe
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.submenu_action_easy_partner_cc_customer_tree
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.view_wizard_easy_partner_cc_anticipe_form
+#: selection:wizard.easy.partner.cc,type:0
+msgid "Anticipe"
+msgstr "Recibos"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_cc_line_ids
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_cc_line_ids
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_partner_cc_form
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_partner_cc_tree
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+msgid "Anticipe/Advancement"
+msgstr "Recibos de Cliente/Adelantos de Proveedor"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_easy_amount_balance
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_easy_amount_balance
+msgid "Balance"
+msgstr "Balance"
+
+#. module: easy_invoice_partner_cc
+#: selection:easy.partner.cc,state:0
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_partner_cc_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model,name:easy_invoice_partner_cc.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.view_wizard_easy_partner_cc_advancement_form
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.view_wizard_easy_partner_cc_anticipe_form
+msgid "Create Move"
+msgstr "Crear Movimiento"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_create_date
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_account_amount_credit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_easy_amount_credit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_total_amount_credit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_account_amount_credit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_easy_amount_credit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_total_amount_credit
+msgid "Credit"
+msgstr "Haber"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_date
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_account_amount_debit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_easy_amount_debit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_total_amount_debit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_account_amount_debit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_easy_amount_debit
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_total_amount_debit
+msgid "Debit"
+msgstr "Debe"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_display_name
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_open_easy_invoice_ids
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_open_easy_invoice_ids
+msgid "Easy Invoice"
+msgstr "Factura Rápida"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+msgid "Easy Invoices"
+msgstr "Facturas Rápida"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model,name:easy_invoice_partner_cc.model_easy_payment_group
+msgid "Easy Payment Group"
+msgstr "Grupo de Pagos"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_id
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_open_invoice_ids
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_open_invoice_ids
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc___last_update
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_write_date
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.act_window,name:easy_invoice_partner_cc.action_wizard_easy_partner_cc_advancement
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.submenu_action_wizard_easy_partner_cc_advancement
+msgid "Make Advancement"
+msgstr "Realizar Adelanto Proveedor"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.act_window,name:easy_invoice_partner_cc.action_wizard_easy_partner_cc_anticipe
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.submenu_action_wizard_easy_partner_cc_anticipe
+msgid "Make Anticipe"
+msgstr "Realizar Recibo Cliente"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_payment_out_group_form_inherit
+msgid "Monto a Aplicar"
+msgstr "Monto a Aplicar"
+
+#. module: easy_invoice_partner_cc
+#: code:addons/easy_invoice_partner_cc/models/easy_partner_cc.py:39
+#, python-format
+msgid "No Puede cancelar Anticipos/Adelantos que no esten en una Caja(chequee que no esten arqueados)."
+msgstr "No Puede cancelar Recibos/Adelantos que no esten en una Caja(chequee que no esten arqueados)."
+
+#. module: easy_invoice_partner_cc
+#: code:addons/easy_invoice_partner_cc/models/easy_payment_group.py:120
+#, python-format
+msgid "No Puede usar un monto en Mayor al Adelanto que posee el Proveedor.-"
+msgstr "No Puede usar un monto en Mayor al Adelanto que posee el Proveedor.-"
+
+#. module: easy_invoice_partner_cc
+#: code:addons/easy_invoice_partner_cc/models/easy_payment_group.py:133
+#, python-format
+msgid "No Puede usar un monto en Mayor al Anticipo que posee el Cliente.-"
+msgstr "No Puede usar un monto en Mayor al permitido para el Cliente.-"
+
+#. module: easy_invoice_partner_cc
+#: code:addons/easy_invoice_partner_cc/models/easy_partner_cc.py:42
+#, python-format
+msgid "No puede retirar el Anticipo sin Fondos en la Caja."
+msgstr "No puede retirar el Recibos sin Fondos en la Caja."
+
+#. module: easy_invoice_partner_cc
+#: code:addons/easy_invoice_partner_cc/wizard/wizard_easy_partner_cc.py:43
+#, python-format
+msgid "No se pueden realizar Adelantos cero o Negativos."
+msgstr "No se pueden realizar Adelantos cero o Negativos."
+
+#. module: easy_invoice_partner_cc
+#: code:addons/easy_invoice_partner_cc/wizard/wizard_easy_partner_cc.py:31
+#, python-format
+msgid "No se pueden realizar Recibos cero o Negativos."
+msgstr "No se pueden realizar Recibos cero o Negativos."
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_amount_balance
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_amount_balance
+msgid "Odoo Balance"
+msgstr "Balance Facturas Odoo"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+msgid "Odoo Invoices"
+msgstr "Facturas Odoo"
+
+#. module: easy_invoice_partner_cc
+#: selection:easy.partner.cc,state:0
+msgid "Open"
+msgstr "Abierto"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_partner_id
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_partner_id
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_tree
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_payment_group_partner_amount_advancement
+msgid "Partner Advancement"
+msgstr "Adelantos"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_payment_group_partner_amount
+msgid "Partner Amount"
+msgstr "Monto de C.C."
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_payment_group_partner_amount_anticipe
+msgid "Partner Anticipe"
+msgstr "Recibos"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.menu_action_easy_res_partner_cc
+msgid "Partner CC"
+msgstr "Cuentas Corrientes"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.menu_action_easy_res_partner_cc_customer
+msgid "Partner CC Customer"
+msgstr "Clientes"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_payment_group_partner_cc_id
+msgid "Partner CC Line"
+msgstr "Lineas de Cuentas Corrientes"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.menu_action_easy_res_partner_cc_supplier
+msgid "Partner CC Supplier"
+msgstr "Proveedores"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_payment_id
+msgid "Payment"
+msgstr "Pago"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.report,name:easy_invoice_partner_cc.print_anticipe_advancement
+msgid "Print Anticipe Advancement"
+msgstr "Imprimir"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_recaudation_id
+msgid "Recaudation"
+msgstr "Caja"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_description
+msgid "Reference/Description"
+msgstr "Referencia/Descripción"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+msgid "Res Partner CC"
+msgstr "Cuentas Corrientes"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.act_window,name:easy_invoice_partner_cc.action_easy_res_partner_customer_tree
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.submenu_action_easy_res_partner_customer_tree
+msgid "Res Partner Customer"
+msgstr "Clientes"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.actions.act_window,name:easy_invoice_partner_cc.action_easy_res_partner_supplier_tree
+#: model:ir.ui.menu,name:easy_invoice_partner_cc.submenu_action_easy_res_partner_supplier_tree
+msgid "Res Partner Supplier"
+msgstr "Proveedores"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+msgid "Saldo a Cobrar"
+msgstr "Saldo a Cobrar"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+msgid "Saldo a Pagar"
+msgstr "Saldo a Pagar"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_user_id
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_easy_partner_cc_state
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_partner_cc_tree
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_form
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc.easy_res_partner_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_partner_total_amount_balance
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_res_users_total_amount_balance
+msgid "Total Balance"
+msgstr "Total Balance"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model.fields,field_description:easy_invoice_partner_cc.field_wizard_easy_partner_cc_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model,name:easy_invoice_partner_cc.model_wizard_easy_partner_cc
+msgid "Wizard Easy partner Anticipe/Advancement"
+msgstr "Recibos de Clientes/Adelanto a Proveedores"
+
+#. module: easy_invoice_partner_cc
+#: model:ir.model,name:easy_invoice_partner_cc.model_easy_partner_cc
+msgid "easy.partner.cc"
+msgstr "easy.partner.cc"

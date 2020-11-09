@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo >
+
+<record id="paperformat_report_easy_paymentgroup" model="report.paperformat">
+            <field name="name">Report Easy Payment Group</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">25</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+ <report 
+            id="action_report_easy_paymentgroup"
+            string="Payment Group"
+            model="easy.payment.group" 
+            report_type="qweb-pdf"
+            file="easy_invoice_reports.report_easy_paymentgroup" 
+            name="easy_invoice_reports.report_easy_paymentgroup"
+            paperformat="easy_invoice_reports.paperformat_report_easy_paymentgroup"
+            print_report_name="(object.state in ('open', 'sent') and 'Payment - %s' % (object.name)) or 'Draft - %s' % (object.name)"
+            menu="False"
+        />
+
+</odoo>

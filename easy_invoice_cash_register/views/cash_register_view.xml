@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="easy_invoice_cash_register_tree" model="ir.ui.view">
+            <field name="name">easy.invoice.cash.register.tree</field>
+            <field name="model">easy.invoice.cash.register</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'arched'" string="Registers">
+                    <field name="name" />
+                    <field name="state" />
+                    <field name="journal_ids" widget="many2many_tags"/>
+                    <field name="easy_recaudation_ids" widget="many2many_tags"/>
+                    <field name="amount_journal" />
+                    <field name="amount_easy" />
+                    <field name="amount_total" />
+                    <field name="user_id" groups="easy_invoice_cash_register.group_cash_register_all"/>  
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="easy_invoice_cash_register_form" model="ir.ui.view">
+            <field name="name">easy.invoice.cash.register</field>
+            <field name="model">easy.invoice.cash.register</field>
+            <field name="arch" type="xml">
+                <form string="Cash Register">
+                <header>
+                    <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,arched"/>
+                </header>
+                <sheet string="Cash Register">
+                    <h1 class="mt0">
+                            <field name="name" class="oe_inline"  readonly="1" />
+                    </h1>
+                
+<!--                     <group>
+                        <field name="company_id" groups="base.group_multi_company"/>
+                    </group> -->
+                    <group string="Cash desks">
+                        <field name="journal_ids" widget="many2many_tags" domain="[('type', '=', 'cash')]" options="{'no_open': True, 'no_quick_create': True, 'no_create_edit' : True}"/>
+                        <field name="easy_recaudation_ids" widget="many2many_tags" domain="[('user_ids','in',[uid]), ('state', '=', 'open')]" options="{'no_open': True, 'no_quick_create': True, 'no_create_edit' : True}" />
+                    </group>
+                    <group string="Totals">
+                        <field name="amount_journal" />
+                        <field name="amount_easy" />
+                        <field name="amount_total" />
+                    </group>
+                    <group string="Adjustment">
+
+                        <field name="effective_count" />
+                        <field name="difference" />
+                    </group>
+                    <group>
+                        <div>
+                            <label for="easy_recaudation_id"/>
+                            <field name="easy_recaudation_id" class="oe_inline" domain="[('id', 'in', easy_recaudation_ids)]" options="{'no_open': True, 'no_quick_create': True, 'no_create_edit' : True}" />     Balance: 
+                            <field name="recaudation_related_amount" class="oe_inline" />
+                            <separator/>
+                            <label for="description"/>
+                            <field name="description" attrs="{'required': [('difference', '!=', 0 )]}"/>
+                        </div>
+                    </group>
+                    <group>
+                            <button name="partial_close" string="Adjustment" class="oe_highlight" type="object" attrs="{'invisible': [('state', '=', 'arched' )]}" />
+                    </group>
+                    <group  states="arched">
+                            <t> Go to the adjustment box to approve the movement. </t>
+                    </group>
+                </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="action_easy_invoice_cash_register_tree" model="ir.actions.act_window">
+            <field name="name">Cash Register</field>
+            <field name="res_model">easy.invoice.cash.register</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+        </record>
+
+        <record id="action_easy_invoice_cash_register_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_invoice_cash_register_tree"/>
+            <field name="act_window_id" ref="action_easy_invoice_cash_register_tree"/>
+        </record>
+
+        <record id="action_easy_invoice_cash_register_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_invoice_cash_register_form"/>
+            <field name="act_window_id" ref="action_easy_invoice_cash_register_tree"/>
+        </record>
+
+        <menuitem action="action_easy_invoice_cash_register_tree" id="menu_action_easy_invoice_cash_register_tree" parent="easy_invoice_recaudation.submenu_box" sequence="100" string="Cash Register" groups="easy_invoice_cash_register.group_own_cash_register"/>
+    </data>
+</odoo>

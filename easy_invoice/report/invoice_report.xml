@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <data >
+
+
+        <report
+            id="action_report_easyinvoice"
+            string="Print Invoice"
+            model="easy.invoice"
+            report_type="qweb-pdf"
+            paperformat="easy_invoice.paperformat_central"
+            file="easy_invoice.report_easy_invoice"
+            name="easy_invoice.report_easy_invoice"
+            print_report_name="'Easy - %s' % (object.name)"
+        />
+
+
+
+    </data>
+</odoo>

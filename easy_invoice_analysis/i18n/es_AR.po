@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_analysis
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-06 19:36+0000\n"
+"PO-Revision-Date: 2020-05-06 19:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,help:easy_invoice_analysis.field_easy_invoice_analysis_report_product_type
+msgid "A stockable product is a product for which you manage stock. The \"Inventory\" app has to be installed.\n"
+"A consumable product, on the other hand, is a product for which stock is not managed.\n"
+"A service is a non-material product you provide.\n"
+"A digital content is a non-material product you sell online. The files attached to the products are the one that are sold on the e-commerce such as e-books, music, pictures,... The \"Digital Product\" module has to be installed."
+msgstr "Un producto almacenable es un producto para el que gestiona el stock. La aplicación \"Inventario\" debe instalarse.\n"
+"Por el contrario, un producto consumible es un producto para el que no se gestiona el stock.\n"
+"Un servicio es un producto no material que usted proporciona.\n"
+"Un contenido digital es un producto no material que vende en línea. Los archivos adjuntos a los productos son los que se venden en el comercio electrónico, tales como libros electrónicos, música, fotos... El módulo \"Producto Digital\" tiene que estar instalado."
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,origin:0
+msgid "Account Invoice"
+msgstr "Odoo"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.menu,name:easy_invoice_analysis.easy_invoice_analysis_report_wizard
+msgid "Analysis Report"
+msgstr "Report Analisis de Lineas"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_analytic_account_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Analytic Account"
+msgstr "Cuenta Analitica"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_categ_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Category"
+msgstr "Categoría"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_company_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Company"
+msgstr "Compañía"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Current Year"
+msgstr "Año Actual"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,type:0
+msgid "Customer Credit Note"
+msgstr "Nota de Credito de Cliente"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,type:0
+msgid "Customer Invoice"
+msgstr "Factura de Cliente"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_date_due
+msgid "Date Due"
+msgstr "Fecha vencimiento"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_easy_id
+msgid "Easy"
+msgstr "Easy"
+
+#. module: easy_invoice_analysis
+#: model:ir.actions.act_window,name:easy_invoice_analysis.easy_invoice_analysis_report_act
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_graph
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_pivot
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_tree
+msgid "Easy Analysis Line"
+msgstr "Linea Analisis Easy"
+
+#. module: easy_invoice_analysis
+#: model:ir.model,name:easy_invoice_analysis.model_easy_invoice_analysis_report
+msgid "Easy Analysis Report"
+msgstr "Easy Analysis Report"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,origin:0
+msgid "Easy Invoice"
+msgstr "Easy"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_invoice_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_journal_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Journal"
+msgstr "Diario"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,state:0
+msgid "Open"
+msgstr "Abierto"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_origin
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Origin"
+msgstr "Origen"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,state:0
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_partner_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_partner_categ_id
+msgid "Partner Category"
+msgstr "Categoria de Contacto"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_price_unit
+msgid "Price Unit"
+msgstr "Precio Unitario"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_product_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Product"
+msgstr "Producto"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_product_type
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Product Type"
+msgstr "Tipo de producto"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_name
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Search Easy Line Analysis"
+msgstr "Busqueda de Lineas Easy"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_state
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,type:0
+msgid "Supplier Bill"
+msgstr "Factura de Proveedor"
+
+#. module: easy_invoice_analysis
+#: selection:easy_invoice_analysis_report,type:0
+msgid "Supplier Credit Note"
+msgstr "Nota de Credito de Proveedor"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Type"
+msgstr "Concepto"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_type
+msgid "Type Operation"
+msgstr "Tipo de Operacion"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_uom_id
+msgid "Uom"
+msgstr "Uom"
+
+#. module: easy_invoice_analysis
+#: model:ir.model.fields,field_description:easy_invoice_analysis.field_easy_invoice_analysis_report_user_id
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "User"
+msgstr "Usuario"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Valid"
+msgstr "Valido"
+
+#. module: easy_invoice_analysis
+#: model:ir.ui.view,arch_db:easy_invoice_analysis.view_easy_invoice_analysis_report_filter
+msgid "Valid and Current"
+msgstr "Valido del año actual"
+
+#. module: easy_invoice_analysis
+#: model:ir.actions.act_window,help:easy_invoice_analysis.easy_invoice_analysis_report_act
+msgid "You will find here all Easy Invoice Lines with Account Invoice Lines"
+msgstr "Aca encontrala todas las lineas de Vetnas Easy y Odoo integradas"
+

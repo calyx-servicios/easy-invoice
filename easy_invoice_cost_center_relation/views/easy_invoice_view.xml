@@ -1,0 +1,40 @@
+<odoo>
+  <data>
+
+
+
+    <record id="easy_invoice_customer_form_inherit" model="ir.ui.view">
+        <field name="model">easy.invoice</field>
+        <field name="name">easy.invoice.customer.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_invoice_customer_form" />
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']"  position="after">
+                <field name="invoice_line_cost_center_ids" widget="many2many_tags" />
+            </xpath>
+<!-- 
+            <field name="user_id" position="after">
+                <button name="%(action_wizard_edit_cost_center)d" string="Edit Cost Center" icon="fa-print " type="action" 
+                        attrs="{'invisible':[('state', 'in', ['draft'])]}"  />
+            </field>
+ -->
+
+        </field>
+    </record>
+
+
+    <record id="easy_invoice_supplier_form_inherit" model="ir.ui.view">
+        <field name="model">easy.invoice</field>
+        <field name="name">easy.invoice.supplier.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_invoice_supplier_form" />
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']"  position="after">
+                <field name="invoice_line_cost_center_ids"  widget="many2many_tags" />
+            </xpath>
+
+        </field>
+    </record>
+
+  </data>
+</odoo>

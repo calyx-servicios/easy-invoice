@@ -1,0 +1,75 @@
+<odoo>
+  <data>
+
+    <record id="view_easy_sequence_tree" model="ir.ui.view">
+        <field name="name">easy.sequence.tree</field>
+        <field name="model">easy.sequence</field>
+        <field name="arch" type="xml">
+            <tree> 
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+     <record id="view_easy_sequence_form" model="ir.ui.view">
+        <field name="name">easy.sequence.form</field>
+        <field name="model">easy.sequence</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <sheet string="Invoice">
+                <h1 class="mt0">
+                    <field name="name" class="oe_inline" required="1" />
+                </h1>
+                <group>
+                    <group string="Invoice" name="group_invoice"> 
+                        <field name="invoice_out_confirm_sequence_id" required="1"  />
+                        <field name="invoice_out_pay_sequence_id" required="1"  />
+                        <field name="invoice_in_confirm_sequence_id" required="1"  />
+                        <field name="invoice_in_pay_sequence_id" required="1"  />
+                    </group>
+
+                    <group string="Refund" name="group_refund"> 
+                        <field name="refund_invoice_out_confirm_sequence_id" required="1"  />
+                        <field name="refund_invoice_out_pay_sequence_id" required="1"  />
+                        <field name="refund_invoice_in_confirm_sequence_id" required="1"  />
+                        <field name="refund_invoice_in_pay_sequence_id" required="1"  />
+                    </group>
+
+                    <group string="Debit Note" name="group_debit_note"> 
+                        <field name="debit_invoice_out_confirm_sequence_id" required="1"  />
+                        <field name="debit_invoice_out_pay_sequence_id" required="1"  />
+                        <field name="debit_invoice_in_confirm_sequence_id" required="1"  />
+                        <field name="debit_invoice_in_pay_sequence_id" required="1"  />
+                    </group>
+
+                    <group string="Recaudation" name="group_recaudation">
+                        <field name="recaudation_transfer_sequence_id" required="1"  />
+                        <field name="recaudation_deposit_sequence_id" required="1"  />
+                        <field name="recaudation_retire_sequence_id" required="1"  />
+                        <field name="payment_group_sequence_in_id" required="1"  />
+                        <field name="payment_group_sequence_out_id" required="1"  />
+                    </group>
+                </group>
+                 </sheet>
+                
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="easy_sequence_action" model="ir.actions.act_window">
+        <field name="name">Easy Sequence</field>
+        <field name="res_model">easy.sequence</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain" eval="False"/> <!-- Force empty -->
+        <field name="context">{}</field>
+        <field name="view_id" ref="view_easy_sequence_tree"/>
+    </record>
+
+    <menuitem action="easy_sequence_action" id="menu_easy_sequence"  sequence="40" parent="submenu_box"/>
+
+  </data>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data >
+        <record id="paperformat_advancement_payment_employee" model="report.paperformat">
+            <field name="name">Advancement Payment Employee</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">297</field>
+            <field name="page_width">210</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">25</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+        
+        <report id="action_report_easyinvoice_employee"
+            string="Print Easy Employee" 
+            model="easy.employee.cc" 
+            report_type="qweb-pdf" 
+            file="easy_invoice_employee_cc.report_easy_invoice_employee_advance_payment" 
+            name="easy_invoice_employee_cc.report_easy_invoice_employee_advance_payment" 
+            paperformat="easy_invoice_employee_cc.paperformat_advancement_payment_employee" 
+            print_report_name="'Recibo de Sueldo - %s' % (object.employee_id.name)"
+        />
+
+    </data>
+
+</odoo>

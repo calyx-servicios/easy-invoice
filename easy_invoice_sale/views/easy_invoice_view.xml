@@ -1,0 +1,31 @@
+<odoo>
+  <data>
+
+    <record id="easy_invoice_customer_tree_inherit" model="ir.ui.view">
+        <field name="model">easy.invoice</field>
+        <field name="name">easy.invoice.customer.tree</field>
+        <field name="inherit_id" ref="easy_invoice.easy_invoice_customer_tree" />
+        <field name="arch" type="xml">
+            <field name="date_invoice" position="after">
+                    <field name="sale_order_id"/>
+            </field>
+        </field>
+    </record>
+
+
+
+    <record id="easy_invoice_customer_form_inherit" model="ir.ui.view">
+        <field name="model">easy.invoice</field>
+        <field name="name">easy.invoice.customer.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_invoice_customer_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="sale_order_id" readonly="1" />
+            </field>
+        </field>
+    </record>
+
+
+
+  </data>
+</odoo>

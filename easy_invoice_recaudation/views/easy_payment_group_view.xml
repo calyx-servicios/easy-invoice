@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!-- 
+FACTUAS DE Proveedores
+ -->
+
+    <record id="easy_payment_in_group_form_inherit" model="ir.ui.view">
+        <field name="model">easy.payment.group</field>
+        <field name="name">easy.payment.group.supplier.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_payment_in_group_form" />
+        <field name="arch" type="xml">
+
+            <field name="date" position="after"  >
+                <field name="recaudation_id" required="1"
+                attrs="{'readonly': [('state', '!=', 'draft')]}" 
+                            domain="['|',('user_create_id', '=', uid),('user_ids','in',[uid]),('state', '=', 'open')]" 
+                            options="{'no_create': True}"/>
+            </field>
+            
+            <page  name="in_invoice_ids_page" position="before">
+                <page  name="payment_group_ids_page" string="Pagos" attrs="{'invisible': [('state', '!=', 'processed')]}">
+                    <field name="payment_group_ids" readonly="1" >
+                        <tree string="payment Lines" editable="bottom">
+                            <field name="invoice_id" readonly="1"/>
+                            <field name="date_pay" readonly="1"/>
+                            <field name="amount_in" sum="Total" readonly="1"/>
+                            <field name="amount_out" sum="Total" readonly="1"/>
+                            <field name="state" invisible="1"/>
+                            
+                            <button name="%(easy_invoice.action_report_easy_payment)d" icon="fa-print " type="action" 
+                                    attrs="{'invisible': [('state', 'not in', ['pay_in','pay_out'] )]}"/>
+                            <!--  
+                            <button name="cancel_payment" string="Cancel" type="object" 
+                            attrs="{'invisible': [('state', 'not in', ['pay_out','pay_in'] )]}"/>
+                            -->
+                        </tree>
+                    </field>
+                </page>
+            </page>
+
+        </field>
+
+    </record>
+
+
+<!-- 
+FACTUAS DE Clientes
+ -->
+
+    
+    <record id="easy_payment_out_group_form_inherit" model="ir.ui.view">
+        <field name="model">easy.payment.group</field>
+        <field name="name">easy.payment.group.customer.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_payment_out_group_form" />
+        <field name="arch" type="xml">
+            <field name="date" position="after"  >
+                <field name="recaudation_id" required="1"
+                attrs="{'readonly': [('state', '!=', 'draft')]}" 
+                            domain="['|',('user_create_id', '=', uid),('user_ids','in',[uid]),('state', '=', 'open')]" 
+                            options="{'no_create': True}"/>
+            </field>
+<!--  -->
+            <page  name="out_invoice_ids_page" position="before" >
+                <page  name="payment_group_ids_page" string="Payments" attrs="{'invisible': [('state', '!=', 'processed')]}" >
+                    <field name="payment_group_ids" readonly="1"  >
+                        <tree string="payment Lines" editable="bottom">
+                            <field name="invoice_id" readonly="1"/>
+                            <field name="date_pay" readonly="1"/>
+                            <field name="amount_in" sum="Total"  readonly="1"/>
+                            <field name="amount_out" sum="Total" readonly="1"/>
+                            <field name="state" invisible="1"/>
+                            
+                            <button name="%(easy_invoice.action_report_easy_payment)d" icon="fa-print " type="action" 
+                                    attrs="{'invisible': [('state', 'not in', ['pay_in','pay_out'] )]}"/>
+                            <!--  
+                            <button name="cancel_payment" string="Cancel" type="object" 
+                            attrs="{'invisible': [('state', 'not in', ['pay_out','pay_in'] )]}"/>
+                            -->
+                        </tree>
+                    </field>
+                </page>
+            </page>
+
+        </field>
+    </record>
+
+
+
+    </data>
+</odoo>

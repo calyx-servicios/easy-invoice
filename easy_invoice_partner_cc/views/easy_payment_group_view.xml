@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+
+<!-- 
+FACTUAS DE Proveedores
+ -->
+
+    <record id="easy_payment_in_group_form_inherit" model="ir.ui.view">
+        <field name="model">easy.payment.group</field>
+        <field name="name">easy.payment.group.supplier.cc.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_payment_in_group_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after"  >
+                <field name="partner_amount_advancement" />
+            </field>
+            <field name="amount_total_rectificative" position="after"  >
+                <field name="partner_amount"  string="Adelanto a Usar" 
+                    attrs="{'readonly': [('state', '!=', 'draft')]}" />
+            </field>
+        </field>
+    </record>
+
+
+<!-- 
+FACTUAS DE Clientes
+ -->
+
+    <record id="easy_payment_out_group_form_inherit" model="ir.ui.view">
+        <field name="model">easy.payment.group</field>
+        <field name="name">easy.payment.group.customer.cc.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_payment_out_group_form" />
+        <field name="arch" type="xml">
+            <field name="amount_money_defined" position="after"  >
+                <field name="partner_amount_anticipe" />
+            </field>
+            <field name="amount_money" position="after"  >
+                <field name="partner_amount" string="Monto a Aplicar" 
+                    attrs="{'readonly': [('state', '!=', 'draft')] }" />
+            </field>
+        </field>
+    </record>
+
+  </data>
+</odoo>

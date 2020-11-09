@@ -1,0 +1,47 @@
+
+<odoo>
+  <data>
+
+    <record id="view_easy_bill_tree" model="ir.ui.view">
+        <field name="name">easy.bill.tree</field>
+        <field name="model">easy.bill</field>
+        <field name="arch" type="xml">
+            <tree> 
+                <field name="value" />
+                <field name="currency_id" />
+            </tree>
+        </field>
+    </record>
+
+     <record id="view_easy_bill_form" model="ir.ui.view">
+        <field name="name">easy.bill.form</field>
+        <field name="model">easy.bill</field>
+        <field name="arch" type="xml">
+            <form>
+ 
+
+
+                <h1 class="mt0">
+                    <field name="value" class="oe_inline" required="1"  />
+
+                </h1>
+                <field name="currency_id" />
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="easy_bill_action" model="ir.actions.act_window">
+        <field name="name">Easy Bill</field>
+        <field name="res_model">easy.bill</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain" eval="False"/> <!-- Force empty -->
+        <field name="view_id" ref="view_easy_bill_tree"/>
+    </record>
+
+    <menuitem action="easy_bill_action" id="menu_easy_bill"  sequence="40" parent="submenu_box"/>
+
+  </data>
+</odoo>

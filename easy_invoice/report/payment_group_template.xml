@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_easypaymentgroup_document">
+    <t t-call="web.external_layout">
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+        <div class="page">
+            <div class="oe_structure"/>
+            <div class="row">
+
+                <div class="col-xs-5 col-xs-offset-1">
+                    <div t-field="doc.partner_id"
+                        t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                    <p t-if="doc.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.partner_id.vat"/></p>
+                </div>
+            </div>
+
+            <h2>
+                
+                <t >
+                    <span>Payment # </span>
+                </t>
+                <span t-field="doc.name"/>
+            </h2>
+
+            <div class="row mt32 mb32" id="informations">
+                
+                <div  class="col-xs-3">
+                    <strong>Date :</strong>
+                    <p t-field="doc.date"/>
+                </div>
+                
+                <div t-if="doc.user_id.name" class="col-xs-3">
+                    <strong>Salesperson:</strong>
+                    <p t-field="doc.user_id"/>
+                </div>
+
+            </div>
+
+                <t t-if="doc.in_invoice_ids">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Rectificative Reference</th>
+                            <th class="text-right">Date</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Residual Amount</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Amount to Pay</th>
+                            
+                        </tr>
+                   </thead>
+                   <tbody class="sale_tbody">
+                        <t t-foreach="doc.in_invoice_ids" t-as="l">
+                                <tr>
+                                    <td><span t-field="l.invoice_id"/></td>
+                                    <td><span t-field="l.invoice_id.date_invoice"/></td>
+                                    <td class="text-right">
+                                        <span t-field="l.invoice_id.residual_amount"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.amount2pay"/>
+                                    </td>
+                                </tr>
+                            </t>                        
+                    </tbody>
+                </table>
+                </t>
+               
+                <t t-if="doc.out_invoice_ids">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Invoice Reference</th>
+                            <th class="text-right">Date</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Residual Amount</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Amount to Pay</th>
+                            
+                        </tr>
+                   </thead>
+                   <tbody class="sale_tbody">
+                        <t t-foreach="doc.out_invoice_ids" t-as="l">
+                                <tr>
+                                    <td><span t-field="l.invoice_id"/></td>
+                                    <td><span t-field="l.invoice_id.date_invoice"/></td>
+                                    <td class="text-right">
+                                        <span t-field="l.invoice_id.residual_amount"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.amount2pay"/>
+                                    </td>
+                                </tr>
+                            </t>                        
+                    </tbody>
+                </table>
+                </t>
+
+                <t t-if="doc.in_rectificative_ids">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Invoice Reference</th>
+                            <th class="text-right">Date</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Residual Amount</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Amount to Pay</th>
+                            
+                        </tr>
+                   </thead>
+                   <tbody class="sale_tbody">
+                        <t t-foreach="doc.in_rectificative_ids" t-as="l">
+                                <tr>
+                                    <td><span t-field="l.invoice_id"/></td>
+                                    <td><span t-field="l.invoice_id.date_invoice"/></td>
+                                    <td class="text-right">
+                                        <span t-field="l.invoice_id.residual_amount"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.amount2pay"/>
+                                    </td>
+                                </tr>
+                            </t>                        
+                    </tbody>
+                </table>
+                </t>
+
+                <t t-if="doc.out_rectificative_ids">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th> Rectificative Reference</th>
+                            <th class="text-right">Date</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Residual Amount</th>
+                            <th class="text-right" groups="sale.group_show_price_subtotal">Amount to Pay</th>
+                            
+                        </tr>
+                   </thead>
+                   <tbody class="sale_tbody">
+                        <t t-foreach="doc.out_rectificative_ids" t-as="l">
+                                <tr>
+                                    <td><span t-field="l.invoice_id"/></td>
+                                    <td><span t-field="l.invoice_id.date_invoice"/></td>
+                                    <td class="text-right">
+                                        <span t-field="l.invoice_id.residual_amount"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="l.amount2pay"/>
+                                    </td>
+                                </tr>
+                            </t>                        
+                    </tbody>
+                </table>
+                </t>
+
+            <div class="clearfix">
+                <div class="row" name="total">
+                    <div class="col-xs-4 pull-right">
+                        <table class="table table-condensed" style="min-width: 200px;max-width: 350px;">
+                            
+                            <tr class="border-black">
+                                <td><strong>Total Debt</strong></td>
+                                <td class="text-right">
+                                    <span t-field="doc.amount_total_debt"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td><strong>Total Rectificative</strong></td>
+                                <td class="text-right">
+                                    <span t-field="doc.amount_total_rectificative"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td><strong>Amount to Pay</strong></td>
+                                <td class="text-right">
+                                    <span t-field="doc.amount2pay"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr class="border-black">
+                                <td><strong>Money Amount</strong></td>
+                                <td class="text-right">
+                                    <span t-field="doc.amount_money"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <div class="oe_structure"/>
+        </div>
+    </t>
+</template>
+
+
+<template id="report_easy_paymentgroup">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="easy_invoice.report_easypaymentgroup_document" t-lang="doc.partner_id.lang"/>
+        </t>
+    </t>
+</template>
+
+
+
+</odoo>

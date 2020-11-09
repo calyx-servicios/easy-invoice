@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+    <template id="easy_invoice_customer_account_report.customer_account_report_qweb">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="easy_invoice_customer_account_report.internal_layout">
+                    <t t-call="easy_invoice_customer_account_report.customer_account_report_base" />
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="easy_invoice_customer_account_report.customer_account_report_base">
+
+        <!-- Defines global variables used by internal layout -->
+
+        <t t-set="title">
+            Customer Account Report_ -
+            <t t-raw="o.company_id.name" />
+            -
+            <t t-raw="o.company_id.currency_id.name" />
+        </t>
+        <t t-set="company_name" t-value="o.company_id.name" />
+        <t t-set="res_company" t-value="o.company_id" />
+        <div class="page">
+            <div class="row">
+                <div class="col-xs-1">
+                    <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="height:30px;width:30px;" />
+                </div>
+
+                <h4 class="mt0" t-esc="title or 'Odoo Report'" style="text-align: left;" />
+
+            </div>
+            <!-- Display filters -->
+            <t t-call="easy_invoice_customer_account_report.customer_account_report_filters" />
+
+            <div class="act_as_table list_table" style="margin-top: 10px;" />
+
+            <!-- Display account lines -->
+
+            <div class="act_as_table data_table" style="width: 100%;">
+                <!-- Display account header -->
+                <t t-call="easy_invoice_customer_account_report.customer_account_report_header" />
+
+                <!-- Display each lines -->
+                <t t-foreach="o.partner_ids" t-as="partner">
+                    <t t-if="partner.visible">
+                            <t t-call="easy_invoice_customer_account_report.customer_account_report_partner" />
+                    </t>
+                    
+
+                </t>
+
+            </div>
+
+        </div>
+    </template>
+
+    <template id="easy_invoice_customer_account_report.customer_account_report_filters">
+        <div class="act_as_table data_table" style="width: 100%;">
+            <div class="act_as_row labels">
+                <div class="act_as_cell">Date range filter</div>
+
+            </div>
+            <div class="act_as_row">
+                <div class="act_as_cell">
+                    From:
+                    <span t-field="o.date_from" />
+                    To:
+                    <span t-field="o.date_to" />
+                </div>
+
+            </div>
+
+
+        </div>
+    </template>
+
+    <template id="easy_invoice_customer_account_report.customer_account_report_header">
+        <!-- Display table headers for lines -->
+        <div class="act_as_thead">
+            <div class="act_as_row labels">
+
+
+                <div class="act_as_cell" style="width: 5%;">Date</div>
+                <div class="act_as_cell" style="width: 3%;">Description</div>
+
+                <div class="act_as_cell" style="width: 7%;">Debit</div>
+
+
+                <div class="act_as_cell" style="width: 5%;">Credit</div>
+
+
+                <div class="act_as_cell" style="width: 5%;">Accumulate</div>
+
+                <div class="act_as_cell" style="width: 6%;">Expiry</div>
+
+
+            </div>
+        </div>
+    </template>
+
+
+    <template id="easy_invoice_customer_account_report.customer_account_report_partner">
+        <!-- # line -->
+        <div class="act_as_row lines" style="background:#fbfbfb; font-size:13px;font-weight:bold;">
+            <!--## Code-->
+            <div class="act_as_cell">
+                <span t-field="partner.partner_id.name" />
+            </div>
+
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell"></div>
+            <div class="act_as_cell">Initial:</div>
+            <div class="act_as_cell">
+                <span t-field="partner.initial" />
+            </div>
+            <div class="act_as_cell"></div>
+
+
+        </div>
+
+        <t t-foreach="partner.move_ids" t-as="account">
+
+            <t t-call="easy_invoice_customer_account_report.report_analytic_lines_account" />
+
+        </t>
+
+        <div class="act_as_row lines" style="background:#f0f0f0; font-size:11px;font-weight:bold;">
+                <!--## Code-->
+                <div class="act_as_cell">
+                    
+                </div>
+    
+                <div class="act_as_cell"></div>
+                <div class="act_as_cell"><span t-field="partner.partner_id.name" /></div>
+                <div class="act_as_cell">Final:</div>
+                <div class="act_as_cell">
+                    <span t-field="partner.final" />
+                </div>
+                <div class="act_as_cell"></div>
+    
+    
+            </div>
+
+    </template>
+
+
+    <template id="easy_invoice_customer_account_report.report_analytic_lines_account">
+        <!-- # line -->
+        <div class="act_as_row lines">
+            <!--## Code-->
+
+            <div class="act_as_cell">
+                <span t-field="account.move_date" />
+            </div>
+
+            <div class="act_as_cell">
+                <span t-field="account.description" />
+                <t t-if="account.easy_invoice_id">
+                    <t t-if="account.easy_invoice_id.type=='out_refund'">
+                        <span t-field="account.easy_invoice_id.type_refund" />
+                    </t>
+                </t>
+
+            </div>
+
+            <div class="act_as_cell">
+                <span t-field="account.debit" />
+            </div>
+
+            <div class="act_as_cell">
+                <span t-field="account.credit" />
+            </div>
+
+            <div class="act_as_cell">
+                <span t-field="account.computed" />
+            </div>
+
+            <div class="act_as_cell">
+                <span t-field="account.expiry_date" />
+            </div>
+
+        </div>
+
+    </template>
+
+    <template id="easy_invoice_customer_account_report.analytic_lines_report_footer">
+        <!-- Display account footer -->
+
+    </template>
+
+
+    <template id="report_analytic_lines">
+        <div class="o_account_financial_reports_page">
+            <t t-call="easy_invoice_customer_account_report.analytic_lines_report_base" />
+        </div>
+    </template>
+
+
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="base_sale_order_form_automatization_inherit" model="ir.ui.view">
+        <field name="model">sale.order</field>
+        <field name="name">Sale Order Inherit Automatization</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@name='action_quotation_send']" position="after">
+                <button name="easy_invoice_action_confirm" type="object" string="Easy Action Confirm"
+                    attrs="{'invisible': [('state', '!=', 'draft')]}"  />   
+            </xpath>
+
+        </field>
+    </record>
+
+ 
+  </data>
+</odoo>
+
+

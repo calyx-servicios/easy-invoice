@@ -1,0 +1,198 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_employee_import
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-18 20:44+0000\n"
+"PO-Revision-Date: 2020-02-18 20:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_amount
+msgid "Amount"
+msgstr "Subtotal"
+
+#. module: easy_invoice_employee_import
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+msgid "Back to Draft"
+msgstr "Volver a Borrador"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_cc_line_id
+msgid "C.C. Line"
+msgstr "C.C. Line"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: easy_invoice_employee_import
+#: selection:easy.employee.cc.import,state:0
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_employee_import
+#: selection:easy.employee.cc.import,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice_employee_import
+#: model:ir.actions.act_window,name:easy_invoice_employee_import.action_easy_employee_cc_import
+#: model:ir.ui.menu,name:easy_invoice_employee_import.submenu_action_easy_employee_cc_import
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_tree
+msgid "Easy Employee Cc Import"
+msgstr "Importar Movimientos de Cuentas"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_easy_movement
+msgid "Easy Movement"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_employee_id
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model,name:easy_invoice_employee_import.model_easy_employee_cc_import
+msgid "Employee Cc Import"
+msgstr "Importar Concepto de Empleado"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model,name:easy_invoice_employee_import.model_easy_employee_cc_import_line
+msgid "Employee Cc Import Line"
+msgstr "Linea Creada"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_import_file
+msgid "File"
+msgstr "Archivo"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_id_10380
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_cc_import_id
+msgid "Import Related"
+msgstr "Cabecera"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_id
+msgid "Imported"
+msgstr "Importado"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_import_line_ids
+msgid "Line Imported"
+msgstr "Lineas Importadas"
+
+#. module: easy_invoice_employee_import
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: easy_invoice_employee_import
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+msgid "Partner CC"
+msgstr "Cuenta Corriente"
+
+#. module: easy_invoice_employee_import
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+msgid "Process"
+msgstr "Procesar"
+
+#. module: easy_invoice_employee_import
+#: selection:easy.employee.cc.import,state:0
+msgid "Processed"
+msgstr "Procesado"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_recaudation_id
+msgid "Recaudation Related"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_line_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_name
+msgid "Reference/Description"
+msgstr "Referencia/Descripción"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_settlement_id
+msgid "Settlement"
+msgstr "Conceptos"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model.fields,field_description:easy_invoice_employee_import.field_easy_employee_cc_import_state
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_employee_import
+#: model:ir.ui.view,arch_db:easy_invoice_employee_import.easy_employee_cc_import_form
+msgid "Total"
+msgstr "Total"
+
+#. module: easy_invoice_employee_import
+#: model:ir.model,name:easy_invoice_employee_import.model_easy_employee_cc
+msgid "easy.employee.cc"
+msgstr "easy.employee.cc"

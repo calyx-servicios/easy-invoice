@@ -1,0 +1,647 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_recaudation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-15 16:27+0000\n"
+"PO-Revision-Date: 2020-10-15 16:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_recaudation.py:92
+#, python-format
+msgid "Ajuste de Caja: (%s)"
+msgstr "Ajuste de Caja: (%s)"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_amount
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_amount
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_amount
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_amount
+msgid "Amount"
+msgstr "Subtotal"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_amount_box
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_amount_box
+msgid "Amount Box"
+msgstr "Monto en Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_amount_difference
+msgid "Amount Difference"
+msgstr "Diferencia"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_reason
+msgid "Amount Difference Reason"
+msgstr "Motivo de la Diferencia"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_recaudation.py:73
+#, python-format
+msgid "Arqueo de Caja"
+msgstr "Arqueo de Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_user_ids
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Assigned Users"
+msgstr "Usuarios"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_bill_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_ids
+msgid "Bill"
+msgstr "Billete"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_value
+msgid "Bill Value"
+msgstr "Valor"
+
+#. module: easy_invoice_recaudation
+#: sql_constraint:easy.bill:0
+msgid "Bill Value must be unique per Currency and Company!"
+msgstr "El valor del Billete debe ser unico por moneda y compañia!"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: easy_invoice_recaudation
+#: selection:easy.recaudation,state:0
+msgid "Close"
+msgstr "Cerrado"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Close Data"
+msgstr "Datos de Cierre"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Close Recaudation"
+msgstr "Cerrar Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_configuration_sequence_id
+msgid "Configuration Sequence"
+msgstr "Secuencias"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_retire_deposit_form
+msgid "Create Move"
+msgstr "Crear Movimiento"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_create_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_create_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_create_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_create_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_create_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_currency_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_currency_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_date_from
+msgid "Date From"
+msgstr "Fecha de inicio"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_date_to
+msgid "Date To"
+msgstr "Fecha final"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_sequence_form
+msgid "Debit Note"
+msgstr "Notas de Débito"
+
+#. module: easy_invoice_recaudation
+#: selection:easy.recaudation.retire.deposit,type:0
+msgid "Deposit"
+msgstr "Depósito"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_name
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_display_name
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_display_name
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_display_name
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_display_name
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_display_name
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_recaudation
+#: selection:easy.recaudation,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice_recaudation
+#: model:ir.actions.act_window,name:easy_invoice_recaudation.easy_bill_action
+#: model:ir.ui.menu,name:easy_invoice_recaudation.menu_easy_bill
+msgid "Easy Bill"
+msgstr "Billetes"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_invoice
+msgid "Easy Invoice"
+msgstr "Factura Rápida"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_invoice_payment
+msgid "Easy Invoice Payment"
+msgstr "Pagos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_payment
+msgid "Easy Payment"
+msgstr "Pagos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_payment_group
+msgid "Easy Payment Group"
+msgstr "Grupo de Pagos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.actions.act_window,name:easy_invoice_recaudation.easy_recaudation_action
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_recaudation
+#: model:ir.ui.menu,name:easy_invoice_recaudation.menu_easy_recaudation
+msgid "Easy Recaudation"
+msgstr "Recaudación"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_recaudation_close
+msgid "Easy Recaudation Close"
+msgstr "Easy Recaudation Close"
+
+#. module: easy_invoice_recaudation
+#: model:ir.actions.act_window,name:easy_invoice_recaudation.easy_sequence_action
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_sequence
+#: model:ir.ui.menu,name:easy_invoice_recaudation.menu_easy_sequence
+msgid "Easy Sequence"
+msgstr "Secuencias"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,help:easy_invoice_recaudation.field_easy_recaudation_close_reason
+msgid "Enter the reason of the amount difference"
+msgstr "Ingrese el motivo de la diferencia"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "History Transfer"
+msgstr "Historial de Transferencias"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.report_easypaymentrecaudationgroup_document
+msgid "Income"
+msgstr "Ingreso"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_sequence_form
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill___last_update
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment___last_update
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation___last_update
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close___last_update
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill___last_update
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_bill_write_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_write_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_write_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_write_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_write_date
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_line_transfer_ids
+msgid "Line Recandation Transfer"
+msgstr "Transferencia"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_line_recaudation_ids
+msgid "Line Recaudation"
+msgstr "Recaudado"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_line_close_ids
+msgid "Line Recaudation Closes"
+msgstr "Arqueos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_line_history_ids
+msgid "Line Recaudation History"
+msgstr "Historial"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Lines History"
+msgstr "Historial"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Lines Parcial Close"
+msgstr "Arqueos de Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Lines Recaudation"
+msgstr "Recaudación"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_payment_group.py:158
+#, python-format
+msgid "No puede Procesar con Facturas que posean                             diferentes Montos Residuales a                                  los calculados.(Ref:%s)"
+msgstr "No puede Procesar con Facturas que posean                             diferentes Montos Residuales a                                  los calculados.(Ref:%s)"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/wizard/easy_recaudation_retire_deposit.py:24
+#, python-format
+msgid "No se pueden realizar Movimientos en cero o Negativos."
+msgstr "No se pueden realizar Movimientos en cero o Negativos."
+
+#. module: easy_invoice_recaudation
+#: selection:easy.recaudation,state:0
+msgid "Open"
+msgstr "Realizado"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Open Recaudation"
+msgstr "Abrir Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_supplier_form_inherit
+msgid "PAY OUT"
+msgstr "Pagar"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_invoice.py:115
+#, python-format
+msgid "Pago Total o Parcial de Facturas"
+msgstr "Pago Total o Parcial de Facturas"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_payment_in_group_form_inherit
+msgid "Pagos"
+msgstr "Pagos"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_recaudation.py:46
+#: model:ir.actions.act_window,name:easy_invoice_recaudation.action_easy_recaudation_close
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_close_form
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+#, python-format
+msgid "Partial Close"
+msgstr "Arqueo de Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_invoice_payment_form
+msgid "Pay In/Out"
+msgstr "Pagar/Cobrar"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/wizard/easy_invoice_payment.py:142
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_payment_group_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_payment_group_ids
+#, python-format
+msgid "Payment Group"
+msgstr "Grupo de Pagos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_sequence_payment_group_sequence_in_id
+msgid "Payment Group Sequence In"
+msgstr "Grupo de F. Ventas"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_sequence_payment_group_sequence_out_id
+msgid "Payment Group Sequence Out"
+msgstr "Grupo de F. Compras"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Payment Grups"
+msgstr "Grupo de Pagos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_group_payment_group_ids
+msgid "Payment Line Created"
+msgstr "Linea de Pago creada"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_payment_transfer_id
+msgid "Payment Pending"
+msgstr "Pagos Pendientes"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_customer_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_supplier_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_payment_out_group_form_inherit
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_boolean_permit_amount_negative
+msgid "Permit Amount Negative"
+msgstr "Permitir Montos Negativos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_invoice_payment_form
+msgid "Prepare Debt"
+msgstr "Preparar"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_quantity
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_recaudation_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_recaudation_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_group_recaudation_id
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_close_bill_close_id
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_sequence_form
+msgid "Recaudation"
+msgstr "Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_close_form
+msgid "Recaudation Close Details"
+msgstr "Detalles de Arqueo"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_sequence_recaudation_deposit_sequence_id
+msgid "Recaudation Deposit Sequence"
+msgstr "Depósitos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_recaudation_id
+msgid "Recaudation Reference"
+msgstr "Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_recaudation_close_id
+msgid "Recaudation Reference Close"
+msgstr "Arqueos"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_recaudation_history_id
+msgid "Recaudation Reference History"
+msgstr "Historial"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_sequence_recaudation_retire_sequence_id
+msgid "Recaudation Retire Sequence"
+msgstr "Retiros"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_payment_recaudation_transfer_id
+msgid "Recaudation Transfer"
+msgstr "Transferencias"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_sequence_recaudation_transfer_sequence_id
+msgid "Recaudation Transference Sequence"
+msgstr "Transferencias"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_sequence_form
+msgid "Refund"
+msgstr "Devolución"
+
+#. module: easy_invoice_recaudation
+#: selection:easy.recaudation.retire.deposit,type:0
+msgid "Retire"
+msgstr "Retiro"
+
+#. module: easy_invoice_recaudation
+#: model:ir.actions.act_window,name:easy_invoice_recaudation.action_easy_recaudation_retire_deposit
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_recaudation_retire_deposit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_retire_deposit_form
+msgid "Retire/Deposit/Transfer"
+msgstr "Retiro/Deposito/Transferencia"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_state
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.menu,name:easy_invoice_recaudation.submenu_box
+msgid "SubMenu Box"
+msgstr "Caja"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/wizard/easy_recaudation_close.py:82
+#, python-format
+msgid "There is a amount difference and no reason especified : %s"
+msgstr "No esta indicada el motivo de la diferencia : %s"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_customer_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_supplier_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_payment_in_group_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_payment_out_group_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.view_easy_recaudation_form
+msgid "Total"
+msgstr "Total"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_total_amount
+msgid "Total Amount"
+msgstr "Importe total"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_total_amount_refunded
+msgid "Total Amount Refunded"
+msgstr "Monto Total"
+
+#. module: easy_invoice_recaudation
+#: selection:easy.recaudation.retire.deposit,type:0
+msgid "Transfer"
+msgstr "Transferencia"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_recaudation_id
+msgid "Transfer to"
+msgstr "Transferir A"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_retire_deposit_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_invoice_payment_type_invoice
+msgid "Type Invoice"
+msgstr "Tipo"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model.fields,field_description:easy_invoice_recaudation.field_easy_recaudation_user_create_id
+msgid "User Create"
+msgstr "Usuario Creador"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_payment_group.py:41
+#, python-format
+msgid "You can not Cancel a Payment Group In without                                      Founds in Recaudation."
+msgstr "No puede Cancelar una Factura de Ventas sin Fondos en la Caja."
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_payment_group.py:118
+#, python-format
+msgid "You can not Pay a debt without                                  Founds in Recaudation."
+msgstr "No puede Pagar una Factura sin Fondos en la Caja."
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_recaudation.py:113
+#, python-format
+msgid "You can not close a Recaudation without \"Date To\"."
+msgstr "No puede Cerrar una Recaudacion Sin Fecha de Cierre"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_invoice.py:89
+#, python-format
+msgid "You cant not Pay a Invoice without Funds"
+msgstr "No puede Pagar una Factura Sin Fondos"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_invoice.py:75
+#, python-format
+msgid "You cant not Pay a Invoice without Recaudation. Pick one in Invoice to continue. Ref:(%s)"
+msgstr "No puede Pagar/Cobrar una Factura Sin una Recaudación. Ref:(%s)"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_invoice.py:34
+#, python-format
+msgid "You cant not Pay a Invoice without Recaudation. Pick one in Wizard or Invoice to continue"
+msgstr "No puede Pagar/Cobrar una Factura Sin una Recaudación."
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_invoice.py:37
+#: code:addons/easy_invoice_recaudation/models/easy_invoice.py:78
+#, python-format
+msgid "You cant not Pay a Invoice without Sequence"
+msgstr "No puede Pagar una Factura sin Secuencia Configurada."
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/wizard/easy_invoice_payment.py:70
+#: code:addons/easy_invoice_recaudation/wizard/easy_invoice_payment.py:103
+#, python-format
+msgid "You cant not Process invoice of different Partners of the wizard."
+msgstr "No puede Procesar una Factura con un Cliente/Proveedor diferente."
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_recaudation.py:127
+#, python-format
+msgid "You cant not Retire without Funds"
+msgstr "No puede Realizar un Retiro sin Fondos"
+
+#. module: easy_invoice_recaudation
+#: code:addons/easy_invoice_recaudation/models/easy_payment_group.py:58
+#, python-format
+msgid "You cant pay without a recaudation."
+msgstr "No puede procesar un pago sin una Caja establecida."
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_bill
+msgid "easy.bill"
+msgstr "Billete"
+
+#. module: easy_invoice_recaudation
+#: model:ir.model,name:easy_invoice_recaudation.model_easy_recaudation_close_bill
+msgid "easy.recaudation.close.bill"
+msgstr "Arqueo de Caja"
+
+#. module: easy_invoice_recaudation
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_customer_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_invoice_supplier_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_payment_in_group_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_recaudation.easy_payment_out_group_form_inherit
+msgid "payment Lines"
+msgstr "payment Lines"

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="True">
+    <!-- rename to Other Taxes, use sequence 20 y clasificamos impuesto -->
+    <record id="settlement_advancement" model="easy.employe.cc.settlement">
+        <field name="name">Adelantos</field>
+        <field name="profile">advancement</field>
+        <field name="easy_movement">yes</field>
+        <field name="symbol">subtraction</field>
+        <field name="ttype">pagos_compesacion</field>
+        <field name="state">open</field>
+    </record>
+
+    <record id="settlement_basic_salary" model="easy.employe.cc.settlement">
+        <field name="name">Sueldo Básico</field>
+        <field name="profile">basic_salary</field>
+        <field name="easy_movement">no</field>
+        <field name="symbol">sum</field>
+        <field name="ttype">haberes</field>
+        <field name="state">open</field>
+    </record>
+
+    <record id="settlement_bank" model="easy.employe.cc.settlement">
+        <field name="name">Banco</field>
+        <field name="profile">bank</field>
+        <field name="easy_movement">no</field>
+        <field name="symbol">subtraction</field>
+        <field name="ttype">haberes</field>
+        <field name="state">open</field>
+    </record>
+
+    <record id="settlement_liquidation_salary" model="easy.employe.cc.settlement">
+        <field name="name">Liquidación de Sueldo</field>
+        <field name="profile">liquidation_salary</field>
+        <field name="easy_movement">yes</field>
+        <field name="symbol">sum</field>
+        <field name="ttype">haberes</field>
+        <field name="state">open</field>
+    </record>
+
+
+</odoo>

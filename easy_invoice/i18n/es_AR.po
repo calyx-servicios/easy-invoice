@@ -1,0 +1,1219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-17 13:59+0000\n"
+"PO-Revision-Date: 2019-12-17 13:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_state
+msgid " * The 'Draft' status is used when a user is encoding a new and unconfirmed Invoice.\n"
+" * The 'Open' status is used when user creates invoice, an invoice number is generated. It stays in the open status till the user pays the invoice.\n"
+" * The 'Paid' status is set automatically when the invoice is paid. Its related journal entries may or may not be reconciled.\n"
+" * The 'Cancelled' status is used when user cancel invoice."
+msgstr "* El estado \"Borrador\" se usa cuando un usuario confecciona un nueva factura no confirmada.\n"
+"* El estado \"Abierto\" se usa cuando el usuario crea una factura, y se genera un número de factura. Este estado se mantiene hasta que el usuario paga la factura\n"
+"* El Estado \"Pagado\" se establece automáticamente cuando la factura se paga.  Sus entradas relacionadas en el diario pueden o no estar conciliadas.\n"
+"* El estado \"Cancelado\" se usa cuando el usuario cancela una factura"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypayment_document
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<span>Payment # </span>"
+msgstr "<span>Pago # </span>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easyshipment_document
+msgid "<span>Shipment # </span>"
+msgstr "<span>Envio # </span>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<strong>Amount to Pay</strong>"
+msgstr "<strong>Monto a Pagar</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easyshipment_document
+msgid "<strong>Confirmation Date:</strong>"
+msgstr "<strong>Fecha:</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypayment_document
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<strong>Date :</strong>"
+msgstr "<strong>Fecha :</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<strong>Money Amount</strong>"
+msgstr "<strong>Monto en Moneda</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<strong>Salesperson:</strong>"
+msgstr "<strong>Comercial</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easyshipment_document
+msgid "<strong>Sign:</strong>"
+msgstr "<strong>Sign:</strong>"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_type_debit_note
+msgid "Type Debit Note"
+msgstr "Tipo Nota Débito"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<strong>Total Debt</strong>"
+msgstr "<strong>Total Deuda</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "<strong>Total Rectificative</strong>"
+msgstr "<strong>Total Rectificativa</strong>"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypayment_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_price_subtotal
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "Amount"
+msgstr "Importe"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_amount_in
+msgid "Amount In"
+msgstr "Egreso"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_amount_money
+msgid "Amount Money"
+msgstr "Monto en Dinero"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_amount_money_defined
+msgid "Amount Money Defined"
+msgstr "Definir Monto"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_amount_out
+msgid "Amount Out"
+msgstr "Ingreso"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_price_subtotal_signed
+msgid "Amount Signed"
+msgstr "Importe con signo"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_amount2pay
+msgid "Amount To Pay"
+msgstr "Monto a Pagar"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_amount_total
+#: model:ir.model.fields,help:easy_invoice.field_easy_payment_amount_total
+msgid "Amount Total"
+msgstr "Monto Total"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_amount_total_debt
+msgid "Amount Total Debt"
+msgstr "Total de FCs"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_amount_total_rectificative
+msgid "Amount Total Rectificative"
+msgstr "Notas de Crédito(-)"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_amount2pay
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "Amount to Pay"
+msgstr "Monto a Pagar"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_amount2payed
+msgid "Amount to Payed"
+msgstr "Monto Pagado"
+
+#. module: easy_invoice
+#: selection:easy.payment,type:0
+msgid "Arch"
+msgstr "Arch"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Back to Draft"
+msgstr "Volver a Borrador"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "CUIT:"
+msgstr "CUIT:"
+
+#. module: easy_invoice
+#: selection:easy.payment,state:0
+#: selection:easy.payment.group,state:0
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+msgid "Cancel Group"
+msgstr "Cancel Group"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "Cancell Invoice"
+msgstr "Cancelar"
+
+#. module: easy_invoice
+#: selection:easy.invoice,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: easy_invoice
+#: model:ir.module.category,description:easy_invoice.easy_invoice
+msgid "Categoría base para las Facturas Fáciles"
+msgstr "Categoría base para las Facturas Fáciles"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type_debit_note:0
+#: selection:easy.invoice,type_refund:0
+msgid "Combo (Marketing)"
+msgstr "Combo (Marketing)"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_company_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_configuration_sequence_id
+msgid "Configuration Sequence"
+msgstr "Secuencias"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_date_contable
+msgid "Contable Date"
+msgstr "Fecha Contable"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type_debit_note:0
+#: selection:easy.invoice,type_refund:0
+msgid "Corrections"
+msgstr "Correcciones"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_create_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_create_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_create_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_create_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_create_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_create_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_create_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_create_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_create_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_create_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_currency_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_currency_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_currency_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_tree
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type:0
+msgid "Customer Credit Note"
+msgstr "Nota de Credito Cliente"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type:0
+msgid "Customer Invoice"
+msgstr "Factura de Cliente"
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_invoice_customer_tree
+#: model:ir.ui.menu,name:easy_invoice.customer_menu
+#: model:ir.ui.menu,name:easy_invoice.menu_action_easy_invoice_customer_tree
+msgid "Customer Invoices"
+msgstr "Facturas de cliente"
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_invoice_customer_rec_tree
+#: model:ir.ui.menu,name:easy_invoice.menu_action_easy_invoice_customer_rec_tree
+msgid "Customer Invoices Rectificative"
+msgstr "NC de Clientes"
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_payment_out_group_tree2
+#: model:ir.ui.menu,name:easy_invoice.menu_action_easy_payment_out_group_tree2
+msgid "Customer Payments"
+msgstr "Cobranzas"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_date
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_date_invoice
+msgid "Date Invoice "
+msgstr "Fecha de Factura"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_date_pay
+msgid "Date Pay"
+msgstr "Fecha"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_debit_invoice_in_confirm_sequence_id
+msgid "Debit In Invoice Confirm Sequence"
+msgstr "ND de Compra"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_debit_invoice_in_pay_sequence_id
+msgid "Debit In Invoice Pay Sequence"
+msgstr "Línea de Pago NDC"
+
+#. module: easy_invoice
+#: selection:easy.invoice,subtype_invoice:0
+msgid "Debit Note"
+msgstr "Nota de Débito"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_debit_invoice_out_confirm_sequence_id
+msgid "Debit Out Invoice Confirm Sequence"
+msgstr "ND de Venta"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_debit_invoice_out_pay_sequence_id
+msgid "Debit Out Invoice Pay Sequence"
+msgstr "Línea de Pago NDV"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Definir Monto"
+msgstr "Definir Monto"
+
+#. module: easy_invoice
+#: selection:easy.payment,type:0
+msgid "Deposit"
+msgstr "Deposito"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_name
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+#: model:ir.ui.view,arch_db:easy_invoice.report_easyshipment_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_description_debit_note
+msgid "Description Debit Note"
+msgstr "Ref. Nota Débito"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_description_refund
+msgid "Description Refund"
+msgstr "Ref. Nota de Crédito"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_display_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_display_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_display_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_display_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_display_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_display_name
+#: model:ir.model.fields,field_description:easy_invoice.field_report_easy_payment_group_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_number
+msgid "Document number"
+msgstr "N° de Factura"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "Documento no valido como factura"
+msgstr "Documento no valido como factura"
+
+#. module: easy_invoice
+#: selection:easy.invoice,state:0
+#: selection:easy.payment.group,state:0
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Due Date"
+msgstr "Fecha vencimiento"
+
+#. module: easy_invoice
+#: model:ir.actions.report,name:easy_invoice.action_aeroo_report_easy_invoice
+#: model:ir.model,name:easy_invoice.model_easy_invoice
+#: model:ir.module.category,name:easy_invoice.easy_invoice
+msgid "Easy Invoice"
+msgstr "Factura Rápida"
+
+#. module: easy_invoice
+#: model:ir.model,name:easy_invoice.model_easy_invoice_line
+msgid "Easy Invoice Line"
+msgstr "Linea de Factura"
+
+#. module: easy_invoice
+#: model:ir.ui.menu,name:easy_invoice.menu_ei_root
+msgid "Easy Invoices"
+msgstr "Facturas"
+
+#. module: easy_invoice
+#: model:ir.model,name:easy_invoice.model_easy_payment
+msgid "Easy Payment"
+msgstr "Pagos"
+
+#. module: easy_invoice
+#: model:ir.model,name:easy_invoice.model_easy_payment_group
+msgid "Easy Payment Group"
+msgstr "Grupo de Pagos"
+
+#. module: easy_invoice
+#: model:ir.model,name:easy_invoice.model_easy_payment_group_line
+msgid "Easy Payment Group Line"
+msgstr "Lineas de Grupo de Pago"
+
+#. module: easy_invoice
+#: model:ir.model,name:easy_invoice.model_easy_sequence
+msgid "Easy Sequence"
+msgstr "Secuencias"
+
+#. module: easy_invoice
+#: model:ir.actions.report,name:easy_invoice.action_aeroo_report_easy_invoice_free
+msgid "Easy invoice Remito"
+msgstr "Remito"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Future Activities"
+msgstr "Actividades futuras"
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_line_sequence
+msgid "Gives the sequence of this line when displaying the invoice."
+msgstr "Presenta la secuencia de esta línea cuando muestra la factura"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_group_type
+msgid "Group Type"
+msgstr "Tipo"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_id
+#: model:ir.model.fields,field_description:easy_invoice.field_report_easy_payment_group_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "IIBB:"
+msgstr "IIBB:"
+
+#. module: easy_invoice
+#: selection:easy.payment.group,group_type:0
+msgid "In Group"
+msgstr "Grupo"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_invoice_in_confirm_sequence_id
+msgid "In Invoice Confirm Sequence"
+msgstr "Facturas de Compra"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_in_invoice_group_id
+msgid "In Invoice Group"
+msgstr "Grupo de Facturas in"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_invoice_in_pay_sequence_id
+msgid "In Invoice Pay Sequence"
+msgstr "Linea de Pago FCC"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_in_rectificative_group_id
+msgid "In Rect Invoice Group"
+msgstr "Grupo de Facturas NC in"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "Inicio Actividades"
+msgstr "Inicio Actividades"
+
+#. module: easy_invoice
+#: selection:easy.invoice,subtype_invoice:0
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_in_invoice_ids
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_invoice_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_out_invoice_ids
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_tree
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_date_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Invoice Date"
+msgstr "Fecha de la factura"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_date_expiration
+msgid "Invoice Expiration"
+msgstr "Fecha de Vencimiento"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_invoice_line_ids
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Invoice Lines"
+msgstr "Líneas de factura"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_invoice_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_invoice_id
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "Invoice Reference"
+msgstr "Referencia factura"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_invoice_refund_id
+msgid "Invoice Refund"
+msgstr "Nota de Crédito"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypayment_document
+msgid "Invoice Refund:"
+msgstr "Nota de Credito:"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypayment_document
+msgid "Invoice:"
+msgstr "Invoice:"
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_sent
+msgid "It indicates that the invoice has been sent."
+msgstr "Indica que la factura ha sido enviada."
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_date_contable
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_date_expiration
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_date_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_payment_group_line_date_invoice
+msgid "Keep empty to use the current date"
+msgstr "Dejarlo vacío para utilizar la fecha actual."
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice___last_update
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line___last_update
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment___last_update
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group___last_update
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line___last_update
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence___last_update
+#: model:ir.model.fields,field_description:easy_invoice.field_report_easy_payment_group___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_write_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_write_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_write_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_write_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_write_uid
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_write_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_write_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_write_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_write_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_write_date
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Late Activities"
+msgstr "Actividades tardías"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_invoice_residual_amount_id
+msgid "Line Residual"
+msgstr "Linea Residual"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_tree
+msgid "Monto"
+msgstr "Monto"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "My Activities"
+msgstr "Mis actividades"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "My Invoices"
+msgstr "Mis facturas"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_name
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_payment_group.py:136
+#, python-format
+msgid "Not implemented Yet."
+msgstr "Aun no implementado"
+
+#. module: easy_invoice
+#: selection:easy.invoice,state:0
+#: selection:easy.payment,state:0
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Open"
+msgstr "Abierta"
+
+#. module: easy_invoice
+#: selection:easy.payment.group,group_type:0
+msgid "Out Group"
+msgstr "Grupo"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_invoice_out_confirm_sequence_id
+msgid "Out Invoice Confirm Sequence"
+msgstr "Facturas de Venta"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_out_invoice_group_id
+msgid "Out Invoice Group"
+msgstr "Grupo de Facturas out"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_invoice_out_pay_sequence_id
+msgid "Out Invoice Pay Sequence"
+msgstr "Linea de Pago FCV"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_out_rectificative_group_id
+msgid "Out Rect Invoice Group"
+msgstr "Grupo de pagos de facturas rectificativas"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Overdue"
+msgstr "Vencidas"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Overdue invoices, maturity date passed"
+msgstr "Facturas vencidas, pasada la fecha de vencimiento"
+
+#. module: easy_invoice
+#: selection:easy.invoice,state:0
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_partner_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_partner_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_partner_id
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_tree
+msgid "Partner Customer"
+msgstr "Cliente"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_tree
+msgid "Partner Supplier"
+msgstr "Proveedor"
+
+#. module: easy_invoice
+#: selection:easy.payment,type:0
+msgid "Pay In"
+msgstr "Compras"
+
+#. module: easy_invoice
+#: selection:easy.payment,type:0
+msgid "Pay Out"
+msgstr "Ventas"
+
+#. module: easy_invoice
+#: model:ir.actions.report,name:easy_invoice.action_report_easy_payment
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_payment_id
+msgid "Payment"
+msgstr "Pago"
+
+#. module: easy_invoice
+#: model:ir.actions.report,name:easy_invoice.action_report_easy_paymentgroup
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Payment Group"
+msgstr "Pagos"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_payment_line_ids
+msgid "Payments Lines"
+msgstr "Lineas de Pagos"
+
+#. module: easy_invoice
+#: selection:easy.payment,state:0
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_boolean_permit_cancel
+msgid "Permit Cancel"
+msgstr "Permitir Cancelar"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Prepare"
+msgstr "Preparar"
+
+#. module: easy_invoice
+#: selection:easy.payment.group,state:0
+msgid "Prepared"
+msgstr "Preparado"
+
+#. module: easy_invoice
+#: model:ir.actions.report,name:easy_invoice.action_report_easyinvoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "Print Invoice"
+msgstr "Imprimir factura"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Print Payment"
+msgstr "Imprimir"
+
+#. module: easy_invoice
+#: model:ir.actions.report,name:easy_invoice.action_report_easyshipment
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "Print Shipment"
+msgstr "Imprimir Envio"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Process Payment"
+msgstr "Aplicar Facturas"
+
+#. module: easy_invoice
+#: selection:easy.payment.group,state:0
+msgid "Processed"
+msgstr "Procesado"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_quantity
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+#: model:ir.ui.view,arch_db:easy_invoice.report_easyshipment_document
+msgid "Quantity"
+msgstr "Cantidad"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "REMITO"
+msgstr "Remito"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "Rectificate Invoice"
+msgstr "Nota de Cŕedito"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:288
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_in_rectificative_ids
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_out_rectificative_ids
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+#, python-format
+msgid "Rectificative"
+msgstr "Nota de Crédito"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_rectificative_invoice_id
+msgid "Rectificative Invoice Related"
+msgstr "Nota de Crédito"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "Rectificative Reference"
+msgstr "Referencia Nota de Credito"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_name
+msgid "Reference/Description"
+msgstr "Referencia/Descripción"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_refund_invoice_in_confirm_sequence_id
+msgid "Refund In Invoice Confirm Sequence"
+msgstr "NC de Compra"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_refund_invoice_out_confirm_sequence_id
+msgid "Refund Out Invoice Confirm Sequence"
+msgstr "NC de Venta"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_refund_invoice_out_pay_sequence_id
+msgid "Refund Out Invoice Pay Sequence"
+msgstr "Linea de Pago NCV"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_sequence_refund_invoice_in_pay_sequence_id
+msgid "Refund in Invoice Pay Sequence"
+msgstr "Linea de Pago NCC"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_tree
+msgid "Residual"
+msgstr "Residual"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_residual_amount
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_line_residual_amount
+#: model:ir.ui.view,arch_db:easy_invoice.report_easypaymentgroup_document
+msgid "Residual Amount"
+msgstr "Importe residual"
+
+#. module: easy_invoice
+#: model:res.groups,name:easy_invoice.easy_invoice_responsible_group
+msgid "Responsible Easy Invoice"
+msgstr "Responsable de Factura Fácil"
+
+#. module: easy_invoice
+#: selection:easy.payment,type:0
+msgid "Retire"
+msgstr "Retiro"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type_debit_note:0
+#: selection:easy.invoice,type_refund:0
+msgid "Returns"
+msgstr "Devoluciones"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_user_id
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_user_id
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Salesperson"
+msgstr "Comercial"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Search Invoice"
+msgstr "Buscar factura"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_sent
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_sequence_number
+msgid "Sequence Number"
+msgstr "Secuencia"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Show all records which has next action date is before today"
+msgstr "Mostrar todos los registros que tienen la próxima fecha de acción antes de hoy"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_group_state
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_state
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_state
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Status"
+msgstr "Estado"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_subtype_invoice
+msgid "SubType Invoice"
+msgstr "Subtipo Factura"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_tree
+msgid "Supplier"
+msgstr "Proveedores"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type:0
+msgid "Supplier Bill"
+msgstr "Proveedor"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type:0
+msgid "Supplier Credit Note"
+msgstr "Notas de Credito Proveedores"
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_invoice_supplier_tree
+#: model:ir.ui.menu,name:easy_invoice.menu_action_easy_invoice_supplier_tree
+msgid "Supplier Invoice"
+msgstr "Facturas Proveedores"
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_invoice_supplier_rec_tree
+#: model:ir.ui.menu,name:easy_invoice.menu_action_easy_invoice_supplier_rec_tree
+msgid "Supplier Invoice Rectificative"
+msgstr "NC de Proveedores"
+
+#. module: easy_invoice
+#: model:ir.ui.menu,name:easy_invoice.vendor_menu
+msgid "Supplier Invoices"
+msgstr "Factura de Proveedores"
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_payment_in_group_tree2
+#: model:ir.ui.menu,name:easy_invoice.menu_action_easy_payment_in_group_tree2
+msgid "Supplier Payments"
+msgstr "Pagos de Proveedor"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "T. de FCs a Cobrar"
+msgstr "Facturas"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_form
+msgid "T. de FCs a Pagar"
+msgstr "T. de FCs a Pagar"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "Tel:"
+msgstr "Tel.:"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Today Activities"
+msgstr "Actividades de Hoy"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_amount_total
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_rec_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_in_group_tree
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_tree
+msgid "Total"
+msgstr "Total"
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_line_price_subtotal_signed
+msgid "Total amount in the currency of the company, negative for credit note."
+msgstr "Importe total en la moneda de la compañía, negativo para facturas rectificativas."
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_amount_total_signed
+msgid "Total amount in the currency of the invoice, negative for credit notes."
+msgstr "Importe total en la moneda de la factura, negativo en facturas rectificativas."
+
+#. module: easy_invoice
+#: model:ir.model.fields,help:easy_invoice.field_easy_invoice_line_price_subtotal
+msgid "Total amount without taxes"
+msgstr "Importe total sin impuestos"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_amount_total_signed
+msgid "Total in Invoice Currency"
+msgstr "Total en la Moneda de la Factura"
+
+#. module: easy_invoice
+#: selection:easy.payment,type:0
+msgid "Transfer"
+msgstr "Transferencia"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_type
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_payment_type
+#: model:ir.ui.view,arch_db:easy_invoice.view_easy_invoice_filter
+msgid "Type"
+msgstr "Tipo"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_type_refund
+msgid "Type Refund"
+msgstr "Tipo de NC"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_price_unit
+#: model:ir.ui.view,arch_db:easy_invoice.report_easy_middle_page
+msgid "Unit Price"
+msgstr "Precio unitario"
+
+#. module: easy_invoice
+#: model:ir.model.fields,field_description:easy_invoice.field_easy_invoice_line_uom_id
+msgid "Unit of Measure"
+msgstr "Unidad de Medida"
+
+#. module: easy_invoice
+#: model:res.groups,name:easy_invoice.easy_invoice_user_group
+msgid "User Easy Invoice"
+msgstr "Usuario Factura Rápida"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type_debit_note:0
+#: selection:easy.invoice,type_refund:0
+msgid "Various"
+msgstr "Varios"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice_line.py:71
+#, python-format
+msgid "Warning!"
+msgstr "Cuidado!"
+
+#. module: easy_invoice
+#: selection:easy.invoice,type_debit_note:0
+#: selection:easy.invoice,type_refund:0
+msgid "Withdrawal"
+msgstr "Retiro"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:35
+#, python-format
+msgid "You cannot validate an invoice with a negative total amount. You should create a credit note instead."
+msgstr "No es posible confirmar una factura con monto total en \"Negativo\", caso de ser necesario se deberá crear una \"Nota de Crédito\"."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:307
+#, python-format
+msgid "You cant not Cancel a Invoice with Payments. First Cancel all Payments and back to Cancel the Invoice."
+msgstr "No es posible cancelar una Factura/Nota de Débito con pagos asociados a dichos documentos, primero cancele los pagos y vuelva a intentar."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:223
+#, python-format
+msgid "You cant not Confirm a Debit Note without In Confirm Sequence."
+msgstr "No es posible confirmar una Nota de Débito sin Secuencia de Confirmación de Compras."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:208
+#, python-format
+msgid "You cant not Confirm a Debit Note without Out Confirm Sequence."
+msgstr "No es posible confirmar una Nota de Débito sin Secuencia de Confirmación de Ventas."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:195
+#, python-format
+msgid "You cant not Confirm a Invoice with Amount Total in 0 or Negative.-"
+msgstr "No es posible confirmar una Factura con \"Monto en Cero o Negativo\".-"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:192
+#, python-format
+msgid "You cant not Confirm a Invoice with one line in 0 or Negative.-"
+msgstr "No es posible confirmar una Factura con \"Lineas en Cero o Negativo\".-"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:217
+#, python-format
+msgid "You cant not Confirm a Invoice without In Confirm Sequence."
+msgstr "No es posible confirmar una Factura sin Secuencia de Facturas de Compras."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:202
+#, python-format
+msgid "You cant not Confirm a Invoice without Out Confirm Sequence."
+msgstr "No es posible confirmar una Factura sin Secuencia de Facturas de Ventas."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:231
+#, python-format
+msgid "You cant not Confirm a Invoice without Refund In Confirm Sequence."
+msgstr "No es posible confirmar una Factura sin Secuencia de NC de Compras."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice.py:237
+#, python-format
+msgid "You cant not Confirm a Invoice without Refund Out Confirm Sequence."
+msgstr "No es posible confirmar una Factura sin Secuencia de NC de Ventas."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_payment_group.py:229
+#, python-format
+msgid "You cant not Prepare a Group with Amount Money in 0 or Negative.-"
+msgstr "No es posible preparar un Grupo de Pagos con Monto en Negativo o Cero.-"
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/models/easy_invoice_line.py:72
+#, python-format
+msgid "You must first select a partner!"
+msgstr "Debe Seleccionar un Cliente/Proveedor!"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_supplier_form
+msgid "payment Lines"
+msgstr "Lineas de Pago"
+
+#. module: easy_invoice
+#: model:ir.model,name:easy_invoice.model_report_easy_payment_group
+msgid "report.easy_payment_group"
+msgstr "report.easy_payment_group"
+
+
+#. module: easy_invoice
+#: model:ir.actions.act_window,name:easy_invoice.action_easy_invoice_confirm
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_confirm_view
+msgid "Confirm Draft Invoices"
+msgstr "Confirmar facturas borrador"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_confirm_view
+msgid "Once draft invoices are confirmed, you will not be able\n"
+"                        to modify them."
+msgstr "Una vez que se confirmen los borradores de facturas, no podrá modificarlos."
+
+#. module: easy_invoice
+#: code:addons/easy_invoice/wizard/easy_invoice_confirm.py:18
+#, python-format
+msgid "Selected invoice(s) cannot be confirmed as they are not in 'Draft' state."
+msgstr "Las facturas seleccionadas no se pueden confirmar ya que no están en estado 'Borrador'."
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_confirm_view
+msgid "Confirm Invoices"
+msgstr "Confirmar facturas"
+
+#. module: easy_invoice
+#: selection:easy.payment,state:0
+#: selection:easy.payment.group,state:0
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_confirm_view
+#: model:ir.ui.view,arch_db:easy_invoice.easy_payment_out_group_form
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: easy_invoice
+#: model:ir.ui.view,arch_db:easy_invoice.easy_invoice_customer_form
+msgid "Pay"
+msgstr "Pagar"

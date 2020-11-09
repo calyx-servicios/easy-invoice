@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+<!-- Transfer -->
+<record id="print_anticipe_advancement" model="ir.actions.report">
+    <field name="name">Print Anticipe Advancement</field>
+    <field name="model">easy.partner.cc</field>
+    <field name="report_name">print_anticipe_advancement</field>
+    <field name="report_type">aeroo</field>
+    <field name="in_format">oo-odt</field>
+    <field name="report_file">easy_invoice_partner_cc/report/print_anticipe_advancement.odt</field>
+    <field name="tml_source">file</field>
+    <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_odt"/>
+</record>
+
+
+
+
+
+</odoo>

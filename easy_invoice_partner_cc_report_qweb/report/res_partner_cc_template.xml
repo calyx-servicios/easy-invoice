@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<template id="report_res_partner_cc_body">
+    <t t-call="web.external_layout">
+        
+        
+    
+        
+        <div class="page"  >
+
+       
+            <div  >
+                <div class="pos-receipt-container">
+                    <div class="pos-sale-ticket">
+                        <div class='cashier'>
+                            <br/>
+                            <div><t t-esc='partner_obj.name' /></div>
+                            <br/>
+                            Total Débitos:
+                            <span t-field="partner_obj.total_amount_debit" t-options='{"widget": "monetary", "display_currency": partner_obj.company_id.currency_id}'/>
+                            Total Créditos:
+                            <span t-field="partner_obj.total_amount_debit" t-options='{"widget": "monetary", "display_currency": partner_obj.company_id.currency_id}'/>
+                        </div>
+                        <br/>
+                   
+                        <div class='cashier' style="min-width: 180px;max-width:180px;font-weight: bold;font-size: 10px;">
+                        Facturas Easy:
+                        </div>
+                        <br/>
+                        <div class='cashier' style="min-width: 180px;max-width:200px;">
+                            <t t-foreach='partner_obj.open_easy_invoice_ids' t-as='easy_invoice_obj'>
+                                <span t-field="easy_invoice_obj.type" />
+                                <span t-field="easy_invoice_obj.name" />
+                                <span t-field="easy_invoice_obj.residual_amount" t-options='{"widget": "monetary", "display_currency": easy_invoice_obj.currency_id}'/>
+                                <br/> 
+                            </t>
+                        </div>
+                        <br/> 
+                        
+                        <div class='cashier' style="min-width: 180px;max-width:180px;font-weight: bold;font-size: 10px;">
+                        Facturas:
+                        </div>
+                        <br/>
+                        <div class='cashier' style="min-width: 180px;max-width:200px;">
+                            <t t-foreach='partner_obj.open_invoice_ids' t-as='invoice_obj'>
+                                <span t-field="invoice_obj.type" />
+                                <span t-field="invoice_obj.name" />
+                                <span t-field="invoice_obj.residual" t-options='{"widget": "monetary", "display_currency": invoice_obj.currency_id}'/>
+                                <br/> 
+                            </t>
+                        </div>
+                        <br/> 
+
+
+                    </div>
+                </div>
+            </div>
+        
+        
+        </div>
+        </t>
+    </template>
+
+
+    <template id="report_res_partner_cc">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="partner_obj">
+                <t t-call="easy_invoice_partner_cc_report_qweb.report_res_partner_cc_body" />
+            </t>
+        </t>
+    </template>
+
+
+
+</odoo>
