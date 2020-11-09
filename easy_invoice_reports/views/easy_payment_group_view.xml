@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="easy_payment_button_reportpaymentgroup" model="ir.ui.view">
+            <field name="name">easy.payment.group.button.form</field>
+            <field name="model">easy.payment.group</field>
+            <field name="inherit_id" ref="easy_invoice.easy_payment_out_group_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="print_easypaymentgroup" string="Imprimir Cobranza" type="object" states="processed" class="btn-primary o_sale_print"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

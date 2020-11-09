@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="product_category_form_view_income_statements" model="ir.ui.view">
+          <field name="model">product.category</field>
+          <field name="name">Product Category Income Statements</field>
+          <field name="inherit_id" ref="product.product_category_form_view" />
+          <field name="arch" type="xml">
+          <xpath expr="//group[@name='first']" position="inside">
+
+                  <field name="level"/>
+                  <field name="sequence"/>
+                  <field name="analytic"/>
+          </xpath>
+          </field>
+      </record>
+
+      <record id="product_category_list_view_income_statements" model="ir.ui.view">
+          <field name="model">product.category</field>
+          <field name="name">product.category.list.income</field>
+          <field name="inherit_id" ref="product.product_category_list_view" />
+          <field name="arch" type="xml">
+          <xpath expr="//field[@name='display_name']" position="after">
+
+                  <field name="category_name"/>
+                  <field name="sub_category_name"/>
+                  <field name="sequence"/>
+
+          </xpath>
+          </field>
+      </record>
+    </data>
+</odoo>

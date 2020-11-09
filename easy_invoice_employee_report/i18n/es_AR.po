@@ -1,0 +1,388 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_employee_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-17 19:56+0000\n"
+"PO-Revision-Date: 2020-06-17 19:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:59
+#, python-format
+msgid "Account"
+msgstr "Empleado"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_advancement
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_advancement
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_advancement
+msgid "Advancement"
+msgstr "Adelantos"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:41
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_total
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_total
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_total
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_header
+#, python-format
+msgid "Amount"
+msgstr "Importe"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:62
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_company_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_company_id
+#, python-format
+msgid "Company"
+msgstr "Compañía"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_easy_employe_cc_settlement_ids
+msgid "Concept"
+msgstr "Concepto"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:117
+#, python-format
+msgid "Concept Type not assigned"
+msgstr "Tipo de Concepto no asignado"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_create_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_create_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:35
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_date
+#, python-format
+msgid "Date"
+msgstr "Fecha"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_date_from
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_date_from
+msgid "Date From"
+msgstr "Desde"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_date_to
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_date_to
+msgid "Date To"
+msgstr "Hasta"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_date_range_id
+msgid "Date range"
+msgstr "Periodo"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:65
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_filters
+#, python-format
+msgid "Date range filter"
+msgstr "Período"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:38
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_description
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_description
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_description
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_header
+#, python-format
+msgid "Description"
+msgstr "Descripción"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_detail
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_detail
+msgid "Detail"
+msgstr "Detail"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_display_name
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_report_employee_xlsx_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_settlement_type
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_filter_settlement_type
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_settlement_type
+msgid "Easy Movement"
+msgstr "Caja"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:24
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_employee_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_employee_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_employee_ids
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_header
+#, python-format
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.menu,name:easy_invoice_employee_report.employee_report_wizard_submenu
+msgid "Employee Report"
+msgstr "Reporte Empleados"
+
+#. module: easy_invoice_employee_report
+#: model:ir.actions.report,name:easy_invoice_employee_report.action_report_employee_html
+msgid "Employee Report HTML"
+msgstr "Reporte Empleado HTML"
+
+#. module: easy_invoice_employee_report
+#: model:ir.actions.report,name:easy_invoice_employee_report.action_report_employee_qweb
+msgid "Employee Report QWEB"
+msgstr "Reporte Empleado QWEB"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_employee_report_wizard
+msgid "Employee Report Wizard"
+msgstr "Reporte Empleado Wizard"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_base
+msgid "Employee Report_ -"
+msgstr "Reporte Empleado_ -"
+
+#. module: easy_invoice_employee_report
+#: model:ir.actions.report,name:easy_invoice_employee_report.action_report_employee_xlsx
+msgid "Employee XLSX"
+msgstr "Empleado XLSX"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_account_ids
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:17
+#, python-format
+msgid "Employees Report"
+msgstr "Reporte Empleados"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_wizard
+msgid "Export XLSX"
+msgstr "Exportar a XLSX"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_filter_account_ids
+msgid "Filter Account"
+msgstr "Filtro Cuenta"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_company_ids
+msgid "Filter Companies"
+msgstr "Filtro Compañías"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_filter_company_ids
+msgid "Filter Company"
+msgstr "Filtro Compañías"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_filter_settlement_ids
+msgid "Filter Settlement"
+msgstr "Filter Settlement"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_filters
+msgid "From:"
+msgstr "Desde:"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:66
+#, python-format
+msgid "From: %s To: %s"
+msgstr "Desde: %s Hasta: %s"
+
+#. module: easy_invoice_employee_report
+#: selection:employee.report.wizard,settlement_type:0
+#: selection:report_employee,filter_settlement_type:0
+#: selection:report_employee_move,settlement_type:0
+msgid "Haberes"
+msgstr "Haberes"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_report_employee_xlsx_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type___last_update
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_report_employee_xlsx___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_write_uid
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_employee_report_wizard_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_write_date
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_move_ids
+msgid "Move"
+msgstr "Movimiento"
+
+#. module: easy_invoice_employee_report
+#: selection:employee.report.wizard,settlement_type:0
+#: selection:report_employee,filter_settlement_type:0
+#: selection:report_employee_move,settlement_type:0
+msgid "Pagos y Compensaciones"
+msgstr "Pagos y Compensaciones"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_payment
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_payment
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_payment
+msgid "Payment"
+msgstr "Pago"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_report_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_report_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_report_id
+msgid "Report"
+msgstr "Reporte"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_salary
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_move_salary
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_salary
+msgid "Salary"
+msgstr "Salary"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:32
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_header
+#, python-format
+msgid "Settlement Type"
+msgstr "Tipo de Movimiento"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_type_id
+msgid "Tipo"
+msgstr "Tipo"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_filters
+msgid "To:"
+msgstr "A:"
+
+#. module: easy_invoice_employee_report
+#: code:addons/easy_invoice_employee_report/report/employee_report_xlsx.py:28
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_employee_type_id
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_ids
+#: model:ir.model.fields,field_description:easy_invoice_employee_report.field_report_employee_type_type
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_header
+#, python-format
+msgid "Type"
+msgstr "Concepto"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_wizard
+msgid "View"
+msgstr "Vista"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_easy_employee_cc
+msgid "easy.employee.cc"
+msgstr "easy.employee.cc"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_easy_employee_cc_type
+msgid "easy.employee.cc.type"
+msgstr "easy.employee.cc.type"
+
+#. module: easy_invoice_employee_report
+#: model:ir.ui.view,arch_db:easy_invoice_employee_report.employee_report_wizard
+msgid "or"
+msgstr "o"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_report_report_employee_xlsx
+msgid "report.report_employee_xlsx"
+msgstr "report.report_employee_xlsx"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_report_employee
+msgid "report_employee"
+msgstr "report_employee"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_report_employee_employee
+msgid "report_employee_employee"
+msgstr "report_employee_employee"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_report_employee_move
+msgid "report_employee_move"
+msgstr "report_employee_move"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_report_employee_type
+msgid "report_employee_type"
+msgstr "report_employee_type"
+
+#. module: easy_invoice_employee_report
+#: model:ir.model,name:easy_invoice_employee_report.model_res_config_settings
+msgid "res.config.settings"
+msgstr "res.config.settings"
+

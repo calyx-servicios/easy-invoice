@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model='ir.ui.view' id='view_easy_recaudation_close_form'>
+        <field name='name'>easy.recaudation.close.form</field>
+        <field name='model'>easy.recaudation.close</field>
+        <field name='arch' type='xml'>
+            <form string="Recaudation Close Details" >
+                <group>
+                <field name="amount" />
+                <field name="amount_box" />
+                <field name="amount_difference" />
+                <field name="reason" attrs="{'required': ['|',('amount_difference','=', False),('amount_difference','!=', 0)]}"/>
+                </group>
+                <!-- <notebook>
+                <page name="bill_ids_page" string="Bill Counts">
+                        <field name="bill_ids" >
+                        <tree editable="bottom">
+                                <field name="bill_id"/>
+                                <field name="quantity"/>
+                                <field name="amount"/>
+                        </tree>
+                        </field>
+                    </page>
+                </notebook> -->
+                <footer>
+                   <button name='partial_close' string='Partial Close'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_easy_recaudation_close">
+        <field name="name">Partial Close</field>
+        <field name="res_model">easy.recaudation.close</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    
+</odoo>

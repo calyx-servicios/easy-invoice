@@ -1,0 +1,86 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_list_line_list
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-14 04:12+0000\n"
+"PO-Revision-Date: 2020-05-14 04:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.easy_invoice_list_list_tree
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.actions.act_window,name:easy_invoice_list_line_list.action_easy_invoice_list_list_tree
+#: model:ir.ui.menu,name:easy_invoice_list_line_list.menu_action_easy_invoice_customer_tree
+msgid "Customer Invoices List"
+msgstr "Lista de Facturas a Clientes"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.actions.act_window,name:easy_invoice_list_line_list.action_easy_invoice_line_customer_list_tree
+#: model:ir.ui.menu,name:easy_invoice_list_line_list.menu_action_easy_invoice_line_customer_tree
+msgid "Customer Invoices Products List"
+msgstr "Lista de Productos Vendidos"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.model.fields,field_description:easy_invoice_list_line_list.field_easy_invoice_line_date_invoice
+msgid "Date Invoice"
+msgstr "Fecha de Factura"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.model,name:easy_invoice_list_line_list.model_easy_invoice
+msgid "Easy Invoice"
+msgstr "Factura Rápida"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.model,name:easy_invoice_list_line_list.model_easy_invoice_line
+msgid "Easy Invoice Line"
+msgstr "Linea de Factura"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.easy_invoice_list_list_form
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.easy_invoice_list_list_tree
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.easy_invoice_customer_list_form
+msgid "Invoice Line"
+msgstr "Linea de la Factura"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.model.fields,field_description:easy_invoice_list_line_list.field_easy_invoice_line_invoice_type
+msgid "Invoice Type"
+msgstr "Tipo de Factura"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.model.fields,help:easy_invoice_list_line_list.field_easy_invoice_line_date_invoice
+msgid "Keep empty to use the current date"
+msgstr "Dejarlo vacío para utilizar la fecha actual."
+
+#. module: easy_invoice_list_line_list
+#: model:ir.model.fields,field_description:easy_invoice_list_line_list.field_easy_invoice_line_partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.view_easy_invoice_line_filter
+msgid "Search Invoice"
+msgstr "Buscar factura"
+
+#. module: easy_invoice_list_line_list
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.easy_invoice_line_customer_list_tree
+#: model:ir.ui.view,arch_db:easy_invoice_list_line_list.easy_invoice_list_list_tree
+msgid "Total"
+msgstr "Total"
+

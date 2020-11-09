@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+
+    <record id="purchase_order_form_inherit" model="ir.ui.view">
+        <field name="model">purchase.order</field>
+        <field name="name">purchase Order Inherit</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_approve']" position="after">
+                <button name="create_easy_invoice" type="object" string="Create Easy Invoice"
+                    attrs="{'invisible': [('state', '!=', 'purchase')]}" />
+            </xpath>
+
+
+
+            <xpath expr="//notebook" position="inside">
+                <page  name="easy_invoice_ids_page" string="Invoice Lines">
+                    <field name="easy_invoice_ids">
+                    </field>
+               </page> 
+            </xpath>
+ <!--  -->
+
+        </field>
+
+    </record>
+
+  </data>
+</odoo>

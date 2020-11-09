@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+
+    <record id="easy_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="name">Hr Employee Inherit</field>
+        <field name="inherit_id" ref="easy_invoice_employee_cc.easy_hr_employee_form" />
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//field[@name='cc_line_ids']/tree/field[@name='type']"  position="after">
+                
+                <field name="analytic_account_id" readonly="1" />
+                <button name="%(action_wizard_edit_analytic_account)d" string="Edit Analytic Account" type="action" class="oe_highlight"  
+                    context="{'default_employee_cc_id':id}"/>
+                    
+
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+  </data>
+</odoo>

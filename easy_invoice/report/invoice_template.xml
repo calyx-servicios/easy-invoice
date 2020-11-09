@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+
+    <template id="external_layout_standard">
+      <div class="header">
+        <div class="row" >
+          <div class="col-xs-7 " style="width:48%;border-left: 1px solid black;border-top: 1px solid black;border-right: 1px solid black;">
+            <t t-call="easy_invoice.report_easy_header"/>
+          </div>
+          <div class="col-xs-7 " style="width:48%;border-left: 1px solid black;border-right: 1px solid black;border-top: 1px solid black;margin-left:30px;">
+            <t t-call="easy_invoice.report_easy_header"/>
+          </div>
+        </div>
+      </div>
+
+          <div class="article o_report_layout_standard">
+              <t t-raw="0" />
+          </div>
+
+          <div class="footer">
+
+                <div class="row" >
+                  <div class="col-xs-7 " style="width:48%;border: 1px solid black;">
+                    <t t-call="easy_invoice.report_easy_footer"/>
+                  </div>
+                  <div class="col-xs-7 " style="width:48%;border: 1px solid black;margin-left:30px;">
+                    <t t-call="easy_invoice.report_easy_footer"/>
+                  </div>
+                </div>
+          </div>
+      </template>
+
+
+    <template id="external_layout">
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+
+            <t t-call="easy_invoice.external_layout_standard">
+              <t t-raw="0"/>
+            </t>
+
+        </template>
+
+
+
+    <template id="report_easy_header">
+      <div class="headerx" style="font-size:10px;width:100%;" >
+
+            <div class="row" style="border-bottom:1px solid black;margin-top: 10px;">
+            <div class="col-xs-5 " name="company_address" style="font-size:12px;margin-left: 10px;">
+
+                <div class="row" style="height:50%;margin-left:10px;">
+                  <div class="col-xs-3 col-xs-offset-1" >
+                      <img t-if="doc.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(doc.company_id.logo)" style="height:50px;width:50px;"/>
+                  </div>
+                </div>
+                <div class="row">
+                <ul class="list-unstyled">
+                    <strong><li t-if="doc.company_id.name"><span t-field="doc.company_id.name"/></li></strong>
+                    <li t-if="doc.company_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.company_id.vat"/></li>
+                    <li t-if="doc.company_id.phone">Tel: <span t-field="doc.company_id.phone"/></li>
+                    <li t-if="doc.company_id.email"><span t-field="doc.company_id.email"/></li>
+                    <li t-if="doc.company_id.street"><span t-field="doc.company_id.street"/></li>
+                    <li t-if="doc.company_id.city">
+                      <span t-field="doc.company_id.city"/>
+                      <span t-field="doc.company_id.state_id"/>
+                      <span t-field="doc.company_id.zip"/>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="col-xs-2 " style="font-size:36px;padding-left: 10px;">
+              <div class="row" style="padding-top: 30px; ">
+                <t t-if="o.type == 'out_invoice'">
+                    <t t-if="o.subtype_invoice == 'invoice'">
+                      R
+                    </t>
+                    <t t-if="o.subtype_invoice == 'debit_note'">
+                      ND
+                    </t>
+                </t>
+                <t t-if="o.type == 'out_refund'">
+                    NC
+                </t>
+              </div>
+            </div>
+
+            <div class="col-xs-4 " style="padding-left: 20px;horizontal-align:right;">
+              <div class="row" style="font-size:10px;">
+              <ul class="list-unstyled">
+                <li style="font-size:16px">
+                <t t-if="doc.type == 'out_invoice'">
+                    <t t-if="doc.subtype_invoice == 'invoice'">
+                      REMITO
+                    </t>
+                    <t t-if="doc.subtype_invoice == 'debit_note'">
+                      REMITO DE DEBITO
+                    </t>
+                </t>
+                <t t-if="doc.type == 'out_refund'">
+                    REMITO DE CREDITO
+                </t>
+                </li>
+              <li style="font-size:10px">Documento no válido como Factura</li>
+              <li/>
+              <li style="font-size:15px">Número:<strong><span t-field="doc.name"/></strong></li>
+              <li style="font-size:13px">Fecha:<span t-field="doc.date_invoice"/></li>
+              </ul>
+              </div>
+              <div class="row" style="font-size:12px;padding-top: -24px;">
+                <ul class="list-unstyled">
+                  <li t-if="doc.company_id.main_id_number"> CUIT:<span t-field="doc.company_id.main_id_number"/></li>
+                  <li t-if="doc.company_id.gross_income_number"> IIBB:<span t-field="doc.company_id.gross_income_number"/></li>
+                  <li t-if="doc.company_id.start_date"> Inicio de Actividades:<span t-field="doc.company_id.start_date"/></li>
+                </ul>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="margin-top:8px; border-bottom:1px solid black;margin-top: 10px;">
+            <div class="col-xs-5 " name="company_address" style="font-size:12px;margin-left: 10px;">
+                  <div class="row">
+                  <ul class="list-unstyled">
+                    <li t-if="doc.partner_id.name">Señores:<strong><span t-field="doc.partner_id.name"/></strong></li>
+                    <li t-if="doc.partner_id.city">
+                      <span t-field="doc.partner_id.city"/>
+                      <span t-field="doc.partner_id.state_id"/>
+                      <span t-field="doc.partner_id.zip"/>
+                    </li>
+                    <li t-if="doc.partner_id.afip_responsability_type_id">
+                      <strong><span t-field="doc.partner_id.afip_responsability_type_id.name"/></strong>
+                    </li>
+                    <li t-if="doc.partner_id.main_id_number">
+                      <span t-field="doc.partner_id.main_id_category_id"/>-<span t-field="doc.partner_id.main_id_number"/>
+                    </li>
+                  </ul>
+
+                </div>
+                </div>
+                <div class="col-xs-6" style="font-size:11px;margin-left: 12px;">
+                  <ul class="list-unstyled" style="text-align: right;">
+                        <li t-if="doc.user_id"><strong>Comercial:</strong><span t-field="doc.user_id"/></li>
+
+                  <t t-if="doc.type == 'out_invoice'">
+                      <t t-if="doc.subtype_invoice == 'debit_note'">
+
+                        <li t-if="doc.user_id" ><strong>Motivo:</strong><span t-field="doc.type_debit_note"/></li>
+                        <li t-if="doc.user_id" style="text-align: right;font-size:9px;"><strong>Referencia:</strong><span t-field="doc.description_debit_note"/></li>
+
+
+                      </t>
+                  </t>
+                  <t t-if="doc.type == 'out_refund'">
+                    <li t-if="doc.user_id"><strong>Motivo:</strong><span t-field="doc.type_refund"/></li>
+                    <li t-if="doc.user_id" style="text-align: right;font-size:9px;"><strong>Referencia:</strong><span t-field="doc.description_refund"/></li>
+
+                  </t>
+                </ul>
+              </div>
+
+        </div>
+
+      </div>
+    </template>
+
+
+    <template id="report_easy_middle_page">
+      <div class="row"  style="padding-top: 10px;font-size:12px;width:105%;">
+
+            <table class="table table-condensed" style="width:100%;border-collapse:collapse;">
+                <thead>
+                    <tr class="border-black" style="border: 2px solid black;">
+                        <th style="width: 55%;">DETALLE</th>
+                        <th class="text-right">CANTIDAD</th>
+                        <th class="text-right">UNITARIO</th>
+                        <th class="text-right" groups="sale.group_show_price_subtotal">SUBTOTAL</th>
+
+                    </tr>
+                </thead>
+            <tbody class="sale_tbody" style="width:100%;">
+                    <t t-foreach="doc.invoice_line_ids" t-as="l">
+                            <tr style="height:80%;">
+                                <td style="width: 55%;">[<span t-field="l.product_id.default_code"/>]<span style="margin-left:2px;" t-field="l.product_id.name"/></td>
+
+                                <td class="text-right">
+                                    <span t-field="l.quantity" style="font-size:11px;"/>
+                                    <span t-field="l.uom_id" style="font-size:7px;" groups="product.group_uom"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="l.price_unit"/>
+                                </td>
+
+                                <td class="text-right" groups="sale.group_show_price_subtotal">
+                                    <span t-field="l.price_subtotal_signed"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+
+                            </tr>
+                        </t>
+                </tbody>
+            </table>
+
+              </div>
+
+        <div class="clearfix" style="padding: 0px;font-size:16px;width:100%;border:0px solid black;">
+            <div class="row" name="total" style="display: block; position: absolute; right: 30px; width: 50%;">
+                <div class="col-xs-7 pull-right" style="padding: 0px;font-size:16px;width:100%;">
+                    <table class="table table-condensed" style="padding: 0px;font-size:16px;width:100%;">
+
+
+                        <tr style="border-top: 2px solid black;">
+                            <td class="text-right" style="width: 80%;"><strong>Importe Total:</strong></td>
+                            <td class="text-right">
+                                <strong><span t-field="doc.amount_total_signed"
+                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_easy_footer">
+
+      <div class="foot" style="font-size:12px;width:100%;" >
+                      <div class="row" style="font-size:14px;margin-top:6px;">
+                        <div class="text-left" style="margin-left:15px;margin-bottom:6px;width:97%;">
+                          <strong>Observación:</strong><span t-field="doc.note"/>
+                         </div>
+                      </div>
+
+                     <div class="text-left" style="border-top: 0px solid black;font-size:12px;margin-top:6px;">
+                         Hora:<span t-esc="doc.get_server_datetime()" style="font-size:9px;width:90%;"/>
+                       </div>
+                     <div class="row" style="font-size:12px;width:100%;margin-left:0px;">
+
+                       <table class="table"  style="border: 2px solid black;">
+                           <tr style="border: 0px solid black;" >
+                             <td style="border: 0px solid white;border-right: 1px solid black;"></td>
+                             <td style="border: 0px solid white;border-right: 1px solid black;"></td>
+                             <td style="border: 0px solid white;border-right: 1px solid black;"></td>
+                             <td style="border: 0px solid white;font-size:10px;"><div style="margin-top:14px;">Hora Llegada</div></td>
+                           </tr>
+
+                           <tr style=" border: 0px solid white;border-bottom: 1px solid black;">
+                               <td style="border: 0px solid white;border-right: 1px solid black;"><div style="margin-top:8px;">Firma Control</div></td>
+                               <td style="border: 0px solid white;border-right: 1px solid black;"><div style="margin-top:8px;">Firma Chofer</div></td>
+                               <td style="border: 0px solid white;border-right: 1px solid black;"><div style="margin-top:8px;">Recibí Conforme. Firma y Aclaración</div></td>
+                               <td style="border: 0px solid white;border-top: 1px solid black;border-right: 1px solid black;;font-size:10px;"><div style="margin-top:14px;">Hora Salida</div></td>
+                           </tr>
+
+                       </table>
+
+                   </div>
+
+                   <div class="row" >
+                     <div class="text-center" style="border-bottom: 1px solid grey;">
+                      <span class="page"/> / <span class="topage"/>
+                   </div>
+                   </div>
+                 </div>
+
+    </template>
+
+    <template id="report_easyinvoice_document">
+        <t t-call="easy_invoice.external_layout">
+          <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})" />
+          <div class="page" >
+          <div class="oe_structure"/>
+              <div class="row" >
+                <div class="col-xs-7 " style="width:48%;">
+                       <t t-call="easy_invoice.report_easy_middle_page"/>
+                </div>
+                <div class="col-xs-7 " style="width:48%;margin-left:30px;">
+                       <t t-call="easy_invoice.report_easy_middle_page"/>
+                </div>
+              </div>
+
+              <div class="oe_structure"/>
+          </div>
+      </t>
+    </template>
+
+
+<template id="report_easy_invoice">
+    <t t-call="web.html_container">
+
+
+                <t t-foreach="docs" t-as="doc" >
+                  <t t-call="easy_invoice.report_easyinvoice_document" t-lang="doc.partner_id.lang"/>
+                </t>
+
+    </t>
+</template>
+
+
+
+
+</odoo>

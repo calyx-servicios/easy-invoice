@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+
+    <template id="report_easypaymentrecaudation_document" inherit_id="easy_invoice.report_easypayment_document">
+
+    <xpath expr="//div[@id='informations']" position="inside">
+        <t t-if="doc.recaudation_id">
+            <div  class="col-xs-3">
+                    <strong>Recaudation :</strong>
+                    <p t-field="doc.recaudation_id"/>
+            </div>
+        </t>
+        <t t-if="doc.recaudation_history_id">
+            <div  class="col-xs-3">
+                    <strong>Recaudation History:</strong>
+                    <p t-field="doc.recaudation_history_id"/>
+            </div>
+        </t>
+    </xpath>
+
+    </template>
+
+
+
+</odoo>

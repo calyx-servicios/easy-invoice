@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="easy_invoice" model="ir.module.category">
+            <field name="name">Easy Invoice</field>
+            <field name="sequence">1</field>
+            <field name="description">Easy Invoice Category</field>
+        </record>
+
+        <record id="easy_invoice_hr_group" model="res.groups">
+            <field name="name">HR Easy Invoice</field>
+            <field name="category_id" ref="easy_invoice"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+        <record id="easy_invoice_user_group" model="res.groups">
+            <field name="name">User Easy Invoice</field>
+            <field name="category_id" ref="easy_invoice"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="implied_ids" eval="[(4, ref('easy_invoice_hr_group'))]"/>
+        </record>
+
+        <record id="easy_invoice_responsible_group" model="res.groups">
+            <field name="name">Responsible Easy Invoice</field>
+            <field name="category_id" ref="easy_invoice"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="implied_ids" eval="[(4, ref('easy_invoice_user_group'))]"/>
+        </record>
+
+        <record id="easy_invoice_responsible_price_group" model="res.groups">
+            <field name="name">Responsible Price Easy Invoice </field>
+            <field name="category_id" ref="easy_invoice"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+            <field name="implied_ids" eval="[(4, ref('easy_invoice_responsible_group'))]"/>
+        </record>
+
+    </data>
+</odoo>

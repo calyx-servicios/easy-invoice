@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+<!-- Transfer -->
+<record id="print_salary_advancement" model="ir.actions.report">
+    <field name="name">Print Salary Advancement</field>
+    <field name="model">easy.employee.cc</field>
+    <field name="report_name">print_salary_advancement</field>
+    <field name="report_type">aeroo</field>
+    <field name="in_format">oo-odt</field>
+    <field name="report_file">easy_invoice_employee_cc/report/print_salary_advancement.odt</field>
+    <field name="tml_source">file</field>
+    <field name="out_format" ref="report_aeroo.report_mimetypes_pdf_odt"/>
+</record>
+
+
+
+
+
+</odoo>

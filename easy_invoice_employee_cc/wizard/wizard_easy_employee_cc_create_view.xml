@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model='ir.ui.view' id='view_wizard_easy_employee_cc_create_form'>
+        <field name='name'>wizard.easy.employee.cc.create.form</field>
+        <field name='model'>wizard.easy.employee.cc.create</field>
+        <field name='arch' type='xml'>
+            <form string="Salary/Advancement" >
+                <group>
+                    <group>
+                        <field name="easy_employe_cc_settlement_id" options="{'no_create': True}"
+                            domain="[('state', '=', 'open')]" required="1"/>
+                        <field name="type" invisible="1"/>
+                        <field name="easy_movement" invisible="1"/>
+                        <field name="amount"/>
+                        <field name="recaudation_id" 
+                            attrs="{'required': [('easy_movement', 'not in', ['no'])],'invisible': [('easy_movement', 'in', ['no'])]}"
+                            options="{'no_create': True}"
+                            domain="[('user_ids','in',[uid]),('state', '=', 'open')]"  />
+                    </group>
+                    <group>
+                        <field name="date" required="1" />
+                        <field name="date_contable" required="1" />
+                        <field name="name" required="1" />
+                        <field name="partner_id" invisible="1" />
+                        <field name="employee_id" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                   <button name='create_move' string='Create Move'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_wizard_easy_employee_cc_create">
+        <field name="name">Make Salary/Advancement</field>
+        <field name="res_model">wizard.easy.employee.cc.create</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    
+</odoo>

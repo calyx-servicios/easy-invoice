@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="easy_invoice_customer_account_report.internal_layout">
+
+    <!-- <div class="header">
+            
+                    <div class="row" >
+                        <div class="col-xs-3 col-xs-offset-1" >
+                            <img t-if="o.company_id.logo" t-att-src="'data:image/png;base64,%s' % to_text(o.company_id.logo)" style="height:30px;width:30px;"/>
+                        </div>
+                </div>
+        </div> -->
+            
+    <div class="article">
+        <link href="/easy_invoice_customer_account_report/static/src/css/report.css" rel="stylesheet"/>
+      <t t-raw="0" />
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="col-xs-6 custom_footer">
+                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+            </div>
+            <div class="col-xs-6 text-right custom_footer">
+                <ul class="list-inline">
+                    <li><span class="page"/></li>
+                    <li>/</li>
+                    <li><span class="topage"/></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+</odoo>
+

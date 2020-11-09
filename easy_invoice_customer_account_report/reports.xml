@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <report
+  id="action_report_customer_account_qweb"
+  model="report_customer_account"
+  string="Customer Account Report QWEB"
+  report_type="qweb-pdf"
+  name="easy_invoice_customer_account_report.customer_account_report_qweb"
+  file="easy_invoice_customer_account_report.customer_account_report_qweb"
+  />
+
+<report
+  id="action_report_customer_account_html"
+  model="report_customer_account"
+  string="Customer Account Report HTML"
+  report_type="qweb-html"
+  name="easy_invoice_customer_account_report.customer_account_report_qweb"
+  file="easy_invoice_customer_account_report.customer_account_report_html"
+  />
+
+
+
+
+  <record id="action_report_customer_account_xlsx" model="ir.actions.report">
+      <field name="name">Customer Account XLSX</field>
+      <field name="model">report_customer_account</field>
+      <field name="type">ir.actions.report</field>
+      <field name="report_name">report_customer_account_xlsx</field>
+      <field name="report_type">xlsx</field>
+      <field name="report_file">report_customer_account</field>
+  </record>
+
+
+
+</odoo>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="easy_employee_cc_import_tree" model="ir.ui.view">
+            <field name="name">easy.employee.cc.import.tree</field>
+            <field name="model">easy.employee.cc.import</field>
+            <field name="arch" type="xml">
+                <tree string="Easy Employee Cc Import">
+                    <field name="date"/>
+                    <field name="date_contable"/>
+                    <field name="settlement_id"/>
+                    <field name="quantity"/>
+                    <field name="import_line_ids"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="easy_employee_cc_import_form" model="ir.ui.view">
+            <field name="name">easy.employee.cc.import.form</field>
+            <field name="model">easy.employee.cc.import</field>
+            <field name="arch" type="xml">
+                <form string="Easy Employee Cc Import">
+                    <header>
+                        <button class="oe_highlight" name="draft2confirm" states="draft" string="Confirm" type="object"/>
+                        <button class="oe_highlight" name="confirm2draft" string="Back to Draft" type="object" states="confirm"/>
+                        <button class="oe_highlight" name="confirm2processed" states="confirm" string="Process" type="object"/>
+                        <field name="state" nolabel="1" statusbar_visible="draft,confirm,processed" widget="statusbar"/>
+                    </header>
+                    <sheet string="Easy Employee Cc Import">
+                        <group>
+                            <group>
+                                <field attrs="{'readonly':[('state', 'not in', ['draft'])] }" name="name" required="1"/>
+                                <field attrs="{'readonly':[('state', 'not in', ['draft'])] }" name="date" required="1"/>
+                                <field attrs="{'readonly':[('state', 'not in', ['draft'])] }" name="date_contable" required="1"/>
+                                <field attrs="{'required': [('easy_movement', 'not in', ['no'])],'invisible': [('easy_movement', 'in', ['no'])]}" domain="[('user_ids','in',[uid]),('state', '=', 'open')]" name="recaudation_id" options="{'no_create': True}"/>
+                                <field invisible="1" name="easy_movement"/>
+                            </group>
+                            <group>
+                                <field attrs="{'readonly':[('state', 'not in', ['draft'])] }" name="import_file" required="1"/>
+                                <field attrs="{'readonly':[('state', 'not in', ['draft'])] }" name="settlement_id" required="1"/>
+                                <field name="quantity" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="line_create_page" string="Lines">
+                                <field name="import_line_ids" readonly="1">
+                                    <tree editable="bottom" string="Partner CC">
+                                        <field name="name"/>
+                                        <field name="employee_id"/>
+                                        <field name="amount" sum="Total"/>
+                                        <field name="cc_line_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_easy_employee_cc_import" model="ir.actions.act_window">
+            <field name="name">Easy Employee Cc Import</field>
+            <field name="res_model">easy.employee.cc.import</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <!-- 
+            <field name="domain">['|',('customer','=',True),('supplier','=',True)]</field>-->
+        </record>
+        <record id="action_easy_employee_cc_import_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_employee_cc_import_tree"/>
+            <field name="act_window_id" ref="action_easy_employee_cc_import"/>
+        </record>
+        <record id="action_easy_employee_cc_import_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_employee_cc_import_form"/>
+            <field name="act_window_id" ref="action_easy_employee_cc_import"/>
+        </record>
+        <menuitem action="action_easy_employee_cc_import" 
+                  id="submenu_action_easy_employee_cc_import" 
+                  groups="easy_invoice.easy_invoice_responsible_group"
+                  parent="easy_invoice_employee_cc.menu_action_easy_hr_employee_cc" 
+                  sequence="20"/>
+    </data>
+</odoo>

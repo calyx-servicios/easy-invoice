@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+    <odoo>
+
+        <record id="hr_sale_order_invoice_confirm_form_view" model="ir.ui.view">
+            <field name="name">sale.order.invoice.confirm.form</field>
+            <field name="model">sale.order.invoice.confirm</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Action Confirm" class="o_expense_form">
+                    <footer>
+                        <button string='Confirm All Invoice' name="action_confirm" type="object" class="btn-primary"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sale_order_invoice_confirm">
+            <field name="name">Invoice Action Confirm</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order.invoice.confirm</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hr_sale_order_invoice_confirm_form_view"/>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+        </record>
+<!-- 
+        <record id="ir_sale_order_invoice_confirm" model="ir.values">
+            <field name="key2">client_action_multi</field>
+            <field name="model">sale.order</field>
+            <field name="name">Easy Invoice Confirm</field>
+            <field name="key">action</field>
+            <field name="value" eval="'ir.actions.act_window,%d'%action_sale_order_invoice_confirm" />
+        </record>
+
+
+        <record id="action_view_sale_advance_payment_inv" model="ir.actions.act_window">
+            <field name="name">Invoice Order</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.advance.payment.inv</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>
+           
+            <field name="binding_model_id" ref="sale.model_sale_order" />
+        </record>
+
+         -->
+
+</odoo>

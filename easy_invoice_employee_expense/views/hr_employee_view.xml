@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+
+    <record id="easy_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.expense.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="easy_invoice_employee_cc.easy_hr_employee_form" />
+        <field name="arch" type="xml">
+            <page name="partner_cc_page" position="after">
+                <page name="expense_line_ids_page" string="Expense" >
+                    <field name="expense_line_ids" readonly="1">
+                        <tree string="Easy Employee Expense">
+                            <field name="date" />
+                            <field name="amount_expense" />
+                            <field name="state"  />
+                            <field name="description"  />
+                        </tree>
+                    </field>
+                </page> 
+            </page>
+        </field>
+    </record>
+    
+
+
+  </data>
+</odoo>

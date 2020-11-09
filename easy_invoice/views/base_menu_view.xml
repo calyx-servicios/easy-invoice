@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem
+            id="menu_ei_root"
+            name="Easy Invoices"
+            web_icon="easy_invoice,static/menu_icon/icon.png"
+            sequence="30"
+            groups="easy_invoice.easy_invoice_hr_group,easy_invoice.easy_invoice_user_group,easy_invoice.easy_invoice_responsible_group"/>
+
+            <menuitem
+                id="customer_menu"
+                name="Customer Invoices"
+                parent="menu_ei_root"
+                sequence="10"/>
+
+            <menuitem
+                id="vendor_menu"
+                name="Supplier Invoices"
+                parent="menu_ei_root"
+                sequence="20"/>
+
+    </data>
+</odoo>
+
+

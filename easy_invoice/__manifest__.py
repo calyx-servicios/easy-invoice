@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+{
+    "name": "Easy Invoice Base",
+    "summary": """
+        Mecanismo simple facturacion rapida """,
+    "description": """
+    """,
+    "author": "Calyx",
+    "website": "http://www.calyxservicios.com.ar",
+    "category": "Easy Invoice",
+    "version": "11.0.1.0.0",
+    "depends": [
+        "base_setup",
+        "base",
+        "l10n_ar_afipws_fe",
+        "l10n_ar_aeroo_einvoice",
+        "report_aeroo_extra_function",
+        "product",
+        "analytic",
+        "web_planner",
+        "portal",
+    ],
+    "data": [
+        "security/security.xml",
+        "security/ir.model.access.csv",
+        "report/paperformat.xml",
+        "report/invoice_template.xml",
+        "report/invoice_report.xml",
+        "report/shipment_template.xml",
+        "report/shipment_report.xml",
+        "report/payment_template.xml",
+        "report/payment_report.xml",
+        'report/payment_group_template.xml',
+        'report/payment_group_report.xml',
+        "views/base_menu_view.xml",
+        "views/easy_invoice_view.xml",
+        "views/easy_payment_group_view.xml",
+        "wizard/easy_invoice_confirm_view.xml",
+    ],
+}

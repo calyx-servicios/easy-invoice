@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <record model='ir.ui.view' id='view_wizard_easy_employee_cc_confirm_form'>
+        <field name='name'>wizard.easy.employee.cc.confirm.form</field>
+        <field name='model'>wizard.easy.employee.cc.confirm</field>
+        <field name='arch' type='xml'>
+            <form string="Confirm Salary" >
+                <group>
+                    <group>
+                        <field name="amount" required="1"/>  
+                        <field name="amount_total" readonly="1"/>       
+                    </group>
+                    <group>
+                        <field name="recaudation_id"  required="1"
+                            domain="[('user_ids','in',[uid]),('state', '=', 'open')]"  />
+                    </group>
+                </group>
+                <footer>
+                   <button name='create_move' string='Create Move'  class='oe_highlight' type='object'/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="act_wizard_easy_employee_cc_confirm">
+        <field name="name">Confirm Salary</field>
+        <field name="res_model">wizard.easy.employee.cc.confirm</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    
+</odoo>

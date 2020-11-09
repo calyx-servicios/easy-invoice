@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_easy_partner_cc_user,access_easy_partner_cc,model_easy_partner_cc,easy_invoice.easy_invoice_user_group,1,1,0,0
+access_easy_partner_cc_resp,access_easy_partner_cc,model_easy_partner_cc,easy_invoice.easy_invoice_responsible_group,1,1,1,1

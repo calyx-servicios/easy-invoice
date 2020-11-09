@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="easy_invoice_customer_form_inherit" model="ir.ui.view">
+        <field name="model">easy.invoice</field>
+        <field name="name">easy.invoice.customer.form</field>
+        <field name="inherit_id" ref="easy_invoice.easy_invoice_customer_form" />
+        <field name="arch" type="xml">
+            
+            <xpath expr="//field[@name='user_id']"  position="after">
+                <field name="pricelist_id"  />
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_unit']"  position="after">
+              <field name="price_unit_show" invisible="True"/>
+            </xpath>
+
+
+
+        </field>
+    </record>
+
+  </data>
+</odoo>

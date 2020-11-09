@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_easy_invoice_user,access_easy_invoice_cash_register,model_easy_invoice_cash_register,easy_invoice.easy_invoice_responsible_group,1,1,1,1

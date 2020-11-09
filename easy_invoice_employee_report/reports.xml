@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <report id="action_report_employee_qweb"
+    model="report_employee"
+    string="Employee Report QWEB"
+    report_type="qweb-pdf"
+    name="easy_invoice_employee_report.employee_report_qweb"
+    file="easy_invoice_employee_report.employee_report_qweb"
+  />
+
+  <report id="action_report_employee_html"
+    model="report_employee"
+    string="Employee Report HTML"
+    report_type="qweb-html"
+    name="easy_invoice_employee_report.employee_report_qweb"
+    file="easy_invoice_employee_report.employee_report__html"
+  />
+
+  <record id="action_report_employee_xlsx" model="ir.actions.report">
+    <field name="name">Employee XLSX</field>
+    <field name="model">report_employee</field>
+    <field name="type">ir.actions.report</field>
+    <field name="report_name">report_employee_xlsx</field>
+    <field name="report_type">xlsx</field>
+    <field name="report_file">report_employee</field>
+  </record>
+
+</odoo>

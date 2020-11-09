@@ -1,0 +1,34 @@
+<odoo>
+    <data>
+        <record id="easy_invoice_customer_form_inherit" model="ir.ui.view">
+            <field name="model">easy.invoice</field>
+            <field name="name">easy.invoice.customer.form</field>
+            <field name="inherit_id" ref="easy_invoice.easy_invoice_customer_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="after">
+                    <button name="%(action_wizard_edit_analytic_account)d" 
+                        string="Edit Analytic Account" 
+                        type="action" class="oe_highlight" 
+                        context="{'default_invoice_line_id':id}" 
+                        attrs="{'invisible':[('invoice_state', 'in', ['draft'])]}" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="easy_invoice_supplier_form_inherit" model="ir.ui.view">
+            <field name="model">easy.invoice</field>
+            <field name="name">easy.invoice.supplier.form</field>
+            <field name="inherit_id" ref="easy_invoice.easy_invoice_supplier_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="after">
+                    <button name="%(action_wizard_edit_analytic_account)d" 
+                        string="Edit Analytic Account"
+                        type="action" class="oe_highlight" 
+                        context="{'default_invoice_line_id':id}" 
+                        attrs="{'invisible':['|',('invoice_state', 'in', ['draft']), ('analytic_line_id','=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

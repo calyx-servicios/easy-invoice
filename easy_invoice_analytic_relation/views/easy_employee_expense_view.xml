@@ -1,0 +1,22 @@
+<odoo>
+  <data>
+
+
+    <record id="easy_employee_expense_form_inherit" model="ir.ui.view">
+        <field name="model">easy.employee.expense</field>
+        <field name="name">easy.employee.expense.form</field>
+        <field name="inherit_id" ref="easy_invoice_employee_expense.easy_employee_expense_form" />
+        <field name="arch" type="xml">
+            <field name="recaudation_id" position="after">
+                <field name="analytic_account_id" attrs="{'readonly': [('state', '!=', 'draft')]}"  />
+                <field name="product_id" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+            </field>
+            
+        </field>
+    </record>
+
+
+
+
+  </data>
+</odoo>

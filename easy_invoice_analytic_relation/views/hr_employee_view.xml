@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+
+    <record id="easy_hr_employee_form_inherit" model="ir.ui.view">
+        <field name="model">hr.employee</field>
+        <field name="name">Hr Employee Inherit</field>
+        <field name="inherit_id" ref="easy_invoice_employee_cc.easy_hr_employee_form" />
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//field[@name='identification_id']" position="after">
+                <group>
+                    <field name="analytic_account_id" />
+                    <field name="product_id"  />
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+  </data>
+</odoo>

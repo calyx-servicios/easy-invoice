@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+
+
+        <record model="ir.ui.view" id="view_easy_invoice_analysis_report_tree_inherit">
+            <field name="name">easy_invoice_analysis_report_tree_inherit</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="inherit_id" ref="easy_invoice_analysis.view_easy_invoice_analysis_report_tree"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='date']" position="after">
+                <field name="type_refund"/>
+            </xpath>
+            </field>
+        </record>
+
+        <record id="view_easy_invoice_analysis_report_filter_inherit" model="ir.ui.view">
+            <field name="name">easy_invoice_analysis_report_select_inherit</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="inherit_id" ref="easy_invoice_analysis.view_easy_invoice_analysis_report_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="type_refund"/>
+                </xpath>
+                <xpath expr="//search/filter[1]" position="after">                    
+                        <filter string="Type Refund" icon="terp-partner" domain="[]" context="{'group_by':'type_refund'}" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

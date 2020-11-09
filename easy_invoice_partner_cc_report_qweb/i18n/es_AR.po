@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_partner_cc_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-01 09:44+0000\n"
+"PO-Revision-Date: 2019-11-01 09:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_partner_cc_report
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc_report.report_res_partner_cc_body
+msgid "<br/>\n"
+"                            Total Débitos:"
+msgstr "<br/>\n"
+"                            Total Débitos:"
+
+
+#. module: easy_invoice_partner_cc_report
+#: model:ir.model,name:easy_invoice_partner_cc_report.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: easy_invoice_partner_cc_report
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc_report.report_res_partner_cc_body
+msgid "Facturas Easy:"
+msgstr "Facturas Easy:"
+
+#. module: easy_invoice_partner_cc_report
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc_report.report_res_partner_cc_body
+msgid "Facturas:"
+msgstr "Facturas:"
+
+#. module: easy_invoice_partner_cc_report
+#: model:ir.actions.report,name:easy_invoice_partner_cc_report.action_report_res_partner_cc
+msgid "Print Report Partner CC"
+msgstr "Imprimir Reporte de Cuenta Corriente"
+
+#. module: easy_invoice_partner_cc_report
+#: model:ir.ui.view,arch_db:easy_invoice_partner_cc_report.report_res_partner_cc_body
+msgid "Total Créditos:"
+msgstr "Total Créditos:"

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="employee_report_wizard" model="ir.ui.view">
+        <field name="name">Employee Report Wizard</field>
+        <field name="model">employee.report.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div>
+                    <group name="filters">
+                        <group name="date_range">
+                            <field name="date_range_id" />
+                            <field name="date_from" />
+                            <field name="date_to" />
+                        </group>
+                    </group>
+                    <group name="company_filter" col="4">
+                            <label for="company_ids" colspan="4" />
+                            <field name="company_ids" nolabel="1" widget="many2many_tags" options="{'no_create': True}" colspan="4" />
+                        </group>
+                    <group name="settlement_filter" >
+                        <group name="settlements">
+                            <field name="settlement_type"   />
+                            <field name="easy_employe_cc_settlement_ids" widget="many2many_tags"  options="{'no_create': True}" />
+                        </group>
+                    </group>
+                    <group name="account_filter" col="4">
+                        <label for="account_ids" colspan="4" />
+
+                        <field name="account_ids" nolabel="1" widget="many2many_tags" options="{'no_create': True}" colspan="4" />
+                    </group>
+                    <group name="description_filter" col="4">
+                        <label for="description" colspan="1" />
+
+                        <field name="description" nolabel="1" colspan="4" />
+                    </group>
+                    <group name="detail_filter" col="1">
+                        <group>
+                            <field name="detail" />
+                        </group>
+                    </group>
+                </div>
+                <footer>
+                    <div>
+                        <button name="button_export_html" string="View" type="object" default_focus="1" class="oe_highlight" />
+                        or
+                        <button name="button_export_xlsx" string="Export XLSX" type="object" default_focus="1" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="easy_invoice.employee_report_wizard" 
+                name="Employee Report" 
+                res_model="employee.report.wizard" 
+                view_type="form" 
+                view_mode="form" 
+                view_id="employee_report_wizard" 
+                target="new"
+                groups="easy_invoice.easy_invoice_responsible_group"
+    />
+
+    <menuitem id="easy_invoice_employee_report.employee_report_wizard_submenu" 
+              name="Employee Report"
+              parent="easy_invoice_employee_cc.menu_action_easy_hr_employee_cc"
+              action="easy_invoice.employee_report_wizard"
+              groups="easy_invoice.easy_invoice_responsible_group"
+    />
+
+</odoo>

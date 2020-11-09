@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+
+        <record id="easy_partner_cc_tree" model="ir.ui.view">
+            <field name="name">easy.partner.cc.tree</field>
+            <field name="model">easy.partner.cc</field>
+            <field name="arch" type="xml">
+                <tree string="Anticipe/Advancement" create="false" delete="false">
+                    <field name="date" />
+                    <field name="partner_id" />
+                    <field name="amount_anticipe" sum="Total" />
+                    <field name="amount_advancement" sum="Total" />
+                    <field name="description"  />
+                    <field name="user_id"  />    
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="easy_partner_cc_form" model="ir.ui.view">
+            <field name="name">easy.partner.cc.customer.form</field>
+            <field name="model">easy.partner.cc</field>
+            <field name="arch" type="xml">
+                <form string="Anticipe/Advancement" >
+                    <header>
+                        <button name="cancel_anticipe_advancement" type="object" states="open" string="Cancel" class="oe_highlight"/>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="open,cancel"/>
+                    </header>
+                    <sheet string="Anticipe/Advancement">
+                        <group>
+                            <group>     
+                                <field name="date" readonly="1" />
+                                <field name="partner_id" readonly="1"/>
+                                <field name="amount_anticipe"  readonly="1"/>
+                                <field name="amount_advancement"  readonly="1"/>
+                        <button name="%(easy_invoice_partner_cc.print_anticipe_advancement)d" icon="fa-print" type="action"/>
+                            </group>
+                            <group>
+                                <field name="user_id"  readonly="1" />    
+                                <field name="description" readonly="1" />
+                            </group>
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_easy_partner_cc_customer_tree" model="ir.actions.act_window">
+            <field name="name">Anticipe</field>
+            <field name="res_model">easy.partner.cc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('amount_anticipe','!=',0.0)]</field>
+        </record>
+
+        <record id="action_easy_partner_cc_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_partner_cc_tree"/>
+            <field name="act_window_id" ref="action_easy_partner_cc_customer_tree"/>
+        </record>
+
+        <record id="action_easy_partner_cc_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_partner_cc_form"/>
+            <field name="act_window_id" ref="action_easy_partner_cc_customer_tree"/>
+        </record>
+
+        
+        <menuitem action="action_easy_partner_cc_customer_tree" id="submenu_action_easy_partner_cc_customer_tree" 
+            parent="menu_action_easy_res_partner_cc_customer" sequence="20"/>
+ <!--  -->
+
+        <record id="action_easy_partner_cc_supplier_tree" model="ir.actions.act_window">
+            <field name="name">Advancement</field>
+            <field name="res_model">easy.partner.cc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('amount_advancement','!=',0.0)]</field>
+        </record>
+
+        <record id="action_easy_partner_cc_tree_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_partner_cc_tree"/>
+            <field name="act_window_id" ref="action_easy_partner_cc_supplier_tree"/>
+        </record>
+
+        <record id="action_easy_partner_cc_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_partner_cc_form"/>
+            <field name="act_window_id" ref="action_easy_partner_cc_supplier_tree"/>
+        </record>
+
+        
+        <menuitem action="action_easy_partner_cc_supplier_tree" id="submenu_action_easy_partner_cc_supplier_tree" 
+            parent="menu_action_easy_res_partner_cc_supplier" sequence="20"/>
+  </data>
+</odoo>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="external_layout_standard">
+        <div class="header">
+            <div class="row">
+                <div class="col-xs-7 " style="width:48%;">
+                    <t t-call="easy_invoice_employee_cc.report_easy_advance_payment_header"/>
+                </div>
+                <div class="col-xs-7 " style="width:48%;margin-left:30px;">
+                    <t t-call="easy_invoice_employee_cc.report_easy_advance_payment_header"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="article o_report_layout_standard">
+            <t t-raw="0" />
+        </div>
+
+        <div class="footer">
+            <div class="row">
+                <div class="col-xs-7 " style="width:48%;">
+                    <t t-call="easy_invoice_employee_cc.report_easy_advance_payment_footer"/>
+                </div>
+                <div class="col-xs-7 " style="width:48%;margin-left:30px;">
+                    <t t-call="easy_invoice_employee_cc.report_easy_advance_payment_footer"/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="external_layout">
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
+
+        <t t-call="easy_invoice_employee_cc.external_layout_standard">
+            <t t-raw="0"/>
+        </t>
+
+    </template>
+
+
+
+    <template id="report_easy_advance_payment_header">
+        <div class="headerx" style="font-size:10px;width:100%;">
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-xs-5 " name="company_address" style="font-size:12px;margin-left: 10px;">
+                    <div class="row" style="height:50%;margin-left:10px;">
+                        <div class="col-xs-3 col-xs-offset-1">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="height:50px;width:50px;"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <ul class="list-unstyled">
+                            <li t-if="company.name">
+                                <span t-field="company.name"/>
+                            </li>
+                            <li t-if="company.vat">
+                                <t t-esc="company.country_id.vat_label or 'TIN'"/>
+                                <span t-field="company.vat"/>
+                            </li>
+                            <li t-if="company.email">
+                                <span t-field="company.email"/>
+                            </li>
+                            <li t-if="company.street">
+                                <span t-field="company.street"/>
+                            </li>
+                            <li t-if="company.city">
+                                <span t-field="company.city"/>
+                                <span t-field="company.state_id"/>
+                                <span t-field="company.zip"/>
+                            </li>
+                            <li>Tel: <span t-field="company.phone"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 " style="font-size:30px;padding-left: 10px;">
+                    <div class="row" style="padding-top: 20px; ">
+                        <ul class="list-unstyled">
+                            <li class="text-center">
+                                <strong>X</strong>
+                            </li>
+                            <li style="font-size:8px">Documento no válido como Factura</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xs-4 " style="padding-left: 20px;horizontal-align:right;">
+                    <div class="row" style="font-size:12px;">
+                        <ul class="list-unstyled">
+                            <li style="font-size:16px">
+                                <span>
+                                    <strong>RECIBO DE SUELDOS</strong>
+                                </span>
+                            </li>
+                            <li t-if="doc.date" class="text-center">Fecha: <span t-field="doc.date"/>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+
+    <template id="report_easy_advance_payment_middle_page">
+
+        <div class="row" style="padding-top:15px;font-size:12px;width:105%;">
+
+            <table class="table table-condensed" style="border: 1px solid black;">
+                <tbody>
+                    <tr>
+                        <td class="text-left" style="padding-left:15px;padding-bottom:10px;padding-top: 10px;border-top: 1px solid black;width: 20%;">
+                            <strong>EMPLEADO</strong>
+                        </td>
+                        <td class="text-left" style="padding-left:15px;padding-bottom:10px;padding-top: 10px;border-top: 1px solid black;">
+                            <span t-field="doc.employee_id.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left" style="padding-left:15px;padding-bottom:10px;border-top: none;width: 20%;">
+                            <strong>MOTIVO</strong>
+                        </td>
+                        <td class="text-left" style="padding-left:15px;padding-bottom:10px;border-top: none;">
+                            <span t-field="doc.easy_employe_cc_settlement_id.name"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row" style="margin-top:-15px;font-size:12px;width:105%;">
+
+            <table class="table table-condensed" style="border: 1px solid black;">
+                <thead>
+                    <tr>
+                        <th class="text-center" colspan="2" style="background:#9b9b9b">Medios de Pago</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-right" colspan="2" style="background:#cdcdcd">
+                            <strong>Importe</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">
+                            Efectivo
+                        </td>
+                        <td class="text-right">
+                            <t t-if="doc.amount_salary > 0">
+                                <span t-field="doc.amount_salary"/>
+                            </t>
+                            <t t-if="doc.amount_advancement > 0">
+                                <span t-field="doc.amount_advancement"/>
+                            </t>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" colspan="2" style="background:#cdcdcd">
+                            <t t-if="doc.amount_salary > 0">
+                                <span style="padding-right:5px;">
+                                    <strong>Total Pagado</strong>
+                                </span>
+                                <span t-field="doc.amount_salary" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' style="padding-right: 20px;"/>
+                            </t>
+                            <t t-if="doc.amount_advancement > 0">
+                                <span style="padding-right:5px;">
+                                    <strong>Total Pagado</strong>
+                                </span>
+                                <span t-field="doc.amount_advancement" t-options='{"widget": "monetary", "display_currency": doc.currency_id}' style="padding-right: 20px;"/>
+                            </t>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </template>
+
+    <template id="report_easy_advance_payment_footer">
+
+        <div class="row" style="width:105%;">
+
+            <table class="table table-condensed" style="border:none;">
+                <tbody>
+                    <tr>
+                        <td class="text-left" style="border:none;padding-left: 30px;font-size:12px;">
+                            RECIBI CONFORME
+                        </td>
+                        <td class="text-right" style="border:none;padding-right: 200px;">
+                            Firma:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text-right" style="border:none;padding-right: 200px;font-size:16px;" colspan="2">
+                            Aclaración:
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </template>
+
+    <template id="report_easyinvoice_advance_payment_document">
+        <t t-call="easy_invoice_employee_cc.external_layout">
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.employee_id.address_id.lang})" />
+            <div class="page">
+                <div class="oe_structure"/>
+                <div class="row">
+                    <div class="col-xs-7 " style="width:45%;">
+                        <t t-call="easy_invoice_employee_cc.report_easy_advance_payment_middle_page"/>
+                    </div>
+                    <div class="col-xs-7 " style="width:45%;margin-left:60px;">
+                        <t t-call="easy_invoice_employee_cc.report_easy_advance_payment_middle_page"/>
+                    </div>
+                </div>
+
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="report_easy_invoice_employee_advance_payment">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="easy_invoice_employee_cc.report_easyinvoice_advance_payment_document" t-lang="doc.employee_id.address_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

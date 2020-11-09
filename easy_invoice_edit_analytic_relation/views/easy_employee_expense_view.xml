@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+
+
+    <record id="easy_employee_expense_form_inherit" model="ir.ui.view">
+        <field name="model">easy.employee.expense</field>
+        <field name="name">easy.employee.expense.form</field>
+        <field name="inherit_id" ref="easy_invoice_analytic_relation.easy_employee_expense_form_inherit" />
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <button name="%(action_wizard_edit_analytic_account)d" string="Edit Analytic Account" type="action" class="oe_highlight"  
+
+                    attrs="{'invisible':[('state', 'not in', ['rendig'])]}" 
+                    context="{'default_employee_expense_id':id}"/>
+               
+            </field>
+            
+        </field>
+    </record>
+
+<!-- 
+                    groups="easy_invoice.easy_invoice_responsible_group" 
+
+ -->
+  </data>
+</odoo>

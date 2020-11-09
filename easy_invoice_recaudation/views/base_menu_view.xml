@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+            <menuitem
+	            id="submenu_box"
+	            name="SubMenu Box"
+                parent="easy_invoice.menu_ei_root"
+	            sequence="50"/>
+
+    </data>
+</odoo>
+
+

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="income_statements_report_assets_backend"
+            name="income_statements_report assets" inherit_id="web.assets_backend">
+      <xpath expr="." position="inside">
+          <link href="/easy_invoice_income_statements/static/src/css/report.css" rel="stylesheet"/>
+          <script type="text/javascript"
+                  src="/easy_invoice_income_statements/static/src/js/income_statements_report_backend.js"/>
+          <script type="text/javascript"
+                  src="/easy_invoice_income_statements/static/src/js/income_statements_report_widgets.js"/>
+      </xpath>
+  </template>
+
+    <template id="easy_invoice_income_statements.income_statements_report_qweb">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="easy_invoice_income_statements.internal_layout">
+                    <t t-call="easy_invoice_income_statements.income_statements_report_base"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="easy_invoice_income_statements.income_statements_report_base">
+
+        <!-- Defines global variables used by internal layout -->
+        <t t-set="title"> Income Statements - <t t-raw="o.company_id.name"/> - <t t-raw="o.company_id.currency_id.name"/></t>
+        <t t-set="company_name" t-value="o.company_id.name"/>
+        <t t-set="res_company" t-value="o.company_id"/>
+        <div class="page">
+            <div class="row">
+                <h4 class="mt0" t-esc="title or 'Odoo Report'" style="text-align: center;"/>
+            </div>
+            <!-- Display filters -->
+            <t t-call="easy_invoice_income_statements.income_statements_report_filters"/>
+            <div class="act_as_table list_table" style="margin-top: 10px;"/>
+
+            <!-- Display account lines -->
+
+            <div class="act_as_table data_table" style="width: 100%;">
+                <!-- Display account header -->
+                <t t-call="easy_invoice_income_statements.income_statements_report_lines_header"/>
+
+                <!-- Display each lines -->
+                <t t-foreach="o.category_ids.filtered(lambda a: not a.hide_category)" t-as="category">
+                    <!-- Display account lines -->
+                    <!-- <t t-set="style" t-value="'font-size: ' + str(14 - category.category_id.level) + 'px; margin-left: ' + str(category.category_id.level* 4) + 'px;'"/> -->
+                    <t t-call="easy_invoice_income_statements.report_income_statements_category"/>
+                    <!-- Adapt style -->
+                </t>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="easy_invoice_income_statements.income_statements_report_filters">
+        <div class="act_as_table data_table" style="width: 100%;">
+            <div class="act_as_row labels">
+                <div class="act_as_cell">Date range filter</div>
+
+            </div>
+            <div class="act_as_row">
+                <div class="act_as_cell">
+                    From: <span t-field="o.date_from"/> To: <span t-field="o.date_to"/>
+                </div>
+
+            </div>
+
+              <div class="act_as_row labels">
+                  <div class="act_as_cell">Categories</div>
+
+              </div>
+              <t t-foreach="o.filter_category_ids" t-as="category">
+              <div class="act_as_row">
+                  <div class="act_as_cell">
+                      <span t-field="category.complete_name"/>
+                  </div>
+              </div>
+              </t>
+              <div class="act_as_row labels">
+                  <div class="act_as_cell">Accounts</div>
+
+              </div>
+              <t t-foreach="o.filter_account_ids" t-as="account">
+              <div class="act_as_row">
+                  <div class="act_as_cell">
+                      <span t-field="account.code"/> To: <span t-field="account.name"/>
+                  </div>
+              </div>
+              </t>
+              <div class="act_as_row labels">
+                  <div class="act_as_cell">Products</div>
+
+              </div>
+              <t t-foreach="o.filter_product_ids" t-as="product">
+              <div class="act_as_row">
+                  <div class="act_as_cell">
+                      <span t-field="product.name"/>
+                  </div>
+              </div>
+              </t>
+
+        </div>
+    </template>
+
+    <template id="easy_invoice_income_statements.income_statements_report_lines_header">
+        <!-- Display table headers for lines -->
+        <div class="act_as_thead">
+            <div class="act_as_row labels">
+
+                <!--## Code-->
+                <div class="act_as_cell" style="width: 8.86%;">Code</div>
+                <!--## Account-->
+                <div class="act_as_cell" style="width: 10%;">Account
+                </div>
+
+                <!--## Category-->
+                <div class="act_as_cell" style="width: 15%;">Category
+                </div>
+
+                <div class="act_as_cell" style="width: 15%;">Sub Category
+                </div>
+                <!--## Product-id-->
+                <div class="act_as_cell" style="width: 10%;">Product
+                </div>
+                <!--## balance-->
+                <div class="act_as_cell" style="width: 10%;">Amount</div>
+                <!--## Debit-->
+
+            </div>
+        </div>
+    </template>
+
+    <template id="easy_invoice_income_statements.report_income_statements_line">
+        <!-- # line -->
+        <div class="act_as_row lines">
+            <!--## Code-->
+            <div class="act_as_cell left">
+                <t t-if="line.account_id">
+                    <t t-set="res_model" t-value="'account.analytic.account'"/>
+                    <span>
+                        <a t-att-data-active-id="line.account_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="line.code"/></a>
+                    </span>
+                </t>
+
+            </div>
+
+            <!--## Account/Partner-->
+            <div class="act_as_cell left">
+                <t t-if="line.name">
+                    <t t-set="res_model" t-value="'account.analytic.account'"/>
+                    <span>
+                        <a t-att-data-active-id="line.account_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="line.name"/></a>
+                    </span>
+                </t>
+
+            </div>
+
+            <div class="act_as_cell left">
+                <t t-if="line.category_id">
+                    <t t-set="res_model" t-value="'product.category'"/>
+                    <span>
+                        <a t-att-data-active-id="line.category_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="line.category_id.category_name"/></a>
+                    </span>
+                </t>
+
+            </div>
+
+            <div class="act_as_cell left">
+
+                <t t-if="line.category_id">
+                    <t t-set="res_model" t-value="'product.category'"/>
+                    <span>
+                        <a t-att-data-active-id="line.category_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="line.category_id.sub_category_name"/></a>
+                    </span>
+
+                </t>
+            </div>
+
+            <!--## Product-->
+            <div class="act_as_cell left">
+                <t t-if="line.product_id">
+                    <t t-set="res_model" t-value="'product.product'"/>
+                    <span>
+                        <a t-att-data-active-id="line.product_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="line.product_id.name"/></a>
+                    </span>
+                </t>
+
+            </div>
+            <!--## Initial balance-->
+            <div class="act_as_cell amount">
+
+
+                <span>
+
+                    <t t-att-style="style" t-raw="line.balance" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                </span>
+
+
+              </div>
+      </div>
+    </template>
+
+    <template id="easy_invoice_income_statements.report_income_statements_category">
+        <!-- # line -->
+        <div class="act_as_row lines">
+            <!--## Code-->
+            <div class="act_as_cell left">
+
+
+            </div>
+
+            <!--## Account/Partner-->
+            <div class="act_as_cell left">
+
+            </div>
+
+            <div class="act_as_cell left">
+                <t t-if="category.category_id">
+                    <t t-set="res_model" t-value="'product.category'"/>
+                    <span>
+                        <a t-att-data-active-id="category.category_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="category.category_id.category_name"/></a>
+                    </span>
+                </t>
+
+            </div>
+
+            <div class="act_as_cell left">
+                <t t-if="category.category_id">
+                    <t t-set="res_model" t-value="'product.category'"/>
+                    <span>
+                        <a t-att-data-active-id="category.category_id.id"
+                           t-att-data-res-model="res_model"
+                           class="o_account_financial_reports_web_action"
+                           t-att-style="style">
+                            <t t-att-style="style" t-raw="category.category_id.sub_category_name"/></a>
+                    </span>
+                </t>
+
+            </div>
+
+            <div class="act_as_cell left">
+            <span>
+
+            </span>
+            </div>
+
+            <!--## Initial balance-->
+            <div class="act_as_cell amount">
+
+
+                <span>
+                  <t t-if="not category.percentage">
+                    <t t-att-style="style" t-raw="category.balance" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
+                  </t>
+                  <t t-if="category.percentage">
+                    <t t-att-style="style" t-raw="category.balance" />
+                  </t>
+                </span>
+
+
+              </div>
+      </div>
+      <t t-if="o.show_lines">
+        <t t-foreach="category.account_ids" t-as="line">
+
+            <!-- Display account lines -->
+            <!-- <t t-set="style" t-value="'font-size: ' + str(14 - line.category_id.level) + 'px; margin-left: ' + str(line.category_id.level* 4) + 'px;'"/> -->
+            <t t-call="easy_invoice_income_statements.report_income_statements_line"/>
+            <!-- Adapt style -->
+        </t>
+      </t>
+    </template>
+
+
+    <template id="easy_invoice_income_statements.income_statements_report_footer">
+        <!-- Display account footer -->
+
+    </template>
+
+
+
+    <template id="report_income_statements">
+        <div class="o_account_financial_reports_page">
+            <t t-call="easy_invoice_income_statements.income_statements_report_base"/>
+        </div>
+    </template>
+
+</odoo>

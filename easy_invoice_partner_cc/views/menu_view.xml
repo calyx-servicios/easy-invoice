@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+}
+
+
+        <menuitem  id="menu_action_easy_res_partner_cc" parent="easy_invoice.menu_ei_root" sequence="5" name="Partner CC"/>
+
+        <menuitem  id="menu_action_easy_res_partner_cc_supplier" parent="menu_action_easy_res_partner_cc" 
+            sequence="30" name="Partner CC Supplier"  />
+        <menuitem  id="menu_action_easy_res_partner_cc_customer" parent="menu_action_easy_res_partner_cc" 
+            sequence="20" name="Partner CC Customer" />
+
+
+  </data>
+</odoo>

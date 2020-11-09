@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- 
+PAGO DE Proveedores
+ -->
+        <record id="easy_payment_in_group_tree" model="ir.ui.view">
+            <field name="name">easy.payment.group.tree</field>
+            <field name="model">easy.payment.group</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="name" />
+                    <field name="partner_id" string="Partner Supplier"/>
+                    <field name="date" />
+                    <field name="amount_money" sum="Total" string="Monto" />
+                    <field name="state"/>
+                    <field name="user_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+
+        <record id="easy_payment_in_group_form" model="ir.ui.view">
+            <field name="name">easy.payment.group.supplier.form</field>
+            <field name="model">easy.payment.group</field>
+            <field name="arch" type="xml">
+                <form string="Payment Group">
+                    <header>
+                        <button name="draft2prepared" type="object" states="draft" string="Prepare" class="oe_highlight"/>
+                        <button name="prepared2draft" type="object" states="prepared" string="Back to Draft" class="oe_highlight"/>
+                        <button name="prepared2processed" type="object" states="prepared" string="Process Payment" class="oe_highlight"/>
+                        <button name="processed2cancel" type="object" states="processed" string="Cancel Group" class="oe_highlight"/>
+                        <button name="cancel2draft" type="object" states="cancel" string="Back to Draft" class="oe_highlight"/>
+                        <button name="print_easypayment" string="Imprimir Pago" type="object" states="processed" class="btn-primary o_sale_print"/>
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,prepared,processed"/>
+                    </header>
+                    <sheet string="Payment Group">
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                        <field name="group_type" invisible="1"/>
+
+                        <group>
+                            <group>
+                                <field string="Partner Supplier" name="partner_id" context="{'search_default_supplier':1, 'show_address': 1, 'default_company_type': 'company'}" options='{"always_reload": True, "no_quick_create": True}' domain="[('supplier', '=', True)]" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="amount_money_defined" attrs="{'readonly': [('state', '!=', 'draft')]}" string="Definir Monto" />
+
+                            </group>
+                            <group>
+                                <field name="amount_total_debt" readonly="1" />
+                                <field name="amount2pay" readonly="1" string="T. de FCs a Pagar" />
+                                <field name="amount_total_rectificative" readonly="1" />
+                                <field name="amount_money" readonly="1" string="Monto Pagado" />
+                                <field name="user_id" readonly="1" />
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="in_invoice_ids_page" string="Invoice">
+                                <field name="in_invoice_ids" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'default_partner_id':partner_id}">
+                                    <tree string="Invoice Lines" editable="button">
+                                        <field name="invoice_id" required="1" domain="[('state', '=', 'open'),('type', '=', 'in_invoice'),('partner_id', '=', partner_id)]" />
+
+                                        <field name="date_invoice" readonly="1" />
+                                        <field name="residual_amount" readonly="0" sum="Total" />
+                                        <field name="amount2pay" sum="Total"/>
+                                        <field name="partner_id" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="in_rectificative_ids_page" string="Rectificative">
+                                <field name="in_rectificative_ids" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'default_partner_id':partner_id}">
+                                    <tree string="Invoice Lines" editable="button">
+                                        <field name="invoice_id" required="1" domain="[('state', '=', 'open'),('type', '=', 'in_refund'),('partner_id', '=', partner_id)]"/>
+
+                                        <field name="date_invoice" readonly="1" />
+                                        <field name="residual_amount" readonly="0" sum="Total" />
+                                        <field name="amount2pay" sum="Total"/>
+                                        <field name="partner_id" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                    <!-- invisible="context.get('view_no_maturity', False)" -->
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_easy_payment_in_group_tree2" model="ir.actions.act_window">
+            <field name="name">Supplier Payments</field>
+            <field name="res_model">easy.payment.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('group_type','=','in_group')]</field>
+            <field name="context">{'default_group_type':'in_group','group_type':'in_group'}</field>
+        </record>
+
+        <record id="action_easy_payment_in_group_tree2_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_payment_in_group_tree"/>
+            <field name="act_window_id" ref="action_easy_payment_in_group_tree2"/>
+        </record>
+
+        <record id="action_easy_payment_in_group_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_payment_in_group_form"/>
+            <field name="act_window_id" ref="action_easy_payment_in_group_tree2"/>
+        </record>
+
+        <menuitem action="action_easy_payment_in_group_tree2" id="menu_action_easy_payment_in_group_tree2" parent="vendor_menu" sequence="30"/>
+
+
+
+
+
+        <!-- 
+PAGO DE Clientes
+ -->
+        <record id="easy_payment_out_group_tree" model="ir.ui.view">
+            <field name="name">easy.payment.group.tree</field>
+            <field name="model">easy.payment.group</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state == 'draft'" decoration-muted="state == 'cancel'" string="Invoice">
+                    <field name="name" />
+                    <field name="partner_id" string="Partner Customer"/>
+                    <field name="date" />
+                    <field name="amount_money" sum="Total" string="Monto"/>
+                    <field name="state"/>
+                    <field name="user_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="easy_payment_out_group_form" model="ir.ui.view">
+            <field name="name">easy.payment.group.customer.form</field>
+            <field name="model">easy.payment.group</field>
+            <field name="arch" type="xml">
+                <form string="Payment Group">
+                    <header>
+                        <button name="draft2prepared" type="object" states="draft" string="Prepare" class="oe_highlight"/>
+                        <button name="prepared2draft" type="object" states="prepared" string="Back to Draft" class="oe_highlight"/>
+                        <button name="prepared2processed" type="object" states="prepared" string="Process Payment" class="oe_highlight"/>
+                        <button name="processed2cancel" type="object" states="processed" string="Cancel" class="oe_highlight"/>
+                        <button name="cancel2draft" type="object" states="cancel" string="Back to Draft" class="oe_highlight"/>
+                        <!-- <button name="print_easypayment" string="Imprimir Cobranza" type="object" states="processed" class="btn-primary o_sale_print"/> -->
+                        <field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,prepared,processed"/>
+                    </header>
+                    <sheet string="Payment Group">
+                        <h1 class="mt0">
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                        <field name="group_type" invisible="1"/>
+
+                        <group>
+                            <group>
+                                <field string="Partner Customer" name="partner_id" context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company'}" options='{"always_reload": True, "no_quick_create": True}' domain="[('customer', '=', True)]" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="date" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="user_id" readonly="1" />
+                                <field name="amount_total_debt" readonly="1" />
+
+                            </group>
+                            <group>
+                                <field name="amount2pay" readonly="1" string="T. de FCs a Cobrar" />
+                                <field name="amount_total_rectificative" readonly="1" />
+                                <field name="amount_money_defined" attrs="{'readonly': [('state', '!=', 'draft')]}" string="Definir Monto" />
+                                <field name="amount_money" readonly="1" string="Monto Pagado" />
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="out_invoice_ids_page" string="Invoice">
+                                <field name="out_invoice_ids" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'default_partner_id':partner_id}">
+                                    <tree string="Invoice Lines" editable="button">
+                                        <field name="invoice_id" required="1" domain="[('state', '=', 'open'),('type', '=', 'out_invoice'),('partner_id', '=', partner_id)]"/>
+                                        <field name="date_invoice" readonly="1" />
+                                        <field name="residual_amount" readonly="0" sum="Total" />
+                                        <field name="amount2pay" sum="Total"/>
+                                        <field name="partner_id" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="out_rectificative_ids_page" string="Rectificative">
+                                <field name="out_rectificative_ids" nolabel="1" attrs="{'readonly': [('state', '!=', 'draft')]}" context="{'default_partner_id':partner_id}">
+                                    <tree string="Invoice Lines" editable="button">
+                                        <field name="invoice_id" required="1" context="{'default_partner_id':partner_id}" domain="[('state', '=', 'open'),('type', '=', 'out_refund'),('partner_id', '=', partner_id)]" />
+                                        <field name="date_invoice" readonly="1" />
+                                        <field name="residual_amount" readonly="0" sum="Total" />
+                                        <field name="amount2pay" sum="Total" />
+                                        <field name="partner_id" invisible="1"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_easy_payment_out_group_tree2" model="ir.actions.act_window">
+            <field name="name">Customer Payments</field>
+            <field name="res_model">easy.payment.group</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field eval="False" name="view_id"/>
+            <field name="domain">[('group_type','=','out_group')]</field>
+            <field name="context">{'default_group_type':'out_group','group_type':'out_group'}</field>
+        </record>
+
+        <record id="action_easy_payment_out_group_tree2_view" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="easy_payment_out_group_tree"/>
+            <field name="act_window_id" ref="action_easy_payment_out_group_tree2"/>
+        </record>
+
+        <record id="action_easy_payment_out_group_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="easy_payment_out_group_form"/>
+            <field name="act_window_id" ref="action_easy_payment_out_group_tree2"/>
+        </record>
+
+        <menuitem action="action_easy_payment_out_group_tree2" id="menu_action_easy_payment_out_group_tree2" parent="customer_menu" sequence="30"/>
+
+
+    </data>
+</odoo>

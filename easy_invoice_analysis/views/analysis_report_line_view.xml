@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+
+
+        <record model="ir.ui.view" id="view_easy_invoice_analysis_report_tree">
+            <field name="name">easy_invoice_analysis_report_tree</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="arch" type="xml">
+                <tree string="Easy Analysis Line">
+                    <field name="date" />
+                    <field name="date_contable" />
+                    <field name="date_due" />
+                    <field name="origin" />
+                    <field name="user_id" />
+                    <field name="company_id" />
+                    <field name="partner_id" />
+                    <field name="partner_categ_id" widget="many2many_tags" options="{'no_create': True}"/>
+                    <field name="journal_id" />
+                    <field name="type" />
+                    <field name="name" />
+                    <field name="state" />
+                    <field name="analytic_account_id" />
+                    <field name="product_id" />
+                    <field name="categ_id" />
+                    <field name="description" />
+                    <field name="product_type" />
+                    <field name="uom_id" />
+                    <field name="quantity" />
+                    <field name="price_unit" />
+                    <field name="amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_easy_invoice_analysis_report_filter" model="ir.ui.view">
+            <field name="name">easy_invoice_analysis_report_select</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="arch" type="xml">
+                <search string="Search Easy Line Analysis">
+                    <field name="date" />
+                    <field name="date_contable" /> 
+                    <field name="date_due" />
+                    <field name="origin" />
+                    <field name="user_id" />
+                    <field name="company_id" />
+                    <field name="partner_id" />
+                    <field name="partner_categ_id" />
+                    <field name="journal_id" />
+                    <field name="type" />
+                    <field name="name" />
+                    <field name="invoice_id" />
+                    <field name="easy_id" />
+                    <field name="product_id" />
+                    <field name="categ_id" />
+                    <field name="description" />
+                    <field name="product_type" />
+                    <field name="amount" />
+                    <field name="uom_id" />
+                    <field name="quantity" />
+                    <field name="state" />
+                    <field name="analytic_account_id" />
+
+                    <separator />
+
+                    <filter string="Valid" name="valid_state" icon="terp-partner" domain="[('state','in',('open','paid'))]" />
+                    <filter string="Current Year" name="current_year" icon="terp-partner"  domain="[('date','&gt;=',datetime.datetime.now().strftime('%Y-01-01'))]"/>
+                    <filter string="Valid and Current" name="valid_current_state" icon="terp-partner" domain="[('state','in',('open','paid')),('date','&gt;=',datetime.datetime.now().strftime('%Y-01-01'))]" />
+                    <separator />
+                    <group expand="0" string="Group By">
+                        <filter string="User" icon="terp-partner" domain="[]" context="{'group_by':'user_id'}" />
+                        <filter string="Date" icon="terp-partner" domain="[]" context="{'group_by':'date_contable'}" />
+                        <filter string="Partner" icon="terp-partner" domain="[]" context="{'group_by':'partner_id'}" />
+                        <filter string="Company" icon="terp-partner" domain="[]" context="{'group_by':'company_id'}" />
+                        <filter string="Journal" icon="terp-partner" domain="[]" context="{'group_by':'journal_id'}" />
+                        <filter string="Origin" icon="terp-partner" domain="[]" context="{'group_by':'origin'}" />
+                        <filter string="Product" icon="terp-partner" domain="[]" context="{'group_by':'product_id'}" />
+                        <filter string="Category" icon="terp-partner" domain="[]" context="{'group_by':'categ_id'}" />
+                        <filter string="Product Type" icon="terp-partner" domain="[]" context="{'group_by':'product_type'}" />
+                        <filter string="Type" icon="terp-partner" domain="[]" context="{'group_by':'type'}" />
+                        <filter string="State" icon="terp-partner" domain="[]" context="{'group_by':'state'}" />
+                        <filter string="Analytic Account" icon="terp-partner" domain="[]" context="{'group_by':'analytic_account_id'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_easy_invoice_analysis_report_graph">
+            <field name="name">easy_invoice_analysis_reportgraph</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="arch" type="xml">
+                <graph string="Easy Analysis Line">
+                    <field name="partner_id" />
+                    <field name="price_unit" type="column" />
+                    <field name="amount" type="measure" />
+                    <field name="quantity" type="measure" />
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="view_easy_invoice_analysis_report_pivot">
+            <field name="name">easy_invoice_analysis_report.pivot</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="arch" type="xml">
+                <pivot string="Easy Analysis Line">
+                    <field name="date" type="row" />
+                    <field name="price_unit" type="column" />
+                    <field name="amount" type="measure" />
+                    <field name="quantity" type="measure" />
+                </pivot>
+            </field>
+        </record>
+
+
+        <record id="easy_invoice_analysis_report_act" model="ir.actions.act_window">
+            <field name="name">Easy Analysis Line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">easy_invoice_analysis_report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+
+            <field name="search_view_id" ref="view_easy_invoice_analysis_report_filter" />
+            <field name="context">{
+                "search_default_valid_current_state":1
+                }
+            </field>
+            <field name="help" type="html">
+                <p>
+                You will find here all Easy Invoice Lines with Account Invoice Lines
+              </p>
+
+            </field>
+        </record>
+
+
+        <menuitem id="easy_invoice_analysis.easy_invoice_analysis_report_wizard" name="Analysis Report" parent="easy_invoice.customer_menu" action="easy_invoice_analysis.easy_invoice_analysis_report_act" groups="easy_invoice.easy_invoice_hr_group,easy_invoice.easy_invoice_user_group,easy_invoice.easy_invoice_responsible_group" />
+    </data>
+</openerp>
