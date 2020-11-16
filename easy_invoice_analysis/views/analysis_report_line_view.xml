@@ -10,12 +10,10 @@
                 <tree string="Easy Analysis Line">
                     <field name="date" />
                     <field name="date_contable" />
-                    <field name="date_due" />
                     <field name="origin" />
                     <field name="user_id" />
                     <field name="company_id" />
                     <field name="partner_id" />
-                    <field name="partner_categ_id" widget="many2many_tags" options="{'no_create': True}"/>
                     <field name="journal_id" />
                     <field name="type" />
                     <field name="name" />
