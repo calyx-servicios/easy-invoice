@@ -14,7 +14,6 @@
                     <field name="user_id" />
                     <field name="company_id" />
                     <field name="partner_id" />
-                    <field name="journal_id" />
                     <field name="type" />
                     <field name="name" />
                     <field name="state" />
