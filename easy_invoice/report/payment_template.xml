@@ -15,7 +15,7 @@
         <link href="/web/static/src/css/reset.min.css" rel="stylesheet"/>
     </template>
 
-    <template id="easypayment_external_layout_standard">
+    <template id="easypayment_layout_boxed">
         <div class="header o_boxed_header" style="border-bottom:none !important">
             <div class="col-xs-6 " style="width:48%;">
                 <t t-call="easy_invoice.easypayment_header"/>
@@ -68,7 +68,7 @@
         </div>
     </template>
 
-    <template id="external_layout">
+    <template id="easypayment_external_layout">
         <!-- Multicompany -->
         <t t-if="not o and doc">
             <t t-set="o" t-value="doc"/>
@@ -81,7 +81,7 @@
             <t t-set="company" t-value="res_company"/>
         </t>
 
-        <t t-call="easy_invoice.easypayment_external_layout_standard">
+        <t t-call="easy_invoice.easypayment_layout_boxed">
             <t t-raw="0"/>
         </t>
 
@@ -144,7 +144,7 @@
     </template>
 
     <template id="report_easypayment_document">
-        <t t-call="easy_invoice.external_layout">
+        <t t-call="easy_invoice.easypayment_external_layout">
             <div class="page">
                 <div class="oe_structure"/>
                 <t t-if="doc.invoice_id">
