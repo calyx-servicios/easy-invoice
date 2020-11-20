@@ -1,105 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="report_easypayment_document">
-    <t t-call="web.external_layout">
-        
-        <t t-if="doc.invoice_id">
-            <t t-set="doc" t-value="doc.with_context({'lang':doc.invoice_id.partner_id.lang})"/>
-        </t>
-        <t t-elif="doc.invoice_refund_id">
-            <t t-set="doc" t-value="doc.with_context({'lang':doc.invoice_refund_id.partner_id.lang})"/>
-        </t>
-        <t t-else="">
-            <t t-set="doc" t-value="doc.with_context({})"/>
-        </t>
-        <div class="page">
-            <div class="oe_structure"/>
-            
-            <t t-if="doc.invoice_id">
-                <div class="row" >
+    <template id="report_assets_common">
+        <t t-call="web.less_helpers"/>
 
-                    <div class="col-xs-5 col-xs-offset-1">
-                        <div t-field="doc.invoice_id.partner_id"
-                            t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
-                        <p t-if="doc.invoice_id.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.invoice_id.partner_id.vat"/></p>
-                        <br/>
-                        <strong>Invoice:<div t-field="doc.invoice_id.name" t-options='{ "no_marker": True}' /></strong>
-                    </div>
-                </div>
-                
-            </t>
-            <t t-if="doc.invoice_refund_id">
-                <div class="row">
+        <link href="/web/static/src/less/import_bootstrap.less" rel="stylesheet" type="text/less"/>
 
-                    <div class="col-xs-5 col-xs-offset-1">
-                        <div t-field="doc.invoice_refund_id.partner_id"
-                            t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
-                        <p t-if="doc.invoice_refund_id.partner_id.vat"><t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.invoice_refund_idpartner_id.vat"/></p>
-                        <br/>
-                        <strong>Invoice Refund:<div t-field="doc.invoice_refund_id.name" t-options='{ "no_marker": True}' /></strong>
-                    </div>
-                </div>
-                
-            </t>
-            <h2>
-                
-                <t >
-                    <span>Payment # </span>
-                </t>
-                <span t-field="doc.name"/>
-                <span t-field="doc.sequence_number"/>
-            </h2>
+        <link href="/web/static/lib/fontawesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="/web/static/src/less/layout_boxed.less" rel="stylesheet" type="text/less"/>
 
-            <div class="row mt32 mb32" id="informations">
-                
-                <div  class="col-xs-3">
-                    <strong>Date :</strong>
-                    <p t-field="doc.date_pay"/>
-                </div>
-                
-                
+    </template>
 
+    <template id="report_assets_pdf">
+        <link href="/web/static/src/css/reset.min.css" rel="stylesheet"/>
+    </template>
+
+    <template id="easypayment_external_layout_standard">
+        <div class="header o_boxed_header" style="border-bottom:none !important">
+            <div class="col-xs-6 " style="width:48%;">
+                <t t-call="easy_invoice.easypayment_header"/>
             </div>
-
-
-              
-
-               
-
-            <div class="clearfix">
-                <div class="row" name="total">
-                    <div class="col-xs-4 pull-right">
-                        <table class="table table-condensed" style="min-width: 200px;max-width: 350px;">
-                            
-                            
-                            <tr class="border-black">
-                                <td><strong>Total</strong></td>
-                                <td class="text-right">
-                                    <span t-field="doc.amount_total"/>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
+            <div class="col-xs-6 " style="width:48%;margin-left:30px;">
+                <t t-call="easy_invoice.easypayment_header"/>
             </div>
-
-            
-            
-            <div class="oe_structure"/>
         </div>
-    </t>
-</template>
 
+        <div class="article o_report_layout_boxed">
+            <t t-raw="0" />
+        </div>
 
-<template id="report_easy_payment">
-    <t t-call="web.html_container">
-        <t t-foreach="docs" t-as="doc">
-            <t t-call="easy_invoice.report_easypayment_document" />
+        <div class="footer o_boxed_footer" style="border-top:none !important">
+            <div class="col-xs-6 " style="width:48%;">
+                <t t-call="easy_invoice.easypayment_footer"/>
+            </div>
+            <div class="col-xs-6 " style="width:48%;margin-left:30px;">
+                <t t-call="easy_invoice.easypayment_footer"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="easypayment_header" name="easypayment_header">
+        <div class="row mb8" style="border-bottom:1px solid #E8E8E8">
+            <div class="col-xs-6">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"/>
+            </div>
+            <div class="col-xs-6 text-right mb4">
+                <h4 class="mt0" t-field="company.report_header"/>
+                <div name="company_address" class="mb4">
+                    <span class="company_address" t-field="company.partner_id" t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true}'/>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="easypayment_footer" name="easypayment_footer">
+        <div class="text-center" style="border-top: 3px solid #808080">
+            <ul class="list-inline">
+                <li t-if="company.phone">Tel: <span t-field="company.phone"/></li>
+                <li t-if="company.email">Mail: <span t-field="company.email"/></li>
+                <li t-if="company.website">Web: <span t-field="company.website"/></li>
+                <li t-if="company.vat"><t t-esc="company.country_id.vat_label or 'TIN'"/>: <span t-field="company.vat"/></li>
+            </ul>
+            <div t-field="company.report_footer"/>
+            <div>
+                Página: <span class="page"/> / <span class="topage"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="external_layout">
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
         </t>
-    </t>
-</template>
 
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id.sudo()"/>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"/>
+        </t>
 
+        <t t-call="easy_invoice.easypayment_external_layout_standard">
+            <t t-raw="0"/>
+        </t>
+
+    </template>
+
+    <template id="easypayment_invoice_refund" name="report_easypayment_invoice_refund">
+        <div class="col-xs-5 col-xs-offset-1">
+            <div t-field="doc.invoice_refund_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+            <p t-if="doc.invoice_refund_id.partner_id.vat">
+                <t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.invoice_refund_idpartner_id.vat"/>
+            </p>
+            <br/>
+            <strong>Nota de Crédito:<div t-field="doc.invoice_refund_id.name" t-options='{ "no_marker": True}' />
+            </strong>
+        </div>
+    </template>
+
+    <template id="easypayment_invoice" name="report_easypayment_invoice">
+        <div class="col-xs-5 col-xs-offset-1">
+            <div t-field="doc.invoice_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+            <p t-if="doc.invoice_id.partner_id.vat">
+                <t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.invoice_id.partner_id.vat"/>
+            </p>
+            <br/>
+            <strong>Factura:<div t-field="doc.invoice_id.name" t-options='{ "no_marker": True}' />
+            </strong>
+        </div>
+    </template>
+
+    <template id="easypayement_middlepage" name="report_easypayment_middle">
+        <h2>
+            <t>
+                <span>Pago # </span>
+            </t>
+            <span t-field="doc.name"/>
+            <span t-field="doc.sequence_number"/>
+        </h2>
+        <div class="row mt32 mb32" id="informations">
+            <div class="col-xs-3">
+                <strong>Fecha :</strong>
+                <p t-field="doc.date_pay"/>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="row" name="total">
+                <div class="col-xs-4 pull-right">
+                    <table class="table table-condensed" style="min-width: 200px;max-width: 350px;">
+                        <tr class="border-black">
+                            <td>
+                                <strong>Total</strong>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="doc.amount_total"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="report_easypayment_document">
+        <t t-call="easy_invoice.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <t t-if="doc.invoice_id">
+                    <div class="row">
+                        <div class="col-xs-7 " style="width:45%;">
+                            <t t-call="easy_invoice.easypayment_invoice"/>
+                        </div>
+                        <div class="col-xs-7 " style="width:45%;margin-left:60px;">
+                            <t t-call="easy_invoice.easypayment_invoice"/>
+                        </div>
+                    </div>
+                </t>
+                <t t-if="doc.invoice_refund_id">
+                    <div class="row">
+                        <div class="col-xs-7 " style="width:45%;">
+                            <t t-call="easy_invoice.easypayment_invoice_refund"/>
+                        </div>
+                        <div class="col-xs-7 " style="width:45%;margin-left:60px;">
+                            <t t-call="easy_invoice.easypayment_invoice_refund"/>
+                        </div>
+                    </div>
+                </t>
+                <div class="col-xs-7 " style="width:45%;">
+                    <t t-call="easy_invoice.easypayement_middlepage"/>
+                </div>
+                <div class="col-xs-7 " style="width:45%;margin-left:60px;">
+                    <t t-call="easy_invoice.easypayement_middlepage"/>
+                </div>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_easy_payment">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="easy_invoice.report_easypayment_document" t-lang="res_company.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
 
 </odoo>
