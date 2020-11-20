@@ -24,7 +24,7 @@
             file="easy_invoice.report_easy_payment" 
             name="easy_invoice.report_easy_payment"
             paperformat="easy_invoice.paperformat_report_easy_payment" 
-            print_report_name="(object.state in ('open', 'sent') and 'Payment - %s' % (object.name)) or 'Draft - %s' % (object.name)"
+            print_report_name="(object.state in ('open', 'sent') and 'Pago - %s' % (object.name)) or 'Borrador - %s' % (object.name)"
         />
 
 </odoo>

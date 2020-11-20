@@ -40,7 +40,7 @@
     </template>
 
     <template id="easypayment_header" name="easypayment_header">
-        <div class="row mb8" style="border-bottom:1px solid #D3D3D3">
+        <div class="row mb8" style="border-bottom:1px solid #E8E8E8">
             <div class="col-xs-6">
                 <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)"/>
             </div>
@@ -63,7 +63,7 @@
             </ul>
             <div t-field="company.report_footer"/>
             <div>
-                Page: <span class="page"/> / <span class="topage"/>
+                Página: <span class="page"/> / <span class="topage"/>
             </div>
         </div>
     </template>
@@ -94,7 +94,7 @@
                 <t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.invoice_refund_idpartner_id.vat"/>
             </p>
             <br/>
-            <strong>Invoice Refund:<div t-field="doc.invoice_refund_id.name" t-options='{ "no_marker": True}' />
+            <strong>Nota de Crédito:<div t-field="doc.invoice_refund_id.name" t-options='{ "no_marker": True}' />
             </strong>
         </div>
     </template>
@@ -106,7 +106,7 @@
                 <t t-esc="doc.company_id.country_id.vat_label or 'TIN'"/>: <span t-field="doc.invoice_id.partner_id.vat"/>
             </p>
             <br/>
-            <strong>Invoice:<div t-field="doc.invoice_id.name" t-options='{ "no_marker": True}' />
+            <strong>Factura:<div t-field="doc.invoice_id.name" t-options='{ "no_marker": True}' />
             </strong>
         </div>
     </template>
@@ -114,14 +114,14 @@
     <template id="easypayement_middlepage" name="report_easypayment_middle">
         <h2>
             <t>
-                <span>Payment # </span>
+                <span>Pago # </span>
             </t>
             <span t-field="doc.name"/>
             <span t-field="doc.sequence_number"/>
         </h2>
         <div class="row mt32 mb32" id="informations">
             <div class="col-xs-3">
-                <strong>Date :</strong>
+                <strong>Fecha :</strong>
                 <p t-field="doc.date_pay"/>
             </div>
         </div>
@@ -145,15 +145,6 @@
 
     <template id="report_easypayment_document">
         <t t-call="easy_invoice.external_layout">
-            <t t-if="doc.invoice_id">
-                <t t-set="doc" t-value="doc.with_context({'lang':doc.invoice_id.partner_id.lang})"/>
-            </t>
-            <t t-elif="doc.invoice_refund_id">
-                <t t-set="doc" t-value="doc.with_context({'lang':doc.invoice_refund_id.partner_id.lang})"/>
-            </t>
-            <t t-else="">
-                <t t-set="doc" t-value="doc.with_context({})"/>
-            </t>
             <div class="page">
                 <div class="oe_structure"/>
                 <t t-if="doc.invoice_id">
@@ -190,7 +181,7 @@
     <template id="report_easy_payment">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
-                <t t-call="easy_invoice.report_easypayment_document"/>
+                <t t-call="easy_invoice.report_easypayment_document" t-lang="res_company.partner_id.lang"/>
             </t>
         </t>
     </template>
