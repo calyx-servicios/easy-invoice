@@ -4,6 +4,7 @@ from odoo.tools.misc import formatLang
 from odoo.addons import decimal_precision as dp
 from odoo.exceptions import AccessError, UserError, RedirectWarning, ValidationError, Warning
 
+MAX_RECTIFICATIVE_PROCESS = 50
 
 class EasyPaymentGroup(models.Model):
 
@@ -57,6 +58,27 @@ class EasyPaymentGroup(models.Model):
         'easy.payment.group.line', 'out_rectificative_group_id', string='Rectificative', )
 
 # ends Field    </tree>
+
+    def _get_qty_out_invoice_ids(self, out_rectificative_ids, out_invoice_ids):
+        """
+            Esta funcion retorna la cantidad de facturas que se podran procesar sin
+            que super la sumatoria total de notas de credito en la lista de rectificativas
+            que se pasan por parametro. De esta manera se evita procesar factura que no llegaran
+            a pagarse de manera innecesaria.
+        """
+        amount_total_rectivicative = 0
+        amount_total_invoice = 0
+        qty_invoice = 0
+        # Calculamos la sumatoria de los motos totales de la lista de rectificativas.
+        for rectificative in out_rectificative_ids:
+            amount_total_rectivicative += rectificative.amount2pay
+        # Verificamos la cantidad de facturas necesarias para cancelar la totalidad
+        # de rectificativas que contiene la lista.
+        while qty_invoice < len(out_invoice_ids) and amount_total_invoice < amount_total_rectivicative:
+            amount_total_invoice += out_invoice_ids[qty_invoice]['amount2pay']
+            qty_invoice += 1
+        
+        return qty_invoice
 
     @api.onchange('partner_id')
     def onchange_partner_id(self):
@@ -112,9 +134,24 @@ class EasyPaymentGroup(models.Model):
         self.out_rectificative_ids = False
         self.in_invoice_ids = in_invoice_ids
         self.in_rectificative_ids = in_rectificative_ids
-        self.out_invoice_ids = out_invoice_ids
         self.out_rectificative_ids = out_rectificative_ids
-
+        self.out_invoice_ids = out_invoice_ids
+        """
+            Ordenamos las listas que contienen las facturas y notas de credito de manera
+            ascendente para procesar por ultimo aquellas que contienen montos mas altos, 
+            de esa manera se necesitara un menor volumenen de facturas que proecesar en 
+            caso que las rectificativas tengan montos altos.
+        """
+        out_rectificative_ids_sort = self.out_rectificative_ids.sorted(key=lambda l: l.amount2pay)
+        out_invoice_ids_sort = self.out_invoice_ids.sorted(key=lambda l: l.amount2pay)
+        """
+            La estrategia sera procesar la cantidad de facturas necesarias para cancelar un 
+            maximo de rectificativas equivalentes a MAX_RECTIFICATIVE_PROCESS.
+        """
+        self.out_rectificative_ids = out_rectificative_ids_sort[0:MAX_RECTIFICATIVE_PROCESS]
+        qty_out_invoice_ids = self._get_qty_out_invoice_ids(self.out_rectificative_ids, out_invoice_ids_sort)
+        self.out_invoice_ids = out_invoice_ids_sort[0:qty_out_invoice_ids]
+        
     @api.multi
     def cancel2draft(self):
         self.state = 'draft'
