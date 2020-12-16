@@ -94,6 +94,11 @@
             <field name="act_window_id" ref="action_easy_invoice_cash_register_tree"/>
         </record>
 
-        <menuitem action="action_easy_invoice_cash_register_tree" id="menu_action_easy_invoice_cash_register_tree" parent="easy_invoice_recaudation.submenu_box" sequence="100" string="Cash Register" groups="easy_invoice_cash_register.group_own_cash_register"/>
+        <menuitem action="action_easy_invoice_cash_register_tree" 
+                  id="menu_action_easy_invoice_cash_register_tree" 
+                  parent="easy_invoice_recaudation.submenu_box" 
+                  sequence="100" 
+                  string="Cash Register" 
+                  groups="easy_invoice_cash_register.group_own_cash_register"/>
     </data>
 </odoo>

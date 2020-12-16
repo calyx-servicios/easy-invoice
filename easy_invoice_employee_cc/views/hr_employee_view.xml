@@ -97,12 +97,12 @@
                   name="Employee CC"
                   parent="easy_invoice.menu_ei_root"
                   sequence="50"
-                  groups="easy_invoice.easy_invoice_responsible_group"/>
+                  groups="easy_invoice.easy_invoice_hr_group"/>
 
         <menuitem action="action_easy_hr_employee_tree" 
                   id="submenu_action_easy_hr_employee_cc_tree" 
                   parent="menu_action_easy_hr_employee_cc"
-                  groups="easy_invoice.easy_invoice_responsible_group" 
+                  groups="easy_invoice.easy_invoice_hr_group" 
                   sequence="10"/>
 
         <record id="easy_employee_settlement_tree" model="ir.ui.view">
@@ -173,12 +173,12 @@
         <menuitem id="menu_action_easy_employee_settings_cc" 
                   name="Settings" 
                   parent="easy_invoice.menu_ei_root"
-                  groups="easy_invoice.easy_invoice_responsible_group" 
+                  groups="easy_invoice.easy_invoice_hr_group" 
                   sequence="50"/>
         <menuitem action="action_easy_employee_settlement_tree" 
                   id="submenu_action_easy_employee_settlement_tree" 
                   parent="menu_action_easy_employee_settings_cc"
-                  groups="easy_invoice.easy_invoice_responsible_group" 
+                  groups="easy_invoice.easy_invoice_hr_group" 
                   sequence="10"/>
         <!-- <menuitem action="action_easy_employee_settlement_types_tree" id="submenu_action_easy_employee_settlement_types_tree" parent="menu_action_easy_employee_settings_cc" sequence="10"/>-->
     </data>

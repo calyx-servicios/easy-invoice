@@ -186,7 +186,8 @@
 
     <menuitem action="easy_recaudation_action" 
         id="menu_easy_recaudation"  
-        sequence="30" 
+        sequence="30"
+        groups="easy_invoice.easy_invoice_user_group,easy_invoice.easy_invoice_responsible_group"
         parent="submenu_box"/>
 
   </data>

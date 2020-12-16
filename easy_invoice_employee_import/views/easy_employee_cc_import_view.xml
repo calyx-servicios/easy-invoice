@@ -80,7 +80,7 @@
         </record>
         <menuitem action="action_easy_employee_cc_import" 
                   id="submenu_action_easy_employee_cc_import" 
-                  groups="easy_invoice.easy_invoice_responsible_group"
+                  groups="easy_invoice.easy_invoice_hr_group"
                   parent="easy_invoice_employee_cc.menu_action_easy_hr_employee_cc" 
                   sequence="20"/>
     </data>

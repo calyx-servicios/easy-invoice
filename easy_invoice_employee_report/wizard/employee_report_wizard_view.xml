@@ -58,14 +58,14 @@
                 view_mode="form" 
                 view_id="employee_report_wizard" 
                 target="new"
-                groups="easy_invoice.easy_invoice_responsible_group"
+                groups="easy_invoice.easy_invoice_hr_group"
     />
 
     <menuitem id="easy_invoice_employee_report.employee_report_wizard_submenu" 
               name="Employee Report"
               parent="easy_invoice_employee_cc.menu_action_easy_hr_employee_cc"
               action="easy_invoice.employee_report_wizard"
-              groups="easy_invoice.easy_invoice_responsible_group"
+              groups="easy_invoice.easy_invoice_hr_group"
     />
 
 </odoo>
