@@ -1,7 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_easy_recaudation_hr,access_easy_recaudation,model_easy_recaudation,easy_invoice.easy_invoice_hr_group,1,1,0,0
+access_easy_recaudation_hr,access_easy_recaudation,model_easy_recaudation,easy_invoice.easy_invoice_hr_group,1,1,1,0
 access_easy_recaudation_user,access_easy_recaudation,model_easy_recaudation,easy_invoice.easy_invoice_user_group,1,1,1,0
 access_easy_recaudation_resp,access_easy_recaudation,model_easy_recaudation,easy_invoice.easy_invoice_responsible_group,1,1,1,1
-access_easy_bill_hr,access_easy_bill,model_easy_bill,easy_invoice.easy_invoice_hr_group,1,1,0,0
+access_easy_bill_hr,access_easy_bill,model_easy_bill,easy_invoice.easy_invoice_hr_group,1,1,1,0
 access_easy_bill_user,access_easy_bill,model_easy_bill,easy_invoice.easy_invoice_user_group,1,1,1,0
 access_easy_bill_resp,access_easy_bill,model_easy_bill,easy_invoice.easy_invoice_responsible_group,1,1,1,1
