@@ -41,7 +41,10 @@
         <field name="view_id" ref="view_easy_bill_tree"/>
     </record>
 
-    <menuitem action="easy_bill_action" id="menu_easy_bill"  sequence="40" parent="submenu_box"/>
-
+    <menuitem action="easy_bill_action" 
+              id="menu_easy_bill"  
+              sequence="40"
+              groups="easy_invoice.easy_invoice_responsible_group"
+              parent="submenu_box"/>
   </data>
 </odoo>

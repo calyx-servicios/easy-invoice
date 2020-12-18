@@ -11,14 +11,12 @@
         <record id="easy_invoice_hr_group" model="res.groups">
             <field name="name">HR Easy Invoice</field>
             <field name="category_id" ref="easy_invoice"/>
-            <field name="users" eval="[(4, ref('base.user_root'))]"/>
         </record>
 
         <record id="easy_invoice_user_group" model="res.groups">
             <field name="name">User Easy Invoice</field>
             <field name="category_id" ref="easy_invoice"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
-            <field name="implied_ids" eval="[(4, ref('easy_invoice_hr_group'))]"/>
         </record>
 
         <record id="easy_invoice_responsible_group" model="res.groups">
