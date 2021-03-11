@@ -17,6 +17,7 @@
         "easy_invoice_employee_expense",
         "easy_invoice_employee_cc",
         "easy_invoice_sale",
+        "easy_invoice_income_statements",
         "account_analytic_sale_in_line",
     ],
     "data": [
