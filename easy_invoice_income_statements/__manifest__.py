@@ -12,6 +12,7 @@
     "version": "11.0.1.1.0",
     "depends": [
         "easy_invoice",
+        "product",
         "base",
         "report_xlsx",
         "account_financial_report",
