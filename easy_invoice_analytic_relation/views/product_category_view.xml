@@ -4,6 +4,7 @@
         <field name="name">Account Analytic Product Category</field>
         <field name="model">product.category</field>
         <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="priority" eval="99" /> 
         <field name="arch" type="xml">
             <field name="sequence" position="after">
                 <field name="account_analytic" attrs="{'invisible': [('parent_id', '!=', False)]}" />

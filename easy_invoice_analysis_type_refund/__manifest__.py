@@ -13,6 +13,7 @@
     'version': '11.0.1.0.0',
     'depends' : [
         'easy_invoice',
+        'easy_invoice_analysis',
         'hr',
         'base',
         'report_xlsx',

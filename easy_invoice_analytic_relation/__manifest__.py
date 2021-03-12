@@ -13,6 +13,7 @@
     "depends": [
         "base",
         "easy_invoice",
+        "easy_invoice_income_statements",
         "easy_invoice_partner_cc",
         "easy_invoice_employee_expense",
         "easy_invoice_employee_cc",
