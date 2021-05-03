@@ -57,7 +57,9 @@ class EasyEmployeeCC(models.Model):
             }
             line_created = self.env['account.analytic.line'].create(vals)
             easy_employee_cc_obj.analytic_line_id = line_created.id
-            self.create_message(easy_employee_cc_obj,analytic_account_obj)
+            # The following line sends a message for each line created and 
+            # this annoys the user because more than one is created per import.
+            # self.create_message(easy_employee_cc_obj,analytic_account_obj) 
 
     @api.multi
     def create_message(self, easy_employee_cc_obj, old):
