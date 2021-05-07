@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<odoo>
+        <record id="customer_invoice_report" model="ir.ui.view">
+            <field name="name">invoice.report.wizard</field>
+            <field name="model">invoice.report</field>
+            <field name="arch" type="xml">
+                <form string="Invoice Report">
+                    <group class="oe_title">
+                        <group>
+                            <field name="date_from" required="1"/>
+                            <field name="date_to" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="button_export_xlsx" string="Export XLSX" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="customer_invoice_report_wizard" model="ir.actions.act_window">
+            <field name="name">Invoice Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">invoice.report</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="customer_invoice_report"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="customer_invoice_reports" parent="easy_invoice.customer_menu" action="customer_invoice_report_wizard"/>
+
+</odoo>

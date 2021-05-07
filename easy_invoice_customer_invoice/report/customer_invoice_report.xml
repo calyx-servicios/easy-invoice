@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report id="customer_invoice_report" model="invoice.report" string="Reporte de Facturacion" report_type="xlsx" name="easy_invoice_customer_invoice.invoice_report" file="Reporte de Facturacion" attachment_use="False" />
+</odoo>
