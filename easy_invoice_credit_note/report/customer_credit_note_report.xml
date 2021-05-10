@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <report id="customer_credit_note_report" model="credit.note.report" string="Reporte de Devoluciones" report_type="xlsx" name="easy_invoice_credit_note.easy_credit_note_report" file="Reporte de Devoluciones" attachment_use="False" />
+</odoo>
