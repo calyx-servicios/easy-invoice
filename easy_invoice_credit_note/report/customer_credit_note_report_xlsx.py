@@ -99,11 +99,20 @@ class CustomerCreditNoteReport(models.AbstractModel):
         #
         # Reporte de Devoluciones Query and Titles
         #
-
+        states = []
+        if objs.draft:
+            states.append("draft")
+        if objs.open:
+            states.append("open")
+        if objs.paid:
+            states.append("paid")
+        if objs.cancel:
+            states.append("cancel")
         account_move_objs = self.env["easy.invoice.line"].search(
             [
                 ("date_invoice", ">=", objs.date_from),
                 ("date_invoice", "<=", objs.date_to),
+                ("invoice_state", "in", states),
                 ("invoice_type", "=", "out_refund"),
                 ("company_id", "=", self.env.user.company_id.id),
 

@@ -46,7 +46,7 @@ msgstr "ID"
 #: model:ir.actions.act_window,name:easy_invoice_customer_invoice.customer_invoice_report_wizard
 #: model:ir.ui.menu,name:easy_invoice_customer_invoice.customer_invoice_reports
 msgid "Invoice Report"
-msgstr "Invoice Report"
+msgstr "Reporte de Facturaciones"
 
 #. module: easy_invoice_customer_invoice
 #: model:ir.model.fields,field_description:easy_invoice_customer_invoice.field_invoice_report___last_update
@@ -93,3 +93,28 @@ msgstr "report.easy_invoice_customer_invoice.customer_invoice_report"
 #: model:ir.model,name:easy_invoice_customer_invoice.model_report_easy_invoice_customer_invoice_invoice_report
 msgid "report.easy_invoice_customer_invoice.invoice_report"
 msgstr "report.easy_invoice_customer_invoice.invoice_report"
+
+#. module: easy_invoice_customer_invoice
+#: model:ir.model.fields,field_description:easy_invoice_customer_invoice.field_invoice_report_open
+msgid "Open"
+msgstr "Abierta"
+
+#. module: easy_invoice_customer_invoice
+#: model:ir.model.fields,field_description:easy_invoice_customer_invoice.field_invoice_report_paid
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: easy_invoice_customer_invoice
+#: model:ir.model.fields,field_description:easy_invoice_customer_invoice.field_invoice_report_account_ids
+msgid "Partners"
+msgstr "Empresas"
+
+#. module: easy_invoice_customer_invoice
+#: model:ir.model.fields,field_description:easy_invoice_customer_invoice.field_invoice_report_draft
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: easy_invoice_customer_invoice
+#: model:ir.model.fields,field_description:easy_invoice_customer_invoice.field_invoice_report_cancel
+msgid "Cancel"
+msgstr "Cancelado"

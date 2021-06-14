@@ -6,7 +6,11 @@ class CreditNoteReport(models.TransientModel):
     
     date_from = fields.Date(string='From')
     date_to = fields.Date(string='To')
-
+    draft = fields.Boolean(default=False)
+    open = fields.Boolean(default=True)
+    paid = fields.Boolean(default=True)
+    cancel = fields.Boolean(default=False)
+    
     @api.multi
     def button_export_xlsx(self):
         self.ensure_one()

@@ -6,9 +6,28 @@
             <field name="arch" type="xml">
                 <form string="Invoice Report">
                     <group class="oe_title">
-                        <group>
+                        <group col="4" colspan="2">
                             <field name="date_from" required="1"/>
                             <field name="date_to" required="1"/>
+                        </group>
+                        <group col="2" colspan="2">
+                            <label string="State" style="font-weight: bold;"/>
+                            <div>
+                                <label string="Draft"/>
+                                <field name="draft" class="oe_inline"/>
+                                <label string="Open"/>
+                                <field name="open" class="oe_inline"/>
+                                <label string="Paid"/>
+                                <field name="paid" class="oe_inline"/>
+                                <label string="Cancel"/>
+                                <field name="cancel" class="oe_inline"/>
+                            </div>                     
+                        </group>
+                        <group name="account_filter">
+                            <field name="account_ids"
+                                widget="many2many_tags"
+                                options="{'no_create': True}"
+                                domain="[('customer','=',True)]"/>
                         </group>
                     </group>
                     <footer>

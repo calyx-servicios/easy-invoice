@@ -6,6 +6,14 @@ class CustomerInvoiceReport(models.TransientModel):
     
     date_from = fields.Date(string='From')
     date_to = fields.Date(string='To')
+    draft = fields.Boolean(default=False)
+    open = fields.Boolean(default=True)
+    paid = fields.Boolean(default=True)
+    cancel = fields.Boolean(default=False)
+    account_ids = fields.Many2many(
+        comodel_name='res.partner',
+        string='Partners',
+    )
 
     @api.multi
     def button_export_xlsx(self):
