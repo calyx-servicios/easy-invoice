@@ -12,6 +12,7 @@
     'depends' : [
         'easy_invoice',
         'report_xlsx',
+        'easy_invoice_cn_types',
         ],
     'data': [
         'wizard/credit_note_report_wizard_view.xml',

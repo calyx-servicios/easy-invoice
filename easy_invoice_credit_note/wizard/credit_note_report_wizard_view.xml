@@ -23,6 +23,11 @@
                                 <field name="cancel" class="oe_inline"/>
                             </div>                     
                         </group>
+                        <group name="type_refund">
+                            <field name="type_refund_ids"
+                                widget="many2many_tags"
+                                options="{'no_create': True}"/>
+                        </group>
                     </group>
                     <footer>
                         <button name="button_export_xlsx" string="Export XLSX" type="object"/>

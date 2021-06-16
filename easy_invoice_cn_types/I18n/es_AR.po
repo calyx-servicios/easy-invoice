@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_cn_types
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 03:46+0000\n"
+"PO-Revision-Date: 2020-11-27 03:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: easy_invoice_cn_types
+#: model:ir.actions.act_window,name:easy_invoice_cn_types.action_easy_cn_types_view
+#: model:ir.ui.menu,name:easy_invoice_cn_types.menu_easy_cn_types
+msgid "CN Type"
+msgstr "Tipos de NC EASY"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_id_11763
+#: model:ir.ui.view,arch_db:easy_invoice_cn_types.view_easy_cn_types_search
+#: model:ir.ui.view,arch_db:easy_invoice_cn_types.view_easy_cn_types_tree
+msgid "CN Types"
+msgstr "Tipos de NC EASY"
+
+#. module: easy_invoice_cn_types
+#: model:ir.actions.act_window,help:easy_invoice_cn_types.action_easy_cn_types_view
+msgid "Click to set a new CN Types."
+msgstr "Haga clic para establecer nuevos tipos de NC."
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_display_name
+msgid "Display Name"
+msgstr "Mostrar Nombre"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model,name:easy_invoice_cn_types.model_easy_invoice
+msgid "Easy Invoice"
+msgstr "Factura Rápida"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_id
+msgid "ID"
+msgstr "ID"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: easy_invoice_cn_types
+#: model:ir.model.fields,field_description:easy_invoice_cn_types.field_easy_invoice_cn_types_sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: easy_invoice_cn_types
+#: model:ir.ui.view,arch_db:easy_invoice_cn_types.view_easy_cn_types_form
+msgid "Type"
+msgstr "Concepto"
+
+#. module: easy_invoice_cn_types
+#: model:ir.ui.view,arch_db:easy_invoice_cn_types.easy_invoice_customer_form_inherit
+#: model:ir.ui.view,arch_db:easy_invoice_cn_types.easy_invoice_supplier_form_inherit
+msgid "Type Refund"
+msgstr "Tipo de NC EASY"
+
+#. module: easy_invoice_cn_types
+#: code:addons/easy_invoice_cn_types/models/easy_cn_types.py:19
+#, python-format
+msgid "You are trying to delete a record that is still referenced in one o more invoice, try to archive it."
+msgstr "Está intentando eliminar un registro al que todavía se hace referencia en una o más facturas, intente archivarlo."
+
+#. module: easy_invoice_cn_types
+#: model:ir.model,name:easy_invoice_cn_types.model_easy_invoice_cn_types
+msgid "easy.invoice.cn.types"
+msgstr "easy.invoice.cn.types"

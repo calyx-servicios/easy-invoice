@@ -94,7 +94,8 @@ class CustomerCreditNoteReport(models.AbstractModel):
         worksheet.set_column(row + 5, column + 5, 12)
         worksheet.set_column(row + 6, column + 6, 8)
         worksheet.set_column(row + 7, column + 7, 8)
-        worksheet.set_column(row + 8, column + 8, 13)
+        worksheet.set_column(row + 8, column + 8, 21)
+        worksheet.set_column(row + 9, column + 9, 13)
 
         #
         # Reporte de Devoluciones Query and Titles
@@ -108,17 +109,37 @@ class CustomerCreditNoteReport(models.AbstractModel):
             states.append("paid")
         if objs.cancel:
             states.append("cancel")
-        account_move_objs = self.env["easy.invoice.line"].search(
-            [
-                ("date_invoice", ">=", objs.date_from),
-                ("date_invoice", "<=", objs.date_to),
-                ("invoice_state", "in", states),
-                ("invoice_type", "=", "out_refund"),
-                ("company_id", "=", self.env.user.company_id.id),
+        
+        type_refunds = []
+        type_refunds_name =[]
+        for type_refund in objs.type_refund_ids:
+            type_refunds.append(str(type_refund.cn_types_value))
+            type_refunds_name.append(str(type_refund.cn_types_name))
+        if type_refunds:
+            account_move_objs = self.env["easy.invoice.line"].search(
+                [
+                    ("date_invoice", ">=", objs.date_from),
+                    ("date_invoice", "<=", objs.date_to),
+                    ("invoice_state", "in", states),
+                    ("invoice_id.type_refund", "in" , type_refunds),
+                    ("invoice_type", "=", "out_refund"),
+                    ("company_id", "=", self.env.user.company_id.id),
 
-            ],
-            order="date_invoice asc",
-        )
+                ],
+                order="date_invoice asc",
+            )
+        else:
+            account_move_objs = self.env["easy.invoice.line"].search(
+                [
+                    ("date_invoice", ">=", objs.date_from),
+                    ("date_invoice", "<=", objs.date_to),
+                    ("invoice_state", "in", states),
+                    ("invoice_type", "=", "out_refund"),
+                    ("company_id", "=", self.env.user.company_id.id),
+
+                ],
+                order="date_invoice asc",
+            )
         #
         # Reporte de Devoluciones Manipulation
         #
@@ -131,6 +152,7 @@ class CustomerCreditNoteReport(models.AbstractModel):
         worksheet.write(row, column + 6, "TOTAL", heading_format)
         worksheet.write(row, column + 7, "FECHA", heading_format)
         worksheet.write(row, column + 8, "NRO DOCUMENTO", heading_format)
+        worksheet.write(row, column + 9, "TIPOS DE NC", heading_format)
         row += 1
         for move in account_move_objs:
 
@@ -143,5 +165,7 @@ class CustomerCreditNoteReport(models.AbstractModel):
             worksheet.write(row, column + 6, move.price_subtotal, center_format)
             worksheet.write(row, column + 7, _format_date(move.date_invoice), center_format)
             worksheet.write(row, column + 8, move.invoice_id.name, right_format)
-            
+            for val,name in zip(type_refunds,type_refunds_name):
+                if val == move.invoice_id.type_refund:
+                    worksheet.write(row, column + 9, name, right_format)
             row += 1
