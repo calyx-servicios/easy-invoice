@@ -115,13 +115,12 @@ class CustomerCreditNoteReport(models.AbstractModel):
         for type_refund in objs.type_refund_ids:
             type_refunds.append(str(type_refund.cn_types_value))
             type_refunds_name.append(str(type_refund.cn_types_name))
-        if type_refunds:
+        if len(type_refunds) == 0 :
             account_move_objs = self.env["easy.invoice.line"].search(
                 [
                     ("date_invoice", ">=", objs.date_from),
                     ("date_invoice", "<=", objs.date_to),
                     ("invoice_state", "in", states),
-                    ("invoice_id.type_refund", "in" , type_refunds),
                     ("invoice_type", "=", "out_refund"),
                     ("company_id", "=", self.env.user.company_id.id),
 
@@ -134,6 +133,7 @@ class CustomerCreditNoteReport(models.AbstractModel):
                     ("date_invoice", ">=", objs.date_from),
                     ("date_invoice", "<=", objs.date_to),
                     ("invoice_state", "in", states),
+                    ("invoice_id.type_refund", "in" , type_refunds),
                     ("invoice_type", "=", "out_refund"),
                     ("company_id", "=", self.env.user.company_id.id),
 
@@ -154,6 +154,7 @@ class CustomerCreditNoteReport(models.AbstractModel):
         worksheet.write(row, column + 8, "NRO DOCUMENTO", heading_format)
         worksheet.write(row, column + 9, "TIPOS DE NC", heading_format)
         row += 1
+        cn_types_ids = self.env['easy.invoice.cn.types'].search([])
         for move in account_move_objs:
 
             worksheet.write(row, column, move.partner_id.name, left_format)
@@ -165,7 +166,12 @@ class CustomerCreditNoteReport(models.AbstractModel):
             worksheet.write(row, column + 6, move.price_subtotal, center_format)
             worksheet.write(row, column + 7, _format_date(move.date_invoice), center_format)
             worksheet.write(row, column + 8, move.invoice_id.name, right_format)
-            for val,name in zip(type_refunds,type_refunds_name):
-                if val == move.invoice_id.type_refund:
-                    worksheet.write(row, column + 9, name, right_format)
+            if len(type_refunds) != 0 :
+                for val,name in zip(type_refunds,type_refunds_name):
+                    if val == move.invoice_id.type_refund:
+                        worksheet.write(row, column + 9, name, right_format)
+            else:
+                for cn_types in cn_types_ids:
+                    if cn_types.cn_types_value == move.invoice_id.type_refund:
+                        worksheet.write(row, column + 9, cn_types.cn_types_name, right_format)
             row += 1

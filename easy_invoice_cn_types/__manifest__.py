@@ -18,7 +18,7 @@
     },
     'depends': ['easy_invoice','easy_invoice_employee_cc'],
     'data': [
-    #     'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/easy_cn_types_view.xml',
     ],
 }

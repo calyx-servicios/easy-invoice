@@ -96,10 +96,16 @@ msgid "Type Refund"
 msgstr "Tipo de NC EASY"
 
 #. module: easy_invoice_cn_types
-#: code:addons/easy_invoice_cn_types/models/easy_cn_types.py:19
+#: code:addons/easy_invoice_cn_types/models/easy_cn_types.py:22
 #, python-format
 msgid "You are trying to delete a record that is still referenced in one o more invoice, try to archive it."
-msgstr "Está intentando eliminar un registro al que todavía se hace referencia en una o más facturas, intente archivarlo."
+msgstr "Está intentando eliminar un registro al que todavía se hace referencia en una o más facturas, intente archivarlo. "
+
+#. module: easy_invoice_cn_types
+#: code:addons/easy_invoice_cn_types/models/easy_cn_types.py:36
+#, python-format
+msgid "You are trying to edit a record that is still referenced in one o more invoice, try to archive it."
+msgstr "Está intentando editar un registro al que todavía se hace referencia en una o más facturas, intente archivarlo. "
 
 #. module: easy_invoice_cn_types
 #: model:ir.model,name:easy_invoice_cn_types.model_easy_invoice_cn_types

@@ -1,5 +1,5 @@
-from odoo import fields, models, _
-from odoo.exceptions import Warning
+from odoo import fields, models, _, api
+from odoo.exceptions import Warning, ValidationError
 
 
 class EasyCNTypes(models.Model):
@@ -26,3 +26,17 @@ class EasyCNTypes(models.Model):
                 )
             )
         return super(EasyCNTypes, self).unlink()
+
+    @api.multi
+    def write(self, vals):
+        sale_obj = self.env["easy.invoice"]
+        rule_ranges = sale_obj.search([("type_refund", "=", self.cn_types_value)])
+        if self.cn_types_value != vals.get("cn_types_value") and rule_ranges:
+            raise Warning(
+                _(
+                    "You are trying to edit a record "
+                    "that is still referenced in one o more invoice, "
+                    "try to archive it."
+                )
+            )
+        return super(EasyCNTypes, self).write(vals)
