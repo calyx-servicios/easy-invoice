@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_easy_cn_types_tree" model="ir.ui.view">
+        <field name="model">easy.invoice.cn.types</field>
+        <field name="arch" type="xml">
+            <tree string="CN Types" decoration-muted="active == False">
+                <field name="sequence" widget="handle" />
+                <field name="active" invisible="True" />
+                <field name="cn_types_value" />
+                <field name="cn_types_name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_easy_cn_types_form" model="ir.ui.view">
+        <field name="model">easy.invoice.cn.types</field>
+        <field name="arch" type="xml">
+            <form string="Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="cn_types_value" required="1"/>
+                            <field name="cn_types_name" required="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_easy_cn_types_search" model="ir.ui.view">
+        <field name="model">easy.invoice.cn.types</field>
+        <field name="arch" type="xml">
+            <search string="CN Types">
+                <field name="cn_types_value" />
+                <field name="cn_types_name" />
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_easy_cn_types_view">
+        <field name="name">CN Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">easy.invoice.cn.types</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="view_easy_cn_types_tree"/>
+        <field name="search_view_id" ref="view_easy_cn_types_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Click to set a new CN Types.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_easy_cn_types" 
+        parent="easy_invoice_employee_cc.menu_action_easy_employee_settings_cc" 
+        sequence="30" 
+        action="action_easy_cn_types_view"
+        groups="easy_invoice.easy_invoice_responsible_group"/>
+</odoo>

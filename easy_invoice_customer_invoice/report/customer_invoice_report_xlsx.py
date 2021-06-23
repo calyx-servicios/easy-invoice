@@ -99,17 +99,43 @@ class CustomerInvoiceReportXLSX(models.AbstractModel):
         #
         # Reporte de Facturacion Query and Titles
         #
+        states = []
+        if objs.draft:
+            states.append("draft")
+        if objs.open:
+            states.append("open")
+        if objs.paid:
+            states.append("paid")
+        if objs.cancel:
+            states.append("cancel")
+        
+        partner_ids = []
+        for partner in objs.account_ids:
+            partner_ids.append(partner.id)
+        if partner_ids:
+            account_move_objs = self.env["easy.invoice.line"].search(
+                [
+                    ("date_invoice", ">=", objs.date_from),
+                    ("date_invoice", "<=", objs.date_to),
+                    ("invoice_state", "in", states),
+                    ("invoice_type", "=", "out_invoice"),
+                    ("company_id", "=", self.env.user.company_id.id),
+                    ("partner_id.id", "in", partner_ids)
+                ],
+                order="date_invoice asc",
+            )
+        else:
+            account_move_objs = self.env["easy.invoice.line"].search(
+                [
+                    ("date_invoice", ">=", objs.date_from),
+                    ("date_invoice", "<=", objs.date_to),
+                    ("invoice_state", "in", states),
+                    ("invoice_type", "=", "out_invoice"),
+                    ("company_id", "=", self.env.user.company_id.id),
+                ],
+                order="date_invoice asc",
+            )
 
-        account_move_objs = self.env["easy.invoice.line"].search(
-            [
-                ("date_invoice", ">=", objs.date_from),
-                ("date_invoice", "<=", objs.date_to),
-                ("invoice_type", "=", "out_invoice"),
-                ("company_id", "=", self.env.user.company_id.id),
-
-            ],
-            order="date_invoice asc",
-        )
         #
         # Reporte de Facturacion Manipulation
         #

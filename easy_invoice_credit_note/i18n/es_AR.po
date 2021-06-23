@@ -56,3 +56,32 @@ msgstr "Desde"
 #: model:ir.model.fields,field_description:easy_invoice_credit_note.field_credit_note_report_date_to
 msgid "To"
 msgstr "Hasta"
+
+#. module: easy_invoice_credit_note
+#: model:ir.model.fields,field_description:easy_invoice_credit_note.field_credit_note_report_open
+#: model:ir.ui.view,arch_db:easy_invoice_credit_note.credit_note_report
+msgid "Open"
+msgstr "Abierta"
+
+#. module: easy_invoice_credit_note
+#: model:ir.model.fields,field_description:easy_invoice_credit_note.field_credit_note_report_paid
+#: model:ir.ui.view,arch_db:easy_invoice_credit_note.credit_note_report
+msgid "Paid"
+msgstr "Pagado"
+
+#. module: easy_invoice_credit_note
+#: model:ir.ui.view,arch_db:easy_invoice_credit_note.credit_note_report
+msgid "State"
+msgstr "Estado"
+
+#. module: easy_invoice_credit_note
+#: model:ir.model.fields,field_description:easy_invoice_credit_note.field_credit_note_report_cancel
+#: model:ir.ui.view,arch_db:easy_invoice_credit_note.credit_note_report
+msgid "Cancel"
+msgstr "Cancelado"
+
+#. module: easy_invoice_credit_note
+#: model:ir.model.fields,field_description:easy_invoice_credit_note.field_credit_note_report_draft
+#: model:ir.ui.view,arch_db:easy_invoice_credit_note.credit_note_report
+msgid "Draft"
+msgstr "Borrador"
