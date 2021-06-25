@@ -1,0 +1,26 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* easy_invoice_analysis_unit_detail
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-25 18:27+0000\n"
+"PO-Revision-Date: 2021-06-25 18:27+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: easy_invoice_analysis_unit_detail
+#: model:ir.model,name:easy_invoice_analysis_unit_detail.model_easy_invoice_analysis_report
+msgid "Easy Analysis Report"
+msgstr "Easy Analysis Report"
+
+#. module: easy_invoice_analysis_unit_detail
+#: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
+msgid "Unit Detail"
+msgstr "Detalle Unidad"

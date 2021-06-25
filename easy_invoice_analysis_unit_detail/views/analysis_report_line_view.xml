@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+
+
+        <record model="ir.ui.view" id="view_easy_invoice_analysis_report_tree_inherit">
+            <field name="name">easy_invoice_analysis_report_tree_inherit</field>
+            <field name="model">easy_invoice_analysis_report</field>
+            <field name="inherit_id" ref="easy_invoice_analysis.view_easy_invoice_analysis_report_tree"/>
+            <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='uom_id']" position = "before">
+                <field name="unit_detail" string = "Unit Detail" />
+            </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
