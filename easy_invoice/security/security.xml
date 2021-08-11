@@ -13,6 +13,21 @@
             <field name="category_id" ref="easy_invoice"/>
         </record>
 
+        <record id="easy_invoice_hr_import_movements_group" model="res.groups">
+            <field name="name">HR Easy Import Account Movements</field>
+            <field name="category_id" ref="easy_invoice"/>
+        </record>
+
+        <record id="easy_invoice_hr_expenses_group" model="res.groups">
+            <field name="name">HR Easy Employee Expenses</field>
+            <field name="category_id" ref="easy_invoice"/>
+        </record>
+
+        <record id="easy_invoice_hr_report_group" model="res.groups">
+            <field name="name">HR Easy Employee report</field>
+            <field name="category_id" ref="easy_invoice"/>
+        </record>
+
         <record id="easy_invoice_user_group" model="res.groups">
             <field name="name">User Easy Invoice</field>
             <field name="category_id" ref="easy_invoice"/>
