@@ -97,12 +97,12 @@
                   name="Employee CC"
                   parent="easy_invoice.menu_ei_root"
                   sequence="50"
-                  groups="easy_invoice.easy_invoice_hr_group"/>
+                  groups="easy_invoice.easy_invoice_hr_employees_group,easy_invoice.easy_invoice_hr_report_group,easy_invoice.easy_invoice_hr_expenses_group,easy_invoice.easy_invoice_hr_import_movements_group"/>
 
         <menuitem action="action_easy_hr_employee_tree" 
                   id="submenu_action_easy_hr_employee_cc_tree" 
                   parent="menu_action_easy_hr_employee_cc"
-                  groups="easy_invoice.easy_invoice_hr_group" 
+                  groups="easy_invoice.easy_invoice_hr_employees_group" 
                   sequence="10"/>
 
         <record id="easy_employee_settlement_tree" model="ir.ui.view">

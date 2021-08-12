@@ -28,6 +28,11 @@
             <field name="category_id" ref="easy_invoice"/>
         </record>
 
+        <record id="easy_invoice_hr_employees_group" model="res.groups">
+            <field name="name">HR Easy Employee</field>
+            <field name="category_id" ref="easy_invoice"/>
+        </record>
+
         <record id="easy_invoice_user_group" model="res.groups">
             <field name="name">User Easy Invoice</field>
             <field name="category_id" ref="easy_invoice"/>
