@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_easy_employee_expense_hr,access_easy_employee_expense,model_easy_employee_expense,easy_invoice.easy_invoice_hr_expenses_group,1,1,1,1
+access_easy_employee_expense_hr_general,access_easy_employee_expense_general,model_easy_employee_expense,easy_invoice.easy_invoice_hr_group,1,0,0,0
