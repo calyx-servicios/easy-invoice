@@ -96,7 +96,7 @@
         <menuitem action="action_easy_employee_expense" 
             id="submenu_action_easy_employee_expense" 
             parent="easy_invoice_employee_cc.menu_action_easy_hr_employee_cc"
-            groups="easy_invoice.easy_invoice_hr_group" 
+            groups="easy_invoice.easy_invoice_hr_expenses_group" 
             sequence="20"/>
 
 
