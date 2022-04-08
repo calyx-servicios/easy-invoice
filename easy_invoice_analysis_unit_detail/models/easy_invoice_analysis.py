@@ -6,7 +6,13 @@ class AnalysisReportLine(models.Model):
     _inherit = 'easy_invoice_analysis_report'
 
     unit_detail = fields.Float('Unit Detail', (16,2))
-
+    delivered_qty = fields.Float('Delivered Quantity', default = 0, store = True)
+    delivery_type = fields.Selection(
+        [("additional", "Additional"), ("normal", "Normal"), ("pending", "Pending")],
+        string="Delivery type",
+        store=True,
+    )
+    
     def _select(self):
         query = """
         SELECT row_number() OVER ()::integer AS id,
