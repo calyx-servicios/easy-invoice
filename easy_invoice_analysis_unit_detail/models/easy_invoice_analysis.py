@@ -6,7 +6,13 @@ class AnalysisReportLine(models.Model):
     _inherit = 'easy_invoice_analysis_report'
 
     unit_detail = fields.Float('Unit Detail', (16,2))
-
+    delivered_qty = fields.Float('Delivered Quantity', default = 0, store = True)
+    delivery_type = fields.Selection(
+        [("additional", "Additional"), ("normal", "Normal"), ("pending", "Pending")],
+        string="Delivery type",
+        store=True,
+    )
+    
     def _select(self):
         query = """
         SELECT row_number() OVER ()::integer AS id,
@@ -32,6 +38,8 @@ class AnalysisReportLine(models.Model):
     my_query.description,
     my_query.date_due,
     my_query.unit_detail,
+    my_query.delivered_qty,
+    my_query.delivery_type,
     my_query.uom_id,
     my_query.journal_id,
     my_query.price_unit,
@@ -57,6 +65,8 @@ class AnalysisReportLine(models.Model):
             l.description AS description,
             l.date_due AS date_due,
             l.unit_detail AS unit_detail,
+            l.delivered_qty,
+            l.delivery_type,
             l.uom_id AS uom_id,
             l.journal_id AS journal_id,
             l.price_unit AS price_unit,
@@ -83,6 +93,8 @@ class AnalysisReportLine(models.Model):
                     e.note AS description,
                     e.date_expiration AS date_due,
                     l_1.unit_detail,
+                    l_1.delivered_qty,
+                    l_1.delivery_type,
                     l_1.uom_id,
                     NULL::integer AS journal_id,
                     l_1.price_unit,
@@ -114,6 +126,8 @@ class AnalysisReportLine(models.Model):
                     l_1.name AS description,
                     i.date_due,
                     l_1.unit_detail,
+                    l_1.delivered_qty,
+                    l_1.delivery_type,
                     l_1.uom_id,
                     i.journal_id,
                     l_1.price_unit,
@@ -148,6 +162,8 @@ class AnalysisReportLine(models.Model):
     my_query.description,
     my_query.date_due,
     my_query.unit_detail,
+    my_query.delivered_qty,
+    my_query.delivery_type,
     my_query.uom_id,
     my_query.journal_id,
     my_query.price_unit,

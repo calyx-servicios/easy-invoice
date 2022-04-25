@@ -11,6 +11,8 @@
 
             <xpath expr="//field[@name='uom_id']" position = "before">
                 <field name="unit_detail" string = "Unit Detail" />
+                <field name="delivered_qty" string="Delivered Quantity"/>
+                <field name="delivery_type" string="Delivery Type"/>
             </xpath>
             </field>
         </record>

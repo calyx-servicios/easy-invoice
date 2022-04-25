@@ -23,4 +23,4 @@ msgstr "Easy Analysis Report"
 #. module: easy_invoice_analysis_unit_detail
 #: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
 msgid "Unit Detail"
-msgstr "Detalle Unidad"
+msgstr "Pedido Original"
