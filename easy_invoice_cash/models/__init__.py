@@ -1,0 +1,1 @@
+from . import easy_recaudation

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>     
+        <record id="view_easy_recaudation_form_cashbox" model="ir.ui.view">
+            <field name="name">Easy Cashbox</field>
+            <field name="model">easy.recaudation</field>
+            <field name="inherit_id" ref="easy_invoice_recaudation.view_easy_recaudation_form"/>
+            <field name="arch" type="xml">
+                <field name="amount_box" position="replace">
+                    <field name="amount_box" string="Total Amount Easy"/>
+                    <field name="effective_journal"/>
+                    <field name="total_amount"/>
+                </field>
+                <xpath expr="//page[@name='user_ids_page']" position="after">
+                    <page name="cash_journal" string="Cash Journal">
+                        <label string="Journals"/>
+                        <field name="journal_ids" widget="many2many_tags"/>
+                        <field name="move_ids">
+                            <tree editable="bottom">
+                                <field name="date"/>
+                                <field name="move_id"/>
+                                <field name="journal_id"/>
+                                <field name="name"/>
+                                <field name="partner_id"/>
+                                <field name="account_id"/>
+                                <field name="balance"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
