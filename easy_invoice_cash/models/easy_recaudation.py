@@ -1,5 +1,4 @@
-from bdb import effective
-from odoo import api, exceptions, fields, models, _
+from odoo import api, fields, models
 
 class EasyRecaudation(models.Model):
 
@@ -18,8 +17,9 @@ class EasyRecaudation(models.Model):
             for journal in self.journal_ids:
                 aml = self.env['account.move.line'].search([('journal_id','=',journal.id),('account_id','=',journal.default_debit_account_id.id)])
                 self.move_ids += aml
-        for move_id in self.move_ids:
-            if move_id.balance:
-                total_amount += move_id.balance
+        if self.move_ids:       
+            for move_id in self.move_ids:
+                if move_id.balance:
+                    total_amount += move_id.balance
         self.effective_journal = total_amount
         self.total_amount = total_amount + self.amount_box
