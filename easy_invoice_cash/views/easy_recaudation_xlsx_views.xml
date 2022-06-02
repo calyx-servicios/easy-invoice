@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>        
+        <report
+        id="report_easy_cashbox_xlsx"
+        string="Easy Cashbox"
+        model="easy.recaudation"
+        report_type="xlsx"
+        name="easy_invoice_cash.report_easy_cashbox_xlsx"
+        file="easy_invoice_cash.report_easy_cashbox_xlsx"/>
+    </data>
+</odoo>
