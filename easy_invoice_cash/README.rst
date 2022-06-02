@@ -23,9 +23,8 @@ Easy Invoice CashBox
 
 
 Generate an additional tab within the easy boxes that allows to bring the movements of the cash diaries that one configures in said tab,
-which are tag type and are updated automatically.
-And the totals of that tab are shown and there are other fields with the totals.
-
+which are tag type and are updated automatically. And the totals of that tab are shown and there are other fields with the totals.
+Including the posibility to print a xlsx report.
 Authors
 ~~~~~~~
 

@@ -8,6 +8,8 @@ class EasyRecaudation(models.Model):
     total_amount = fields.Float('Amount Box', compute="_compute_moves")
     journal_ids = fields.Many2many('account.journal', string='Journals')
     move_ids = fields.Many2many('account.move.line', string='Moves', compute="_compute_moves")
+    report_date_from = fields.Date('From')
+    report_date_to = fields.Date('To')
 
     @api.depends('journal_ids')
     def _compute_moves(self):
