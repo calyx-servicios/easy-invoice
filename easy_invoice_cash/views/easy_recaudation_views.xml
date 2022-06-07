@@ -16,9 +16,9 @@
                         <label string="Journals"/>
                         <field name="journal_ids" widget="many2many_tags"/>
                         <label string="Date Report"/>
-                        <field name="report_date_from" required="1"/>
+                        <field name="report_date_from"/>
                         <label string=" - "/>
-                        <field name="report_date_to" required="1"/>
+                        <field name="report_date_to"/>
                         <field name="move_ids">
                             <tree editable="bottom">
                                 <field name="date"/>
