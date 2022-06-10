@@ -12,7 +12,7 @@
     "website": "https://odoo.calyx-cloud.com.ar/",
     "license": "AGPL-3",
     "category": "EasyInvoice",
-    "version": "11.0.2.0.0",
+    "version": "11.0.3.0.0",
     "application": False,
     "installable": True,
     "depends": ["easy_invoice_recaudation"],
