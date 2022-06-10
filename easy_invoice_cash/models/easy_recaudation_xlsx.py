@@ -1,7 +1,4 @@
 from odoo import models, _
-import datetime
-
-DEFAULT_DATE_FROM = datetime.datetime(1900, 1, 1)
 
 class EasyRecaudationXlsx(models.AbstractModel):
     _name = 'report.easy_invoice_cash.report_easy_cashbox_xlsx'
@@ -10,14 +7,8 @@ class EasyRecaudationXlsx(models.AbstractModel):
 
     def generate_xlsx_report(self, workbook, data, partners):
         report_name = partners.name
-        if partners.partners.report_date_from:
-            date_from = partners.report_date_from
-        else:
-            date_from = DEFAULT_DATE_FROM
-        if partners.report_date_to:
-            date_to = partners.report_date_to
-        else:
-            date_to = datetime.datetime.now()
+        date_from = partners.report_date_from
+        date_to = partners.report_date_to
         sheet = workbook.add_worksheet(_("Cashbox Report"))
         bold = workbook.add_format({'bold': True})
         sheet.set_column(0, 0, 11)
@@ -62,7 +53,7 @@ class EasyRecaudationXlsx(models.AbstractModel):
                 sheet.write(line, 5, "-")
                 sheet.write(line, 6, easy_aml.sequence_number)
                 sheet.write(line, 7, easy_aml.state)
-                sheet.write(line, 8, easy_aml.amount_in - easy_aml.amount_out)
+                sheet.write(line, 8, easy_aml.amount_out - easy_aml.amount_in)
                 line += 1
         for easy_aml_historic in partners.line_history_ids:
             if date_from <= easy_aml_historic.date_pay <= date_to:
@@ -74,5 +65,5 @@ class EasyRecaudationXlsx(models.AbstractModel):
                 sheet.write(line, 5, "-")
                 sheet.write(line, 6, easy_aml_historic.sequence_number)
                 sheet.write(line, 7, easy_aml_historic.state)
-                sheet.write(line, 8, easy_aml_historic.amount_in - easy_aml_historic.amount_out)
+                sheet.write(line, 8, easy_aml_historic.amount_out - easy_aml_historic.amount_in)
                 line += 1
