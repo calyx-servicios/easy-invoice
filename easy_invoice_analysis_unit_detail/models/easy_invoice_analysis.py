@@ -8,7 +8,7 @@ class AnalysisReportLine(models.Model):
     unit_detail = fields.Float('Unit Detail', (16,2))
     delivered_qty = fields.Float('Delivered Quantity', default = 0, store = True)
     delivery_type = fields.Selection(
-        [("additional", "Additional"), ("normal", "Normal"), ("pending", "Pending")],
+        [("additional", "Additional"), ("normal", "Normal"), ("pending", "Pending"), ("birthday_cake", "Birthday cake")],
         string="Delivery type",
         store=True,
     )

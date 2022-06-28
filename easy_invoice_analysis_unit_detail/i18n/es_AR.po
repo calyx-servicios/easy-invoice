@@ -24,3 +24,8 @@ msgstr "Easy Analysis Report"
 #: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
 msgid "Unit Detail"
 msgstr "Pedido Original"
+
+#. module: easy_invoice_analysis_unit_detail
+#: selection:easy_invoice_analysis_report,delivery_type:0
+msgid "Birthday cake"
+msgstr "Torta de cumpleaños"
