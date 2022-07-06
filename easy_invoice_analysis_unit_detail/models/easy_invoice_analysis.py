@@ -1,4 +1,4 @@
-from odoo import fields, models, tools, api
+from odoo import fields, models, tools, api,_
 
 class AnalysisReportLine(models.Model):
     """ Easy Analysis Report"""
