@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-25 18:27+0000\n"
-"PO-Revision-Date: 2021-06-25 18:27+0000\n"
+"POT-Creation-Date: 2022-07-06 21:11+0000\n"
+"PO-Revision-Date: 2022-07-06 21:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,16 +16,54 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: easy_invoice_analysis_unit_detail
+#: code:addons/easy_invoice_analysis_unit_detail/models/easy_invoice_analysis.py:11
+#: selection:easy_invoice_analysis_report,delivery_type:0
+#, python-format
+msgid "Additional"
+msgstr "Adicional"
+
+#. module: easy_invoice_analysis_unit_detail
+#: selection:easy_invoice_analysis_report,delivery_type:0
+msgid "Birthday cake"
+msgstr "Torta De Cumpleaños"
+
+#. module: easy_invoice_analysis_unit_detail
+#: model:ir.model.fields,field_description:easy_invoice_analysis_unit_detail.field_easy_invoice_analysis_report_delivered_qty
+#: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
+msgid "Delivered Quantity"
+msgstr "Cantidad Entregada"
+
+#. module: easy_invoice_analysis_unit_detail
+#: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
+msgid "Delivery Type"
+msgstr "Tipo de entrega"
+
+#. module: easy_invoice_analysis_unit_detail
+#: model:ir.model.fields,field_description:easy_invoice_analysis_unit_detail.field_easy_invoice_analysis_report_delivery_type
+msgid "Delivery type"
+msgstr "Tipo de Entrega"
+
+#. module: easy_invoice_analysis_unit_detail
 #: model:ir.model,name:easy_invoice_analysis_unit_detail.model_easy_invoice_analysis_report
 msgid "Easy Analysis Report"
 msgstr "Easy Analysis Report"
 
 #. module: easy_invoice_analysis_unit_detail
-#: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
-msgid "Unit Detail"
-msgstr "Pedido Original"
+#: code:addons/easy_invoice_analysis_unit_detail/models/easy_invoice_analysis.py:11
+#: selection:easy_invoice_analysis_report,delivery_type:0
+#, python-format
+msgid "Normal"
+msgstr "Normal"
 
 #. module: easy_invoice_analysis_unit_detail
+#: code:addons/easy_invoice_analysis_unit_detail/models/easy_invoice_analysis.py:11
 #: selection:easy_invoice_analysis_report,delivery_type:0
-msgid "Birthday cake"
-msgstr "Torta de cumpleaños"
+#, python-format
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: easy_invoice_analysis_unit_detail
+#: model:ir.model.fields,field_description:easy_invoice_analysis_unit_detail.field_easy_invoice_analysis_report_unit_detail
+#: model:ir.ui.view,arch_db:easy_invoice_analysis_unit_detail.view_easy_invoice_analysis_report_tree_inherit
+msgid "Unit Detail"
+msgstr "Detalle Unidad"
