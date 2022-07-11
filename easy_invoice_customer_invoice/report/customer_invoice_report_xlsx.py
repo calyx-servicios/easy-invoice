@@ -192,6 +192,7 @@ class CustomerInvoiceReportXLSX(models.AbstractModel):
         worksheet.write(row, column + 12, "TIPO DE PEDIDO", heading_format)
         row += 1
         for move in account_move_objs:
+            delivery_type = dict(move._fields['delivery_type'].selection).get(move.delivery_type)
             move_date = _format_date(move.date_invoice)
             worksheet.write(row, column, move.partner_id.name, left_format)
             worksheet.write(row, column + 1, move.product_id.default_code, left_format)
@@ -205,5 +206,5 @@ class CustomerInvoiceReportXLSX(models.AbstractModel):
             worksheet.write(row, column + 9, move.price_subtotal, center_format)
             worksheet.write(row, column + 10, move_date, center_format)
             worksheet.write(row, column + 11, move.invoice_id.name, right_format)
-            worksheet.write(row, column + 12, move.delivery_type, left_format)
+            worksheet.write(row, column + 12, _(delivery_type), left_format)
             row += 1
