@@ -133,7 +133,7 @@ class CustomerInvoiceReportXLSX(models.AbstractModel):
         worksheet.set_column(row + 10, column + 10, 8)  # FECHA
         worksheet.set_column(row + 11, column + 11, 13)  # NRO DOCUMENTO
         worksheet.set_column(row + 12, column + 12, 15)  # TIPO DE PEDIDO
-        worksheet.set_column(row + 12, column + 12, 15) # DESCRIPCION EN LOS REPORTES DE FACTURACION
+        worksheet.set_column(row + 13, column + 13, 15) # DESCRIPCION EN LOS REPORTES DE FACTURACION
 
         #
         # Reporte de Facturacion Query and Titles
@@ -191,7 +191,7 @@ class CustomerInvoiceReportXLSX(models.AbstractModel):
         worksheet.write(row, column + 10, "FECHA", heading_format)
         worksheet.write(row, column + 11, "NRO DOCUMENTO", heading_format)
         worksheet.write(row, column + 12, "TIPO DE PEDIDO", heading_format)
-        worksheet.write(row, column + 13, "DESCRIPCION EN LOS REPORTES DE FACTURACION", heading_format)
+        worksheet.write(row, column + 13, "DESCRIPCION", heading_format)
         row += 1
         for move in account_move_objs:
             delivery_type = dict(move._fields['delivery_type'].selection).get(move.delivery_type)
@@ -209,4 +209,5 @@ class CustomerInvoiceReportXLSX(models.AbstractModel):
             worksheet.write(row, column + 10, move_date, center_format)
             worksheet.write(row, column + 11, move.invoice_id.name, right_format)
             worksheet.write(row, column + 12, _(delivery_type), left_format)
+            worksheet.write(row, column + 13, move.invoice_id.note, left_format)
             row += 1
